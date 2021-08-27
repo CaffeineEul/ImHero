@@ -40,31 +40,30 @@ public class CharacterInfo : MonoBehaviour
             }
             if(hit.collider != null && hit.transform.gameObject.tag == "Range")
             {
-                foreach (var i in CanMoveAreas)
+                if (hit.transform.gameObject == CanMoveAreas[0])
                 {
-                    if(hit.transform.gameObject == i)
-                    {
-                        //
-                        if(transform.position.x > hit.transform.position.x && transform.position.y > hit.transform.position.y)
-                        {
-                            objectMoveAlgorithm.GetMoveDir(h, v, h, v-1);
-                        }
-                        else if(transform.position.x > hit.transform.position.x && transform.position.y < hit.transform.position.y)
-                        {
-                            objectMoveAlgorithm.GetMoveDir(h, v, h, v+1);
-                        }
-                        else if (transform.position.x < hit.transform.position.x && transform.position.y > hit.transform.position.y)
-                        {
-                            objectMoveAlgorithm.GetMoveDir(h, v, h+1, v);
-                        }
-                        else if (transform.position.x < hit.transform.position.x && transform.position.y < hit.transform.position.y)
-                        {
-                            objectMoveAlgorithm.GetMoveDir(h, v, h-1, v);
-                        }
-                        appearRange = !appearRange;
-                    }
+                    objectMoveAlgorithm.GetMoveDir(h, v, h, v - 1);
+                    objectMoveAlgorithm.MoveTileMap();
+                    appearRange = !appearRange;
                 }
-                objectMoveAlgorithm.MoveTileMap();
+                if (hit.transform.gameObject == CanMoveAreas[1])
+                {
+                    objectMoveAlgorithm.GetMoveDir(h, v, h, v + 1);
+                    objectMoveAlgorithm.MoveTileMap();
+                    appearRange = !appearRange;
+                }
+                if (hit.transform.gameObject == CanMoveAreas[2])
+                {
+                    objectMoveAlgorithm.GetMoveDir(h, v, h - 1, v);
+                    objectMoveAlgorithm.MoveTileMap();
+                    appearRange = !appearRange;
+                }
+                if (hit.transform.gameObject == CanMoveAreas[3])
+                {
+                    objectMoveAlgorithm.GetMoveDir(h, v, h + 1, v);
+                    objectMoveAlgorithm.MoveTileMap();
+                    appearRange = !appearRange;
+                }
             }
         }
         AppearCanMoveRange();
@@ -72,20 +71,26 @@ public class CharacterInfo : MonoBehaviour
     void AppearCanMoveRange()
     {
         if (!appearRange)
+        {
+            CanMoveAreas[0].SetActive(false);
+            CanMoveAreas[1].SetActive(false);
+            CanMoveAreas[2].SetActive(false);
+            CanMoveAreas[3].SetActive(false);
             return;
-        if(h > 1)
+        }
+        if(v > 0)
         {
             CanMoveAreas[0].SetActive(true);
         }
-        if(h < 7)
+        if(v < 7)
         {
             CanMoveAreas[1].SetActive(true);
         }
-        if(v > 1)
+        if(h > 0)
         {
             CanMoveAreas[2].SetActive(true);
         }
-        if(v < 7)
+        if(h < 7)
         {
             CanMoveAreas[3].SetActive(true);
         }
@@ -101,11 +106,13 @@ public class CharacterInfo : MonoBehaviour
     public void MovePositionH(int var)
     {
         h += var;
+        posX = mapInfo.GetInfoV(h, v);
         posY = mapInfo.GetInfoH(h, v);
     }
     public void MovePositionV(int var)
     {
         v += var;
         posX = mapInfo.GetInfoV(h, v);
+        posY = mapInfo.GetInfoH(h, v);
     }
 }

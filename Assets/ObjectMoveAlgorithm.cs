@@ -23,7 +23,7 @@ public class ObjectMoveAlgorithm : MonoBehaviour
         {
             foreach(var g in gameObjects)
             {
-                if (g.GetComponent<CharacterInfo>().ReturnPositionH() < 7)
+                if (g.GetComponent<CharacterInfo>().ReturnPositionH() < 8)
                 {
                     g.GetComponent<CharacterInfo>().MovePositionH(1);
                     g.GetComponent<CharacterInfo>().MovePositionV(0);
@@ -34,7 +34,7 @@ public class ObjectMoveAlgorithm : MonoBehaviour
         {
             foreach (var g in gameObjects)
             {
-                if (g.GetComponent<CharacterInfo>().ReturnPositionH() > 1)
+                if (g.GetComponent<CharacterInfo>().ReturnPositionH() > 0)
                 {
                     g.GetComponent<CharacterInfo>().MovePositionH(-1);
                     g.GetComponent<CharacterInfo>().MovePositionV(0);
@@ -45,7 +45,7 @@ public class ObjectMoveAlgorithm : MonoBehaviour
         {
             foreach (var g in gameObjects)
             {
-                if (g.GetComponent<CharacterInfo>().ReturnPositionV() < 7)
+                if (g.GetComponent<CharacterInfo>().ReturnPositionV() < 8)
                 {
                     g.GetComponent<CharacterInfo>().MovePositionH(0);
                     g.GetComponent<CharacterInfo>().MovePositionV(1);
@@ -56,7 +56,7 @@ public class ObjectMoveAlgorithm : MonoBehaviour
         {
             foreach (var g in gameObjects)
             {
-                if (g.GetComponent<CharacterInfo>().ReturnPositionV() > 1)
+                if (g.GetComponent<CharacterInfo>().ReturnPositionV() > 0)
                 {
                     g.GetComponent<CharacterInfo>().MovePositionH(0);
                     g.GetComponent<CharacterInfo>().MovePositionV(-1);
