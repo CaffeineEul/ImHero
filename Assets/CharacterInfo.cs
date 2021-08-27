@@ -13,6 +13,9 @@ public class CharacterInfo : MonoBehaviour
     float posY;
     bool ChooseCharacter = true;
     bool appearRange = false;
+
+    private TurnController turnController;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +23,8 @@ public class CharacterInfo : MonoBehaviour
         objectMoveAlgorithm = GameObject.Find("ObjectMoveAlgorithm").GetComponent<ObjectMoveAlgorithm>();
         posX = transform.position.x;
         posY = transform.position.y;
+
+        turnController = GameObject.Find("TurnController").GetComponent<TurnController>();
     }
     // Update is called once per frame
     void Update()
@@ -33,7 +38,7 @@ public class CharacterInfo : MonoBehaviour
             RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction);
 
             //캐릭터 눌렀을 때
-            if (hit.collider != null && hit.transform.gameObject == this.gameObject)
+            if (hit.collider != null && hit.transform.gameObject == this.gameObject && turnController.IsPlayerTurn())
             {
                 appearRange = true;
                 ChooseCharacter = !ChooseCharacter;
@@ -42,18 +47,21 @@ public class CharacterInfo : MonoBehaviour
             {
                 if (hit.transform.gameObject == CanMoveAreas[0])
                 {
+                    turnController.MinusMb();
                     objectMoveAlgorithm.GetMoveDir(h, v, h, v - 1);
                     objectMoveAlgorithm.MoveTileMap();
                     appearRange = !appearRange;
                 }
                 if (hit.transform.gameObject == CanMoveAreas[1])
                 {
+                    turnController.MinusMb();
                     objectMoveAlgorithm.GetMoveDir(h, v, h, v + 1);
                     objectMoveAlgorithm.MoveTileMap();
                     appearRange = !appearRange;
                 }
                 if (hit.transform.gameObject == CanMoveAreas[2])
                 {
+                    turnController.MinusMb();
                     objectMoveAlgorithm.GetMoveDir(h, v, h - 1, v);
                     objectMoveAlgorithm.MoveTileMap();
                     appearRange = !appearRange;
