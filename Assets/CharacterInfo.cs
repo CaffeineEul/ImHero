@@ -6,11 +6,13 @@ public class CharacterInfo : MonoBehaviour
 {
     public MapInfo mapInfo;
     public ObjectMoveAlgorithm objectMoveAlgorithm;
+    public GameObject[] CanMoveAreas;
     public int h;
     public int v;
     float posX;
     float posY;
-    bool can = true;
+    bool ChooseCharacter = true;
+    bool appearRange = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,20 +26,68 @@ public class CharacterInfo : MonoBehaviour
     {
         transform.position = new Vector3(posX, posY, 0);
 
-        if(Input.GetMouseButton(0) && can)
+        if(Input.GetMouseButtonDown(0))
         {
-            print("*");
             Vector2 wp = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             Ray2D ray = new Ray2D(wp, Vector2.zero);
             RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction);
 
+            //캐릭터 눌렀을 때
             if (hit.collider != null && hit.transform.gameObject.tag == "Character")
             {
-                print("*8");
-                objectMoveAlgorithm.GetMoveDir(h, v, h + 1, v);
-                objectMoveAlgorithm.MoveTileMap();
-                can = false;
+                appearRange = true;
+                ChooseCharacter = !ChooseCharacter;
             }
+            if(hit.collider != null && hit.transform.gameObject.tag == "Range")
+            {
+                foreach (var i in CanMoveAreas)
+                {
+                    if(hit.transform.gameObject == i)
+                    {
+                        //
+                        if(transform.position.x > hit.transform.position.x && transform.position.y > hit.transform.position.y)
+                        {
+                            objectMoveAlgorithm.GetMoveDir(h, v, h, v-1);
+                        }
+                        else if(transform.position.x > hit.transform.position.x && transform.position.y < hit.transform.position.y)
+                        {
+                            objectMoveAlgorithm.GetMoveDir(h, v, h, v+1);
+                        }
+                        else if (transform.position.x < hit.transform.position.x && transform.position.y > hit.transform.position.y)
+                        {
+                            objectMoveAlgorithm.GetMoveDir(h, v, h+1, v);
+                        }
+                        else if (transform.position.x < hit.transform.position.x && transform.position.y < hit.transform.position.y)
+                        {
+                            objectMoveAlgorithm.GetMoveDir(h, v, h-1, v);
+                        }
+                        appearRange = !appearRange;
+                    }
+                }
+                objectMoveAlgorithm.MoveTileMap();
+            }
+        }
+        AppearCanMoveRange();
+    }
+    void AppearCanMoveRange()
+    {
+        if (!appearRange)
+            return;
+        if(h > 1)
+        {
+            CanMoveAreas[0].SetActive(true);
+        }
+        if(h < 7)
+        {
+            CanMoveAreas[1].SetActive(true);
+        }
+        if(v > 1)
+        {
+            CanMoveAreas[2].SetActive(true);
+        }
+        if(v < 7)
+        {
+            CanMoveAreas[3].SetActive(true);
         }
     }
     public int ReturnPositionH()

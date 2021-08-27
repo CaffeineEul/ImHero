@@ -5,10 +5,10 @@ using UnityEngine;
 public class ObjectMoveAlgorithm : MonoBehaviour
 {
     public GameObject[] gameObjects;
-    public float h=0;
-    public float v=0;
-    public float nh=0;
-    public float nv=0;
+    public float h = 0;
+    public float v = 0;
+    public float nh = 0;
+    public float nv = 0;
     
     public void GetMoveDir(float h, float v, float nh, float nv)
     {

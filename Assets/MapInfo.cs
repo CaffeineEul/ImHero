@@ -15,7 +15,6 @@ public class MapInfo : MonoBehaviour
         {0.5f, 1, 1.5f, 2.0f , 2.5f, 3.0f, 3.5f, 4.0f },
         { 1, 1.5f, 2.0f , 2.5f, 3.0f, 3.5f, 4.0f, 4.5f}
     };
-    //0.53
     public float[,] infoH = new float[8, 8]
     {
         {1.85f, 2.1f, 2.35f, 2.6f, 2.85f, 3.1f, 3.35f, 3.6f},
