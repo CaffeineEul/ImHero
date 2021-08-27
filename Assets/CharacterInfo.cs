@@ -63,6 +63,7 @@ public class CharacterInfo : Operator
                 }
                 if (hit.transform.gameObject == CanMoveAreas[3])
                 {
+                    turnController.MinusMb();
                     objectMoveAlgorithm.GetMoveDir(h, v, h + 1, v);
                     objectMoveAlgorithm.MoveTileMap();
                     appearRange = !appearRange;

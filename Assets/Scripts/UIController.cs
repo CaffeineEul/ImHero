@@ -25,13 +25,20 @@ public class UIController : MonoBehaviour
 
     private void UpdateMB()
     {
-        if(turnController)
-
         if(mb != turnController.GetMB())
         {
             mb = turnController.GetMB();
-
-            MBTile[mb].SetActive(false);
+            if(mb <= 0)
+            {
+                foreach(GameObject g in MBTile)
+                {
+                    g.SetActive(true);
+                }
+            }
+            else if(mb < 6)
+            {
+                MBTile[mb].SetActive(false);
+            }
         }
 
 

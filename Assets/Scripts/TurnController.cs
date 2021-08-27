@@ -10,13 +10,13 @@ public class TurnController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(mb < 0)
+        if(mb <= 0)
         {
             isPlayerTurn = false;
             mb = 6;
         }
 
-        if(!isPlayerTurn && mb < 0)
+        if(!isPlayerTurn && mb <= 0)
         {
             EndEnemyTurn();
         }
@@ -29,6 +29,7 @@ public class TurnController : MonoBehaviour
     public void MinusMb()
     {
         mb--;
+        print(mb);
     }
 
     /// <summary>
