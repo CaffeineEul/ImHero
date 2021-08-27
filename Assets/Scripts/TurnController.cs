@@ -14,6 +14,11 @@ public class TurnController : MonoBehaviour
         {
             isPlayerTurn = false;
         }
+
+        if(!isPlayerTurn && mb < 0)
+        {
+            EndEnemyTurn();
+        }
     }
 
 
@@ -42,4 +47,6 @@ public class TurnController : MonoBehaviour
         mb = 6;
         isPlayerTurn = true;
     }
+
+
 }
