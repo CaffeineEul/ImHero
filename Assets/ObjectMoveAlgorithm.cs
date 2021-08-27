@@ -9,7 +9,19 @@ public class ObjectMoveAlgorithm : MonoBehaviour
     public float v = 0;
     public float nh = 0;
     public float nv = 0;
+    public bool CanClick = true;
     
+    public bool IsCanClick()
+    {
+        return CanClick;
+    }
+    public void AllAreaOff()
+    {
+        foreach(var g in gameObjects)
+        {
+            g.GetComponent<CharacterInfo>().appearRange = false;
+        }
+    }
     public void GetMoveDir(float h, float v, float nh, float nv)
     {
         this.h = h;

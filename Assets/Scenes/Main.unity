@@ -4887,12 +4887,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: 
-  hp: 0
-  damage: 0
-  moveDistance: 0
-  attackRange: 0
+  hp: 4
+  damage: 3
+  moveDistance: 1
+  attackRange: 2
   h: 6
   v: 2
+  _LayerMask:
+    serializedVersion: 2
+    m_Bits: 0
   mapInfo: {fileID: 0}
   objectMoveAlgorithm: {fileID: 0}
   CanMoveAreas:
@@ -4900,7 +4903,9 @@ MonoBehaviour:
   - {fileID: 2114754107}
   - {fileID: 1376435388}
   - {fileID: 825174474}
+  sprite: {fileID: 21300000, guid: 2d9dec88e806ba742a2574f87510a8f6, type: 3}
   c: 0
+  appearRange: 0
 --- !u!58 &995813359
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -5018,12 +5023,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: 
-  hp: 0
-  damage: 0
-  moveDistance: 0
-  attackRange: 0
+  hp: 6
+  damage: 2
+  moveDistance: 1
+  attackRange: 1
   h: 2
   v: 2
+  _LayerMask:
+    serializedVersion: 2
+    m_Bits: 0
   mapInfo: {fileID: 0}
   objectMoveAlgorithm: {fileID: 0}
   CanMoveAreas:
@@ -5031,7 +5039,9 @@ MonoBehaviour:
   - {fileID: 526898997}
   - {fileID: 338044660}
   - {fileID: 1420112096}
-  c: 0
+  sprite: {fileID: 21300000, guid: 2d9dec88e806ba742a2574f87510a8f6, type: 3}
+  c: 1
+  appearRange: 0
 --- !u!58 &1006800334
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -5210,7 +5220,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1059076770
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7595,12 +7605,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: 
-  hp: 0
-  damage: 0
-  moveDistance: 0
-  attackRange: 0
+  hp: 4
+  damage: 3
+  moveDistance: 1
+  attackRange: 2
   h: 1
   v: 6
+  _LayerMask:
+    serializedVersion: 2
+    m_Bits: 0
   mapInfo: {fileID: 0}
   objectMoveAlgorithm: {fileID: 0}
   CanMoveAreas:
@@ -7608,7 +7621,9 @@ MonoBehaviour:
   - {fileID: 405437464}
   - {fileID: 608919268}
   - {fileID: 1427715501}
+  sprite: {fileID: 0}
   c: 0
+  appearRange: 0
 --- !u!58 &1438477177
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -7966,12 +7981,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: 
-  hp: 0
-  damage: 0
-  moveDistance: 0
-  attackRange: 0
+  hp: 6
+  damage: 2
+  moveDistance: 1
+  attackRange: 1
   h: 4
   v: 4
+  _LayerMask:
+    serializedVersion: 2
+    m_Bits: 0
   mapInfo: {fileID: 0}
   objectMoveAlgorithm: {fileID: 0}
   CanMoveAreas:
@@ -7979,7 +7997,9 @@ MonoBehaviour:
   - {fileID: 867810276}
   - {fileID: 975228731}
   - {fileID: 536791468}
-  c: 0
+  sprite: {fileID: 21300000, guid: 2d9dec88e806ba742a2574f87510a8f6, type: 3}
+  c: 1
+  appearRange: 0
 --- !u!58 &1561457921
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -8375,6 +8395,7 @@ MonoBehaviour:
   v: 0
   nh: 0
   nv: 0
+  CanClick: 1
 --- !u!4 &1637292126
 Transform:
   m_ObjectHideFlags: 0
@@ -9016,12 +9037,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: 
-  hp: 0
+  hp: 2
   damage: 0
-  moveDistance: 0
-  attackRange: 0
+  moveDistance: 1
+  attackRange: 3
   h: 0
   v: 0
+  _LayerMask:
+    serializedVersion: 2
+    m_Bits: 0
   mapInfo: {fileID: 0}
   objectMoveAlgorithm: {fileID: 0}
   CanMoveAreas:
@@ -9029,7 +9053,9 @@ MonoBehaviour:
   - {fileID: 260893763}
   - {fileID: 1926247266}
   - {fileID: 1420997842}
-  c: 0
+  sprite: {fileID: 21300000, guid: 2d9dec88e806ba742a2574f87510a8f6, type: 3}
+  c: 2
+  appearRange: 0
 --- !u!1 &1767471088
 GameObject:
   m_ObjectHideFlags: 0
@@ -10177,12 +10203,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: 
-  hp: 0
+  hp: 2
   damage: 0
   moveDistance: 0
-  attackRange: 0
+  attackRange: 3
   h: 6
   v: 6
+  _LayerMask:
+    serializedVersion: 2
+    m_Bits: 0
   mapInfo: {fileID: 0}
   objectMoveAlgorithm: {fileID: 0}
   CanMoveAreas:
@@ -10190,7 +10219,9 @@ MonoBehaviour:
   - {fileID: 1910018219}
   - {fileID: 1380955318}
   - {fileID: 1795564882}
-  c: 0
+  sprite: {fileID: 21300000, guid: 2d9dec88e806ba742a2574f87510a8f6, type: 3}
+  c: 2
+  appearRange: 0
 --- !u!58 &2105280377
 CircleCollider2D:
   m_ObjectHideFlags: 0

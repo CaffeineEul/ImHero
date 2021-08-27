@@ -26,6 +26,17 @@ public class MapInfo : MonoBehaviour
         {0.35f, 0.6f, 0.85f, 1.1f, 1.35f, 1.6f, 1.85f, 2.1f},
         {0.1f, 0.35f, 0.6f, 0.85f, 1.1f, 1.35f, 1.6f, 1.85f}
     };
+    public bool[,] Exist = new bool[8, 8]
+    {
+        {false, false,false,false,false,false,false,false},
+        {false, false,false,false,false,false,false,false},
+        {false, false,false,false,false,false,false,false},
+        {false, false,false,false,false,false,false,false},
+        {false, false,false,false,false,false,false,false},
+        {false, false,false,false,false,false,false,false},
+        {false, false,false,false,false,false,false,false},
+        {false, false,false,false,false,false,false,false}
+    };
 
     public float GetInfoV(int v, int h)
     {

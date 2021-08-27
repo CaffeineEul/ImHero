@@ -11,6 +11,7 @@ public class Operator : MonoBehaviour
     [SerializeField] protected int attackRange;
     [SerializeField] protected int h;
     [SerializeField] protected int v;
+    public LayerMask _LayerMask;
 
     public enum Class
     {
@@ -55,11 +56,11 @@ public class Operator : MonoBehaviour
     {
         Debug.DrawRay(transform.position, new Vector3(-1, -1, 0) * attackRange, new Color(0, 1, 0));
 
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, new Vector3(0, -1, 0) * 0.9f);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, new Vector3(0, -1, 0) * 0.9f, _LayerMask);
 
-        if (hit.collider != null)
+        if (hit.transform.gameObject.tag == "Character")
         {
-            Debug.Log(hit.collider.name);
+            return true;
         }
 
         return false;
