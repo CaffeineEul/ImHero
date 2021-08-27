@@ -19,7 +19,7 @@ public class Operator : MonoBehaviour
         Supporter
     }
 
-    TurnController turnController;
+    protected TurnController turnController;
 
     public void Start()
     {

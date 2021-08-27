@@ -13,7 +13,6 @@ public class CharacterInfo : Operator
     bool ChooseCharacter = true;
     bool appearRange = false;
 
-    private TurnController turnController;
 
     // Start is called before the first frame update
     private void Awake()
@@ -22,8 +21,6 @@ public class CharacterInfo : Operator
         objectMoveAlgorithm = GameObject.Find("ObjectMoveAlgorithm").GetComponent<ObjectMoveAlgorithm>();
         posX = transform.position.x;
         posY = transform.position.y;
-
-        turnController = GameObject.Find("TurnController").GetComponent<TurnController>();
     }
     // Update is called once per frame
     void Update()
