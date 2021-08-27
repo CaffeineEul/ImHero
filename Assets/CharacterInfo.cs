@@ -8,7 +8,6 @@ public class CharacterInfo : Operator
     public MapInfo mapInfo;
     public ObjectMoveAlgorithm objectMoveAlgorithm;
     public GameObject[] CanMoveAreas;
-    Image image;
     public Sprite sprite;
     public Class c;
     float posX;
@@ -23,7 +22,7 @@ public class CharacterInfo : Operator
         objectMoveAlgorithm = GameObject.Find("ObjectMoveAlgorithm").GetComponent<ObjectMoveAlgorithm>();
         posX = transform.position.x;
         posY = transform.position.y;
-        image = GetComponent<Image>();
+        mapInfo.Exist[h, v] = true; 
     }
     // Update is called once per frame
     void Update()
