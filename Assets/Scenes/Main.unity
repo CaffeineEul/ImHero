@@ -4488,7 +4488,7 @@ GameObject:
   - component: {fileID: 995813359}
   - component: {fileID: 995813358}
   m_Layer: 0
-  m_Name: Character (5)
+  m_Name: Enemy_Dealer
   m_TagString: Character
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4613,7 +4613,7 @@ GameObject:
   - component: {fileID: 1006800334}
   - component: {fileID: 1006800333}
   m_Layer: 0
-  m_Name: Character (1)
+  m_Name: Player_Tanker
   m_TagString: Character
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6707,7 +6707,7 @@ GameObject:
   - component: {fileID: 1438477177}
   - component: {fileID: 1438477176}
   m_Layer: 0
-  m_Name: Character (2)
+  m_Name: Player_Dealer
   m_TagString: Character
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7072,7 +7072,7 @@ GameObject:
   - component: {fileID: 1561457921}
   - component: {fileID: 1561457920}
   m_Layer: 0
-  m_Name: Character (4)
+  m_Name: Enemy_Tanker
   m_TagString: Character
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7826,7 +7826,7 @@ GameObject:
   - component: {fileID: 1753010922}
   - component: {fileID: 1753010923}
   m_Layer: 0
-  m_Name: Character
+  m_Name: Player_Supporter
   m_TagString: Character
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8646,7 +8646,7 @@ GameObject:
   - component: {fileID: 2105280377}
   - component: {fileID: 2105280376}
   m_Layer: 0
-  m_Name: Character (3)
+  m_Name: Enemy_Supporter
   m_TagString: Character
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
