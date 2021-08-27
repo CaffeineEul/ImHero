@@ -13,8 +13,6 @@ public class CharacterInfo : Operator
     bool ChooseCharacter = true;
     bool appearRange = false;
 
-    private TurnController turnController;
-
     // Start is called before the first frame update
     private void Awake()
     {
@@ -22,8 +20,6 @@ public class CharacterInfo : Operator
         objectMoveAlgorithm = GameObject.Find("ObjectMoveAlgorithm").GetComponent<ObjectMoveAlgorithm>();
         posX = transform.position.x;
         posY = transform.position.y;
-
-        turnController = GameObject.Find("TurnController").GetComponent<TurnController>();
     }
     // Update is called once per frame
     void Update()
@@ -67,6 +63,7 @@ public class CharacterInfo : Operator
                 }
                 if (hit.transform.gameObject == CanMoveAreas[3])
                 {
+                    turnController.MinusMb();
                     objectMoveAlgorithm.GetMoveDir(h, v, h + 1, v);
                     objectMoveAlgorithm.MoveTileMap();
                     appearRange = !appearRange;
