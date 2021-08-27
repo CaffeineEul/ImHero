@@ -12,11 +12,18 @@ public class Operator : MonoBehaviour
     [SerializeField] protected int h;
     [SerializeField] protected int v;
 
-    protected enum Class
+    public enum Class
     {
         Dealer,
         Tanker,
         Supporter
+    }
+
+    TurnController turnController;
+
+    public void Start()
+    {
+        turnController = GameObject.Find("TurnController").GetComponent<TurnController>();
     }
 
     /// <summary>
@@ -24,8 +31,9 @@ public class Operator : MonoBehaviour
     /// </summary>
     /// <param name="target">공격할 대상</param>
     /// <param name="damage">가한 공격력</param>
-    protected void Attack(Operator target, int damage)
+    public virtual void Attack(Operator target, int damage)
     {
+        turnController.MinusMb();
         target.hp -= damage;
         return;
     }
