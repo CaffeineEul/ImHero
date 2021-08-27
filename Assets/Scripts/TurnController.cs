@@ -6,6 +6,12 @@ public class TurnController : MonoBehaviour
 {
     private bool isPlayerTurn = true;
     [SerializeField] private int mb;
+    public int turn;
+
+    private void Start()
+    {
+        turn = 1;
+    }
 
     // Update is called once per frame
     void Update()
@@ -13,6 +19,7 @@ public class TurnController : MonoBehaviour
         if(mb <= 0)
         {
             isPlayerTurn = false;
+            turn++;
             mb = 6;
         }
 
@@ -57,6 +64,11 @@ public class TurnController : MonoBehaviour
     public int GetMB()
     {
         return mb; 
+    }
+
+    public int GetTurnCount()
+    {
+        return turn;
     }
 
 

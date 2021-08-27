@@ -1,13 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIController : MonoBehaviour
 {
     [SerializeField] private GameObject[] MBTile;
+    public Text currentTurn;
 
     private int mb;
-    private bool isMbChange;
     TurnController turnController;
 
     // Start is called before the first frame update
@@ -21,6 +22,7 @@ public class UIController : MonoBehaviour
     void Update()
     {
         UpdateMB();
+        UpdateTurnCount();
     }
 
     private void UpdateMB()
@@ -40,7 +42,10 @@ public class UIController : MonoBehaviour
                 MBTile[mb].SetActive(false);
             }
         }
+    }
 
-
+    private void UpdateTurnCount()
+    {
+        currentTurn.text = turnController.GetTurnCount().ToString();
     }
 }
