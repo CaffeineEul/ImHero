@@ -2,13 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CharacterInfo : MonoBehaviour
+public class CharacterInfo : Operator
 {
     public MapInfo mapInfo;
     public ObjectMoveAlgorithm objectMoveAlgorithm;
     public GameObject[] CanMoveAreas;
-    public int h;
-    public int v;
+    public Class c;
     float posX;
     float posY;
     bool ChooseCharacter = true;
@@ -17,7 +16,7 @@ public class CharacterInfo : MonoBehaviour
     private TurnController turnController;
 
     // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
         mapInfo = GameObject.Find("MapInfo").GetComponent<MapInfo>();
         objectMoveAlgorithm = GameObject.Find("ObjectMoveAlgorithm").GetComponent<ObjectMoveAlgorithm>();

@@ -35,15 +35,4 @@ public class MapInfo : MonoBehaviour
     {
         return infoH[v, h];
     }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
