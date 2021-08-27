@@ -4513,8 +4513,8 @@ MonoBehaviour:
   - {fileID: 2114754107}
   - {fileID: 1376435388}
   - {fileID: 825174474}
-  h: 0
-  v: 0
+  h: 6
+  v: 2
 --- !u!58 &995813359
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -4638,8 +4638,8 @@ MonoBehaviour:
   - {fileID: 526898997}
   - {fileID: 338044660}
   - {fileID: 1420112096}
-  h: 0
-  v: 0
+  h: 2
+  v: 2
 --- !u!58 &1006800334
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -6732,8 +6732,8 @@ MonoBehaviour:
   - {fileID: 405437464}
   - {fileID: 608919268}
   - {fileID: 1427715501}
-  h: 0
-  v: 0
+  h: 1
+  v: 6
 --- !u!58 &1438477177
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -7097,8 +7097,8 @@ MonoBehaviour:
   - {fileID: 867810276}
   - {fileID: 975228731}
   - {fileID: 536791468}
-  h: 0
-  v: 0
+  h: 4
+  v: 4
 --- !u!58 &1561457921
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -7485,6 +7485,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameObjects:
   - {fileID: 1753010919}
+  - {fileID: 1006800332}
+  - {fileID: 1438477175}
+  - {fileID: 2105280375}
+  - {fileID: 1561457919}
+  - {fileID: 995813357}
   h: 0
   v: 0
   nh: 0
@@ -8671,8 +8676,8 @@ MonoBehaviour:
   - {fileID: 1910018219}
   - {fileID: 1380955318}
   - {fileID: 1795564882}
-  h: 0
-  v: 0
+  h: 6
+  v: 6
 --- !u!58 &2105280377
 CircleCollider2D:
   m_ObjectHideFlags: 0

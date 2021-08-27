@@ -33,7 +33,7 @@ public class CharacterInfo : MonoBehaviour
             RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction);
 
             //캐릭터 눌렀을 때
-            if (hit.collider != null && hit.transform.gameObject.tag == "Character")
+            if (hit.collider != null && hit.transform.gameObject == this.gameObject)
             {
                 appearRange = true;
                 ChooseCharacter = !ChooseCharacter;
