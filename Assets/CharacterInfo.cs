@@ -13,7 +13,6 @@ public class CharacterInfo : Operator
     bool ChooseCharacter = true;
     bool appearRange = false;
 
-
     // Start is called before the first frame update
     private void Awake()
     {

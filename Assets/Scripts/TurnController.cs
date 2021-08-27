@@ -13,6 +13,7 @@ public class TurnController : MonoBehaviour
         if(mb < 0)
         {
             isPlayerTurn = false;
+            mb = 6;
         }
 
         if(!isPlayerTurn && mb < 0)
@@ -46,6 +47,15 @@ public class TurnController : MonoBehaviour
     {
         mb = 6;
         isPlayerTurn = true;
+    }
+
+    /// <summary>
+    /// 남은 기동력을 리턴합니다
+    /// </summary>
+    /// <returns></returns>
+    public int GetMB()
+    {
+        return mb; 
     }
 
 
