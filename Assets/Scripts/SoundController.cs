@@ -34,6 +34,7 @@ public class SoundController : MonoBehaviour
     private UIController uiController;
 
     private bool isOver = false;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -73,13 +74,13 @@ public class SoundController : MonoBehaviour
         if (uiController.teamcount_temp <= 0 && uiController.enemycount_temp > 0 && !isOver)
         {
             // defeat
-            PlaySound(audioClips[(int)clipsName.gameOver], SFXaudio, false, SFXVolume);
+            PlaySound(audioClips[(int)clipsName.gameOver], BGMaudio, false, BGMVolume);
             isOver = true;
         }
         else if (uiController.enemycount_temp <= 0 && uiController.teamcount_temp > 0 && !isOver)
         {
             // win
-            PlaySound(audioClips[(int)clipsName.gameOver_Victory], SFXaudio, false, SFXVolume);
+            PlaySound(audioClips[(int)clipsName.gameOver_Victory], BGMaudio, false, BGMVolume);
             isOver = true;
         }
     }

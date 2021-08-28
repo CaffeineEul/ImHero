@@ -7397,8 +7397,8 @@ MonoBehaviour:
   Menu: {fileID: 806781172}
   MenuWindow: {fileID: 1890810996}
   DoubleCheck: {fileID: 1097328603}
-  WinWindow: {fileID: 0}
-  DefeatWindow: {fileID: 0}
+  WinWindow: {fileID: 1808833170}
+  DefeatWindow: {fileID: 1438430153}
   var: 1
   AllStop: 0
   enemycount_temp: 0
@@ -24758,8 +24758,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: b9d69f6b11f48d4438310e673e77fa99, type: 3}
   - {fileID: 8300000, guid: 99099b5a86794d745b157ec4b6b0fa2f, type: 3}
   - {fileID: 8300000, guid: 183d77f067e513040b3cc15856e2697e, type: 3}
+  - {fileID: 8300000, guid: f361384b2d3036e4ab3dea5303bfe21c, type: 3}
   - {fileID: 8300000, guid: 9158a7339df20674d9d80f51ecbebc73, type: 3}
-  - {fileID: 8300000, guid: f0c87cea29ee2764e953bcbd94c2a722, type: 3}
   - {fileID: 8300000, guid: 5be9e0e2ce3a096439e260988dbf893f, type: 3}
   - {fileID: 8300000, guid: 80ea5e28f96f6fc46976ed15c8cdd3ad, type: 3}
   - {fileID: 8300000, guid: cfa15bba3730b404d9ec4a4334aa4070, type: 3}
