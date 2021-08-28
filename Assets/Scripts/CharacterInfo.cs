@@ -21,7 +21,7 @@ public class CharacterInfo : Operator
     private float posX;
     private float posY;
 
-    
+    ParticleSystem parti;
 
     // Start is called before the first frame update
     private void Start()
@@ -31,13 +31,19 @@ public class CharacterInfo : Operator
         uIController = GameObject.Find("UIController").GetComponent<UIController>();
         posX = transform.position.x;
         posY = transform.position.y;
-        mapInfo.Exist[h, v] = true; 
+        mapInfo.Exist[h, v] = true;
+
+        if (me == Class.Supporter)
+        {
+            parti = Instantiate(attackParticle, transform.position, Quaternion.identity);
+        }
     }
 
 
     // Update is called once per frame
     void Update()
     {
+        if(parti != null) parti.transform.position = transform.position;
         if (uIController.AllStop)
             return;
         if (IsDead())

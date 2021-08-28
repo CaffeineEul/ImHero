@@ -91,9 +91,15 @@ public class Operator : MonoBehaviour
         soundController.HealSound();
         turnController.MinusMb();
         print(target.name);
-        Instantiate(healedParticle, target.transform.position, Quaternion.identity);
+        ParticleSystem par = Instantiate(healedParticle, target.transform.position, Quaternion.identity);
+        StartCoroutine(ParticleOff(par, 5f));
         target.hp += heal;
         target.hp = Mathf.Clamp(target.hp, 0, 6);
+    }
+    IEnumerator ParticleOff(ParticleSystem particle,float time)
+    {
+        yield return new WaitForSeconds(time);
+        particle.Stop();
     }
 
     /// <summary>
