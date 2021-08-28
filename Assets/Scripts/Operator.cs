@@ -47,7 +47,7 @@ public class Operator : MonoBehaviour
             case Class.Supporter:
                 className = "Supporter";
                 hp = 2;
-                damage = 0;
+                damage = 1;
                 range = 3;
                 break;
         }
