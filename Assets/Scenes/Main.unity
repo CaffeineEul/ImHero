@@ -7030,6 +7030,11 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!198 &324310328 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 1343046906861396229, guid: 6f64fe8e71469af49b15fac74cd340b9, type: 3}
+  m_PrefabInstance: {fileID: 1185619916}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &330876946
 GameObject:
   m_ObjectHideFlags: 0
@@ -7461,7 +7466,6 @@ MonoBehaviour:
   WinWindow: {fileID: 1808833170}
   DefeatWindow: {fileID: 1438430153}
   ConsoleWindow: {fileID: 1670661358}
-  GameOverFX: {fileID: 1287140718}
   enemycount_temp: 0
   teamcount_temp: 0
   var: 1
@@ -17759,6 +17763,7 @@ MonoBehaviour:
   _LayerMask:
     serializedVersion: 2
     m_Bits: 0
+  AttackFX: {fileID: 324310328}
   me: 0
   uIController: {fileID: 0}
   mapInfo: {fileID: 0}
@@ -17923,6 +17928,7 @@ MonoBehaviour:
   _LayerMask:
     serializedVersion: 2
     m_Bits: 0
+  AttackFX: {fileID: 324310328}
   me: 1
   uIController: {fileID: 0}
   mapInfo: {fileID: 0}
@@ -23642,6 +23648,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1989013163}
     m_Modifications:
+    - target: {fileID: 1343046906861396229, guid: 6f64fe8e71469af49b15fac74cd340b9, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.a
+      value: 0.34901962
+      objectReference: {fileID: 0}
     - target: {fileID: 1354020395533783814, guid: 6f64fe8e71469af49b15fac74cd340b9, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -24316,11 +24326,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1285140961}
   m_CullTransparentMesh: 1
---- !u!198 &1287140718 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 1535278827089407386, guid: c1707aa3572c3994aad345b321bab359, type: 3}
-  m_PrefabInstance: {fileID: 1577363571}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1289604640
 GameObject:
   m_ObjectHideFlags: 0
@@ -31273,6 +31278,7 @@ MonoBehaviour:
   _LayerMask:
     serializedVersion: 2
     m_Bits: 0
+  AttackFX: {fileID: 324310328}
   me: 0
   uIController: {fileID: 0}
   mapInfo: {fileID: 0}
@@ -31852,6 +31858,7 @@ MonoBehaviour:
   _LayerMask:
     serializedVersion: 2
     m_Bits: 0
+  AttackFX: {fileID: 324310328}
   me: 1
   uIController: {fileID: 0}
   mapInfo: {fileID: 0}
@@ -33419,6 +33426,7 @@ MonoBehaviour:
   _LayerMask:
     serializedVersion: 2
     m_Bits: 0
+  AttackFX: {fileID: 324310328}
   me: 2
   uIController: {fileID: 0}
   mapInfo: {fileID: 0}
@@ -36073,6 +36081,7 @@ MonoBehaviour:
   _LayerMask:
     serializedVersion: 2
     m_Bits: 0
+  AttackFX: {fileID: 324310328}
   me: 2
   uIController: {fileID: 0}
   mapInfo: {fileID: 0}

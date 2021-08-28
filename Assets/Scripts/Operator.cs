@@ -23,7 +23,7 @@ public class Operator : MonoBehaviour
     [SerializeField] protected ParticleSystem healedParticle;
     [SerializeField] protected ParticleSystem moveParticle;
     public LayerMask _LayerMask;
-
+    public ParticleSystem AttackFX;
     public Class me;
 
     protected SoundController soundController;
@@ -78,6 +78,10 @@ public class Operator : MonoBehaviour
         turnController.MinusMb();
         Instantiate(attackParticle, target.transform.position, Quaternion.identity);
         target.hp -= damage;
+        
+        AttackFX.Play(true);
+
+
         return;
     }
 

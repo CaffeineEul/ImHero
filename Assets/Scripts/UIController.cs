@@ -20,7 +20,7 @@ public class UIController : MonoBehaviour
     public GameObject WinWindow;
     public GameObject DefeatWindow;
     public GameObject ConsoleWindow;
-    public ParticleSystem GameOverFX;
+    
 
     public int enemycount_temp;
     public int teamcount_temp;
@@ -57,12 +57,6 @@ public class UIController : MonoBehaviour
         UpdateStatusHUD();
         RemainUnit();
         Time.timeScale = var;
-
-        if (!DefeatWindow.activeSelf)
-        {
-            GameOverFX.Stop();
-        }
-
 
         if (EAA.LogMessage != null)
         {
@@ -215,11 +209,6 @@ public class UIController : MonoBehaviour
     public void GameOver()
     {
         DefeatWindow.SetActive(true);
-
-        if (!GameOverFX.isPlaying)
-        {
-            GameOverFX.Play(true);
-        }
     }
 
 
