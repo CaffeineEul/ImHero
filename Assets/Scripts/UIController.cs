@@ -16,6 +16,7 @@ public class UIController : MonoBehaviour
     private int mb;
     TurnController turnController;
     public float var= 1f;
+    GameObject target;
     // Start is called before the first frame update
     void Awake()
     {
@@ -80,11 +81,30 @@ public class UIController : MonoBehaviour
     {
         GameObject[] hpCnt = new GameObject[statusHUD.transform.GetChild(1).childCount - 1];
         GameObject[] dmgCnt = new GameObject[statusHUD.transform.GetChild(2).childCount - 1];
-        
-        for(int i = 1; i < statusHUD.transform.GetChild(1).childCount; i++)
+        for (int i = 1; i < statusHUD.transform.GetChild(1).childCount; i++)
         {
             hpCnt[i - 1] = statusHUD.transform.GetChild(1).GetChild(i).gameObject;
             dmgCnt[i - 1] = statusHUD.transform.GetChild(2).GetChild(i).gameObject;
+        }
+        
+        if(target != null)
+        {
+            for(int i  = 0; i < target.GetHp(); i++)
+            {
+                hpCnt[i].SetActive(true);
+            }
+            for(int i = target.GetHp(); i < 6; i++)
+            {
+                hpCnt[i].SetActive(false);
+            }
+            for (int i = 0; i < target.GetDamage(); i++)
+            {
+                dmgCnt[i].SetActive(true);
+            }
+            for (int i = target.GetDamage(); i < 6; i++)
+            {
+                dmgCnt[i].SetActive(false);
+            }
         }
     }
 
