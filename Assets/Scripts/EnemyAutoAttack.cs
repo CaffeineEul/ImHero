@@ -42,7 +42,7 @@ public class EnemyAutoAttack : MonoBehaviour
 
     private void Go()
     {
-        turnController.MinusMb();
+        // 공격 체크
         foreach (GameObject enemy in enemies)
         {
             for(int j = 0; j < enemy.transform.childCount; j++)
@@ -51,17 +51,28 @@ public class EnemyAutoAttack : MonoBehaviour
                 tile.SetActive(true);
                 tile.GetComponent<SpriteRenderer>().enabled = false;
 
-                if(tile.GetComponent<TileColChk>().isPlayer)
+                TileColChk tileColChk = tile.GetComponent<TileColChk>();
+                CharacterInfo characterInfo = enemy.GetComponent<CharacterInfo>();
+
+                if (characterInfo.me == Operator.Class.Supporter && tileColChk.isEnemy && tileColChk.enemy.GetComponent<Operator>().GetHp() < 6)
                 {
-                    CharacterInfo characterInfo = enemy.GetComponent<CharacterInfo>();
-                    print(characterInfo.name);
-                    characterInfo.Attack(tile.GetComponent<TileColChk>().player.GetComponent<Operator>(), characterInfo.GetDamage());
+
+                    Debug.Log(characterInfo.name + "가 " + tileColChk.enemy.name + "를 힐했습니다");
+                    characterInfo.Heal(tileColChk.enemy.GetComponent<Operator>(), characterInfo.GetDamage());
+                    waitTime = false;
+                    return;
+                }
+                else if(tileColChk.isPlayer)
+                {
+                    Debug.Log(characterInfo.name + "가 " + tileColChk.player.name + "를 공격했습니다");
+                    characterInfo.Attack(tileColChk.player.GetComponent<Operator>(), characterInfo.GetDamage());
                     waitTime = false;
                     return;
                 }
             }
         }
 
+        turnController.MinusMb();
         waitTime = false;
     }
 

@@ -87,6 +87,8 @@ public class Operator : MonoBehaviour
     /// <param name="heal"></param>
     public virtual void Heal(Operator target, int heal)
     {
+        if (target.hp >= 6) return;
+
         // SFX
         soundController.HealSound();
         turnController.MinusMb();
