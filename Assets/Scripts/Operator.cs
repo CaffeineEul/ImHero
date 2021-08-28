@@ -30,19 +30,19 @@ public class Operator : MonoBehaviour
         switch (me)
         {
             case Class.Dealer:
-                name = "Dealer";
+                className = "Dealer";
                 hp = 4;
                 damage = 3;
                 range = 2;
                 break;
             case Class.Tanker:
-                name = "Tanker";
+                className = "Tanker";
                 hp = 6;
                 damage = 2;
                 range = 1;
                 break;
             case Class.Supporter:
-                name = "Supporter";
+                className = "Supporter";
                 hp = 2;
                 damage = 0;
                 range = 3;
