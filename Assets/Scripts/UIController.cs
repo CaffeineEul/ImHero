@@ -31,17 +31,17 @@ public class UIController : MonoBehaviour
 
     private void UpdateMB()
     {
-        if(mb != turnController.GetMB())
+        if (mb != turnController.GetMB())
         {
             mb = turnController.GetMB();
-            if(mb <= 0)
+            if (mb <= 0)
             {
-                foreach(GameObject g in MBTile)
+                foreach (GameObject g in MBTile)
                 {
                     g.SetActive(true);
                 }
             }
-            else if(mb < 6)
+            else if (mb < 6)
             {
                 MBTile[mb].SetActive(false);
             }
@@ -58,18 +58,17 @@ public class UIController : MonoBehaviour
         Operator target = null;
 
         if (Input.GetMouseButtonUp(0))
-<<<<<<< Updated upstream
-        {                     
-=======
         {
-            target = GetClicked2DObject().GetComponent<Operator>();
->>>>>>> Stashed changes
 
-            if((target = GetClicked2DObject().GetComponent<Operator>()) != null)
             {
-                name.text = target.GetName();
-                portrait.sprite = target.GetComponent<SpriteRenderer>().sprite;
-            }            
+                target = GetClicked2DObject().GetComponent<Operator>();
+
+                if ((target = GetClicked2DObject().GetComponent<Operator>()) != null)
+                {
+                    name.text = target.GetName();
+                    portrait.sprite = target.GetComponent<SpriteRenderer>().sprite;
+                }
+            }
         }
     }
 
@@ -85,7 +84,7 @@ public class UIController : MonoBehaviour
 
         hit = layer == -1 ? Physics2D.Raycast(ray.origin, ray.direction, Mathf.Infinity) : Physics2D.Raycast(ray.origin, ray.direction, Mathf.Infinity, mask);
 
-        if(hit)
+        if (hit)
         {
             target = hit.collider.gameObject;
         }
