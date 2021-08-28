@@ -5797,7 +5797,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 2d9dec88e806ba742a2574f87510a8f6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 48f9d5c121a08354f96fbf65bd715e52, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -6183,7 +6183,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 2d9dec88e806ba742a2574f87510a8f6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 48f9d5c121a08354f96fbf65bd715e52, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -6484,7 +6484,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 2d9dec88e806ba742a2574f87510a8f6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 48f9d5c121a08354f96fbf65bd715e52, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -12101,7 +12101,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 2d9dec88e806ba742a2574f87510a8f6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 48f9d5c121a08354f96fbf65bd715e52, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -15863,13 +15863,13 @@ MonoBehaviour:
   name: 
   hp: 4
   damage: 3
-  moveDistance: 1
-  attackRange: 2
+  range: 0
   h: 6
   v: 2
   _LayerMask:
     serializedVersion: 2
     m_Bits: 0
+  me: 0
   mapInfo: {fileID: 0}
   objectMoveAlgorithm: {fileID: 0}
   CanMoveAreas:
@@ -16008,13 +16008,13 @@ MonoBehaviour:
   name: 
   hp: 6
   damage: 2
-  moveDistance: 1
-  attackRange: 1
+  range: 0
   h: 2
   v: 2
   _LayerMask:
     serializedVersion: 2
     m_Bits: 0
+  me: 0
   mapInfo: {fileID: 0}
   objectMoveAlgorithm: {fileID: 0}
   CanMoveAreas:
@@ -21917,7 +21917,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 2d9dec88e806ba742a2574f87510a8f6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 48f9d5c121a08354f96fbf65bd715e52, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -28580,13 +28580,13 @@ MonoBehaviour:
   name: 
   hp: 4
   damage: 3
-  moveDistance: 1
-  attackRange: 2
+  range: 0
   h: 1
   v: 6
   _LayerMask:
     serializedVersion: 2
     m_Bits: 0
+  me: 0
   mapInfo: {fileID: 0}
   objectMoveAlgorithm: {fileID: 0}
   CanMoveAreas:
@@ -28965,13 +28965,13 @@ MonoBehaviour:
   name: 
   hp: 6
   damage: 2
-  moveDistance: 1
-  attackRange: 1
+  range: 0
   h: 4
   v: 4
   _LayerMask:
     serializedVersion: 2
     m_Bits: 0
+  me: 0
   mapInfo: {fileID: 0}
   objectMoveAlgorithm: {fileID: 0}
   CanMoveAreas:
@@ -29635,7 +29635,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 2d9dec88e806ba742a2574f87510a8f6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 48f9d5c121a08354f96fbf65bd715e52, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -30143,13 +30143,13 @@ MonoBehaviour:
   name: 
   hp: 2
   damage: 0
-  moveDistance: 1
-  attackRange: 3
+  range: 0
   h: 0
   v: 0
   _LayerMask:
     serializedVersion: 2
     m_Bits: 0
+  me: 0
   mapInfo: {fileID: 0}
   objectMoveAlgorithm: {fileID: 0}
   CanMoveAreas:
@@ -30689,7 +30689,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 2d9dec88e806ba742a2574f87510a8f6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 48f9d5c121a08354f96fbf65bd715e52, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -31772,7 +31772,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 2d9dec88e806ba742a2574f87510a8f6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 48f9d5c121a08354f96fbf65bd715e52, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -32125,13 +32125,13 @@ MonoBehaviour:
   name: 
   hp: 2
   damage: 0
-  moveDistance: 0
-  attackRange: 3
+  range: 0
   h: 6
   v: 6
   _LayerMask:
     serializedVersion: 2
     m_Bits: 0
+  me: 0
   mapInfo: {fileID: 0}
   objectMoveAlgorithm: {fileID: 0}
   CanMoveAreas:
