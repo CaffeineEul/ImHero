@@ -92,7 +92,6 @@ public class Operator : MonoBehaviour
         // SFX
         soundController.HealSound();
         turnController.MinusMb();
-        print(target.name);
         ParticleSystem par = Instantiate(healedParticle, target.transform.position, Quaternion.identity);
         StartCoroutine(ParticleOff(par, 5f));
         target.hp += heal;

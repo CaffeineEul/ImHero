@@ -5,11 +5,11 @@ using UnityEngine;
 public class EnemyAutoAttack : MonoBehaviour
 {
     public GameObject[] enemies;
-    private bool OnceAction = true;
-    private CharacterInfo characterInfo;
+    CharacterInfo characterInfo;
     private ObjectMoveAlgorithm objectMoveAlgorithm;
     private TurnController turnController;
     private bool waitTime = false;
+    private bool isLastPlayerTurn = true;
     // Start is called before the first frame update
 
 
@@ -22,22 +22,22 @@ public class EnemyAutoAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!turnController.IsPlayerTurn() && !waitTime)
+        if(!turnController.IsPlayerTurn() && isLastPlayerTurn)
         {
-            if(Input.GetMouseButtonUp(0))
+            waitTime = true;
+            StartCoroutine(waitTimefalse());
+        }
+
+        if (!turnController.IsPlayerTurn() && !waitTime)
+        {
+            if (Input.GetMouseButtonUp(0))
             {
                 waitTime = true;
                 Go();
             }
         }
 
-        //if (!turnController.IsPlayerTurn() && WaitTime)
-        //    StartCoroutine(Action());
-        //if (turnController.IsPlayerTurn())
-        //{
-        //    StopAllCoroutines();
-        //    WaitTime = true;
-        //}
+        isLastPlayerTurn = turnController.IsPlayerTurn();
     }
 
     private void Go()
@@ -45,15 +45,16 @@ public class EnemyAutoAttack : MonoBehaviour
         // 공격 체크
         foreach (GameObject enemy in enemies)
         {
-            for(int j = 0; j < enemy.transform.childCount; j++)
+            for (int j = 0; j < enemy.transform.childCount; j++)
             {
                 GameObject tile = enemy.transform.GetChild(j).gameObject;
                 tile.SetActive(true);
                 tile.GetComponent<SpriteRenderer>().enabled = false;
 
                 TileColChk tileColChk = tile.GetComponent<TileColChk>();
-                CharacterInfo characterInfo = enemy.GetComponent<CharacterInfo>();
+                characterInfo = enemy.GetComponent<CharacterInfo>();
 
+                // 서폿일 때
                 if (characterInfo.me == Operator.Class.Supporter && tileColChk.isEnemy && tileColChk.enemy.GetComponent<Operator>().GetHp() < 6)
                 {
 
@@ -62,7 +63,7 @@ public class EnemyAutoAttack : MonoBehaviour
                     waitTime = false;
                     return;
                 }
-                else if(tileColChk.isPlayer)
+                else if (characterInfo.me != Operator.Class.Supporter && tileColChk.isPlayer) // 딜탱일때
                 {
                     Debug.Log(characterInfo.name + "가 " + tileColChk.player.name + "를 공격했습니다");
                     characterInfo.Attack(tileColChk.player.GetComponent<Operator>(), characterInfo.GetDamage());
@@ -72,107 +73,66 @@ public class EnemyAutoAttack : MonoBehaviour
             }
         }
 
+        // 공격할 대상이 없으면 랜덤한 대상을 랜덤한 방향으로 랜덤한 거리 만큼 이동
+        GameObject moveEnemy = enemies[Random.Range(0, 3)];
+        characterInfo = moveEnemy.GetComponent<CharacterInfo>();
+
+        int v = characterInfo.ReturnPositionV();
+        int h = characterInfo.ReturnPositionH();
+
+        float rand = UnityEngine.Random.Range(1, 3);
+        switch (rand)
+        {
+            case 0:
+                if (characterInfo.ReturnPositionV() > 0)
+                {
+                    int ran = Random.Range(1, characterInfo.Areas.Length / 4);
+                    Debug.Log(moveEnemy.name + "이 " + rand + "방향으로 " + ran + "만큼 이동합니다");
+                    characterInfo.objectMoveAlgorithm.GetMoveDir(h, v, h, Mathf.Clamp(v - ran, 0, 7));
+                    objectMoveAlgorithm.MoveTileMap(ran);
+                }
+                break;
+
+            case 1:
+                if (characterInfo.ReturnPositionV() < 7)
+                {
+                    int ran = Random.Range(1, characterInfo.Areas.Length / 4);
+                    Debug.Log(moveEnemy.name + "이 " + rand + "방향으로 " + ran + "만큼 이동합니다");
+                    characterInfo.objectMoveAlgorithm.GetMoveDir(h, v, h, Mathf.Clamp(v + ran, 0, 7));
+                    objectMoveAlgorithm.MoveTileMap(ran);
+                }
+                break;
+
+            case 2:
+                if (characterInfo.ReturnPositionH() > 0)
+                {
+                    int ran = Random.Range(1, characterInfo.Areas.Length / 4);
+                    Debug.Log(moveEnemy.name + "이 " + rand + "방향으로 " + ran + "만큼 이동합니다");
+                    characterInfo.objectMoveAlgorithm.GetMoveDir(h, v, Mathf.Clamp(h - ran, 0, 7), v);
+                    objectMoveAlgorithm.MoveTileMap(ran);
+                }
+                break;
+
+            case 3:
+                if (characterInfo.ReturnPositionH() < 7)
+                {
+                    int ran = Random.Range(1, characterInfo.Areas.Length / 4);
+                    Debug.Log(moveEnemy.name + "이 " + rand + "방향으로 " + ran + "만큼 이동합니다");
+                    characterInfo.objectMoveAlgorithm.GetMoveDir(h, v, Mathf.Clamp(h + ran, 0, 7), v);
+                    objectMoveAlgorithm.MoveTileMap(ran);
+                }
+                break;
+        }
+
         turnController.MinusMb();
-        waitTime = false;
+        StartCoroutine(waitTimefalse());
+        return;
+
     }
 
-    //IEnumerator Action()
-    //{
-    //    WaitTime = false;
-    //    foreach (var i in gameObjects)
-    //    {
-    //        characterInfo = i.GetComponent<CharacterInfo>();
-    //        for(int j = 0; j < i.transform.childCount; j++)
-    //        {
-    //            i.transform.GetChild(j).gameObject.SetActive(true);
-
-    //            if (i.transform.GetChild(j).gameObject.GetComponent<TileColChk>().isPlayer)
-    //            {
-    //                characterInfo.Attack(i.transform.GetChild(j).gameObject.GetComponent<TileColChk>().player.GetComponent<Operator>(), characterInfo.GetDamage());
-    //                turnController.MinusMb();
-    //                if (turnController.IsPlayerTurn())
-    //                    yield return null;
-    //                else
-    //                    yield return new WaitForSeconds(1f);
-    //            }
-    //        }
-    //    }
-    //    foreach (var i in gameObjects)
-    //    {
-    //        characterInfo = i.GetComponent<CharacterInfo>();
-    //        for (int j = 0; j < 4; j++)
-    //        {
-    //            int v = characterInfo.ReturnPositionV();
-    //            int h = characterInfo.ReturnPositionH();
-    //            float rand = UnityEngine.Random.Range(0, 3);
-    //            switch(rand)
-    //            {
-    //                case 0:
-    //                    if (characterInfo.ReturnPositionV() > 0)
-    //                    {
-    //                        int ran = Random.Range(0, characterInfo.Areas.Length / 4);
-    //                        characterInfo.objectMoveAlgorithm.GetMoveDir(h, v, h, Mathf.Clamp(v - ran, 0, 7));
-    //                        objectMoveAlgorithm.MoveTileMap(ran);
-    //                        turnController.MinusMb();
-    //                        WaitTime = false;
-    //                        if (turnController.IsPlayerTurn())
-    //                            yield return null;
-    //                        else
-    //                            yield return new WaitForSeconds(1f);
-    //                    }
-    //                    break;
-    //                case 1:
-    //                    if (characterInfo.ReturnPositionV() < 7)
-    //                    {
-    //                        int ran = Random.Range(0, characterInfo.Areas.Length / 4);
-    //                        characterInfo.objectMoveAlgorithm.GetMoveDir(h, v, h, Mathf.Clamp(v + ran, 0, 7));
-    //                        objectMoveAlgorithm.MoveTileMap(ran);
-    //                        turnController.MinusMb();
-    //                        WaitTime = false;
-    //                        if (turnController.IsPlayerTurn())
-    //                            yield return null;
-    //                        else
-    //                            yield return new WaitForSeconds(1f);
-    //                    }
-    //                    break;
-    //                case 2:
-    //                    if (characterInfo.ReturnPositionH() > 0)
-    //                    {
-    //                        int ran = Random.Range(0, characterInfo.Areas.Length / 4);
-    //                        characterInfo.objectMoveAlgorithm.GetMoveDir(h, v, Mathf.Clamp(h-ran, 0,  7), v);
-    //                        objectMoveAlgorithm.MoveTileMap(ran);
-    //                        turnController.MinusMb();
-    //                        WaitTime = false;
-    //                        if (turnController.IsPlayerTurn())
-    //                            yield return null;
-    //                        else
-    //                            yield return new WaitForSeconds(1f);
-    //                    }
-    //                    break;
-    //                case 3:
-    //                    if (characterInfo.ReturnPositionH() < 7)
-    //                    {
-    //                        int ran = Random.Range(0, characterInfo.Areas.Length / 4);
-    //                        characterInfo.objectMoveAlgorithm.GetMoveDir(h, v, Mathf.Clamp(h + ran, 0, 7), v);
-    //                        objectMoveAlgorithm.MoveTileMap(ran);
-    //                        turnController.MinusMb();
-    //                        WaitTime = false;
-    //                        if (turnController.IsPlayerTurn())
-    //                            yield return null;
-    //                        else
-    //                            yield return new WaitForSeconds(1f);
-    //                    }
-    //                    break;
-    //                default: 
-    //                    break;
-    //            }
-    //        }
-    //    }
-    //    if (turnController.IsPlayerTurn())
-    //        yield return null;
-    //    else
-    //        yield return new WaitForSeconds(1f);
-    //    WaitTime = true;
-    //}
-    //}
+    private IEnumerator waitTimefalse()
+    {
+        yield return  new WaitForSeconds(0.2f);
+        waitTime = false;
+    }
 }
