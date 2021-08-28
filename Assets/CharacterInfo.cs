@@ -8,8 +8,11 @@ public class CharacterInfo : Operator
     public MapInfo mapInfo;
     public ObjectMoveAlgorithm objectMoveAlgorithm;
     public GameObject[] CanMoveAreas;
+    public GameObject[] CanAttackAreas;
     public Sprite sprite;
     public Class c;
+    public int[] nextX = new int[] { 0, 0, 1, -1 };
+    public int[] nextY = new int[] { 1, -1, 0, 0 };
     float posX;
     float posY;
     bool ChooseCharacter = true;
@@ -87,6 +90,31 @@ public class CharacterInfo : Operator
             }
         }
         AppearCanMoveRange();
+        AppearCanAttackRange();
+    }
+    void AppearCanAttackRange()
+    {
+        if(!appearRange)
+        {
+            for(int i = 0; i < CanAttackAreas.Length; i++)
+            {
+                CanAttackAreas[i].SetActive(false);
+            }
+        }
+        for(int i = 0; i < CanAttackAreas.Length / 4; i++)
+        {
+            for(int j = 0; j < 4; j++)
+            {
+                int newv = v + nextX[j];
+                int newh = h + nextY[i];
+                if((newv >= 0 && newv <= 7 && newh >= 0 && newh <= 7) && mapInfo.Exist[newh,newv] )
+                {
+                    print("*");
+                    CanAttackAreas[j * (i + 1)].SetActive(true);
+                }
+            }
+        }
+
     }
     void AppearCanMoveRange()
     {
