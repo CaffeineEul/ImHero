@@ -169,7 +169,7 @@ public class CharacterInfo : Operator
         Debug.Log(soundController.isClicked);
         soundController.isClicked = false;
         Debug.Log(soundController.isClicked);
-        if (mapInfo.Exist[Mathf.Clamp(h + var, 0, h + var), v])
+        if (mapInfo.Exist[Mathf.Clamp(h + var, 0, 7), v])
         {
             return;
         }
@@ -190,7 +190,7 @@ public class CharacterInfo : Operator
         Debug.Log(soundController.isClicked);
         soundController.isClicked = false;
         Debug.Log(soundController.isClicked);
-        if (mapInfo.Exist[h, Mathf.Clamp(v + var, 0, v + var)])
+        if (mapInfo.Exist[h, Mathf.Clamp(v + var, 0, 7)])
         {
             return;
         }
