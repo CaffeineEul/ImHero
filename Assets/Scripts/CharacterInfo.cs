@@ -12,6 +12,8 @@ public class CharacterInfo : Operator
     public Class c;
     public bool appearRange = false;
 
+
+    private SoundController soundController;
     private bool ChooseCharacter = true;
     private float posX;
     private float posY;
@@ -21,6 +23,7 @@ public class CharacterInfo : Operator
     // Start is called before the first frame update
     private void Start()
     {
+        soundController = GameObject.Find("SoundController").GetComponent<SoundController>();
         mapInfo = GameObject.Find("MapInfo").GetComponent<MapInfo>();
         objectMoveAlgorithm = GameObject.Find("ObjectMoveAlgorithm").GetComponent<ObjectMoveAlgorithm>();
         posX = transform.position.x;
@@ -165,7 +168,10 @@ public class CharacterInfo : Operator
 
     public void MovePositionH(int var)
     {
-        if(mapInfo.Exist[Mathf.Clamp(h + var, 0, h + var), v])
+        Debug.Log(soundController.isClicked);
+        soundController.isClicked = false;
+        Debug.Log(soundController.isClicked);
+        if (mapInfo.Exist[Mathf.Clamp(h + var, 0, h + var), v])
         {
             return;
         }
@@ -174,11 +180,18 @@ public class CharacterInfo : Operator
         posX = mapInfo.GetInfoV(h, v);
         posY = mapInfo.GetInfoH(h, v);
         mapInfo.Exist[h, v] = true;
+        Debug.Log("!!!!");
+
+        //soundController.PlaySound(soundController.audioClips[(int)SoundController.clipsName.move], soundController.SFXaudio, false);
+        
     }
 
 
     public void MovePositionV(int var)
     {
+        Debug.Log(soundController.isClicked);
+        soundController.isClicked = false;
+        Debug.Log(soundController.isClicked);
         if (mapInfo.Exist[h, Mathf.Clamp(v + var, 0, v + var)])
         {
             return;
@@ -188,5 +201,7 @@ public class CharacterInfo : Operator
         posX = mapInfo.GetInfoV(h, v);
         posY = mapInfo.GetInfoH(h, v);
         mapInfo.Exist[h, v] = true;
+        Debug.Log("!!");
+        //soundController.PlaySound(soundController.audioClips[(int)SoundController.clipsName.move], soundController.SFXaudio, false);
     }
 }

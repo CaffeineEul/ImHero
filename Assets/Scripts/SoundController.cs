@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SoundController : Operator
+public class SoundController : MonoBehaviour
 {
-    enum clipsName
+    public enum clipsName
     {
         attack,         // [0]
         cancle,         // [1]
@@ -23,21 +23,19 @@ public class SoundController : Operator
 
     public GameObject[] charactors;
     public AudioClip[] audioClips;
+    public bool isClicked = false;
 
-    private AudioSource BGMaudio;
-    private AudioSource SFXaudio;
-    private Operator op;
-    private CharacterInfo chInfo;
+    [HideInInspector] public AudioSource BGMaudio;
+    [HideInInspector] public AudioSource SFXaudio;
     
 
     // Start is called before the first frame update
     void Start()
     {
-        op = GetComponent<Operator>();
-        chInfo = op.GetComponent<CharacterInfo>();
+        SFXaudio = gameObject.AddComponent<AudioSource>();
+        BGMaudio = gameObject.AddComponent<AudioSource>();
 
         // InGame BGM Play 
-        BGMaudio = gameObject.AddComponent<AudioSource>();
         PlaySound(audioClips[(int)clipsName.stageBGM], BGMaudio, true);
     }
 
@@ -52,10 +50,13 @@ public class SoundController : Operator
             Ray2D ray = new Ray2D(character, Vector2.zero);
             RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction);
 
-            if (hit.collider != null && hit.transform.gameObject.CompareTag("Character"))
+
+            if (hit.collider != null && hit.transform.gameObject.CompareTag("Character") && isClicked == false)
             {
-                SFXaudio = gameObject.AddComponent<AudioSource>();
+                Debug.Log(isClicked);
                 PlaySound(audioClips[(int)clipsName.click], SFXaudio, false);
+                isClicked = true;
+                Debug.Log(isClicked);
             }
         }
     }
@@ -63,7 +64,7 @@ public class SoundController : Operator
 
     public void PlaySound(AudioClip audioClip, AudioSource audioPlayer, bool isLoop)
     {
-        //audioPlayer.Stop();
+        audioPlayer.Stop();
         audioPlayer.clip = audioClip;
         audioPlayer.loop = isLoop;
         audioPlayer.Play();
