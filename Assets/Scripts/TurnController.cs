@@ -38,7 +38,6 @@ public class TurnController : MonoBehaviour
     {
         mb--;
         print(mb);
-        PlaySound(audioClips[(int)clipsName.move], SFXaudio, false);
     }
 
     /// <summary>

@@ -52,12 +52,8 @@ public class SoundController : MonoBehaviour
             if (hit.collider != null && hit.transform.gameObject.CompareTag("Character"))
             {
                 Debug.Log("!");
-                PlaySound(audioClips[(int)clipsName.click], SFXaudio, false);
+                PlaySound(audioClips[(int)clipsName.move], SFXaudio, false);
             }
-
-
-            PlaySound(audioClips[(int)clipsName.move], SFXaudio, false);
-
         }
     }
 
