@@ -15915,7 +15915,15 @@ MonoBehaviour:
   me: 0
   mapInfo: {fileID: 0}
   objectMoveAlgorithm: {fileID: 0}
-  Areas: []
+  Areas:
+  - {fileID: 1573620577}
+  - {fileID: 2114754107}
+  - {fileID: 1376435388}
+  - {fileID: 825174474}
+  - {fileID: 817088550}
+  - {fileID: 1853012459}
+  - {fileID: 62331586}
+  - {fileID: 721373658}
   sprite: {fileID: 21300000, guid: 2d9dec88e806ba742a2574f87510a8f6, type: 3}
   c: 0
   appearRange: 0
@@ -16051,7 +16059,11 @@ MonoBehaviour:
   me: 1
   mapInfo: {fileID: 0}
   objectMoveAlgorithm: {fileID: 0}
-  Areas: []
+  Areas:
+  - {fileID: 320490847}
+  - {fileID: 526898997}
+  - {fileID: 338044660}
+  - {fileID: 1420112096}
   sprite: {fileID: 21300000, guid: 2d9dec88e806ba742a2574f87510a8f6, type: 3}
   c: 1
   appearRange: 0
@@ -28712,7 +28724,15 @@ MonoBehaviour:
   me: 0
   mapInfo: {fileID: 0}
   objectMoveAlgorithm: {fileID: 0}
-  Areas: []
+  Areas:
+  - {fileID: 1740277186}
+  - {fileID: 405437464}
+  - {fileID: 608919268}
+  - {fileID: 1427715501}
+  - {fileID: 583902157}
+  - {fileID: 1395653929}
+  - {fileID: 138809602}
+  - {fileID: 1374801527}
   sprite: {fileID: 0}
   c: 0
   appearRange: 0
@@ -29118,7 +29138,11 @@ MonoBehaviour:
   me: 1
   mapInfo: {fileID: 0}
   objectMoveAlgorithm: {fileID: 0}
-  Areas: []
+  Areas:
+  - {fileID: 1142261401}
+  - {fileID: 867810276}
+  - {fileID: 975228731}
+  - {fileID: 536791468}
   sprite: {fileID: 21300000, guid: 2d9dec88e806ba742a2574f87510a8f6, type: 3}
   c: 1
   appearRange: 0
@@ -30291,7 +30315,19 @@ MonoBehaviour:
   me: 2
   mapInfo: {fileID: 0}
   objectMoveAlgorithm: {fileID: 0}
-  Areas: []
+  Areas:
+  - {fileID: 1435748721}
+  - {fileID: 260893763}
+  - {fileID: 1926247266}
+  - {fileID: 1420997842}
+  - {fileID: 330876946}
+  - {fileID: 1981659206}
+  - {fileID: 203541937}
+  - {fileID: 1796828759}
+  - {fileID: 1275147281}
+  - {fileID: 1663111443}
+  - {fileID: 471248066}
+  - {fileID: 311184586}
   sprite: {fileID: 21300000, guid: 2d9dec88e806ba742a2574f87510a8f6, type: 3}
   c: 2
   appearRange: 0
@@ -32320,7 +32356,19 @@ MonoBehaviour:
   me: 2
   mapInfo: {fileID: 0}
   objectMoveAlgorithm: {fileID: 0}
-  Areas: []
+  Areas:
+  - {fileID: 994147851}
+  - {fileID: 1910018219}
+  - {fileID: 1380955318}
+  - {fileID: 1795564882}
+  - {fileID: 408613976}
+  - {fileID: 1854372479}
+  - {fileID: 820984449}
+  - {fileID: 1845313646}
+  - {fileID: 101097891}
+  - {fileID: 1223506559}
+  - {fileID: 26223456}
+  - {fileID: 1777821264}
   sprite: {fileID: 21300000, guid: 2d9dec88e806ba742a2574f87510a8f6, type: 3}
   c: 2
   appearRange: 0
