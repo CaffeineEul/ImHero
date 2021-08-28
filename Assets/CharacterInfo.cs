@@ -94,23 +94,41 @@ public class CharacterInfo : Operator
     }
     void AppearCanAttackRange()
     {
-        if(!appearRange)
+        if (!appearRange)
         {
-            for(int i = 0; i < CanAttackAreas.Length; i++)
+            for (int i = 0; i < CanAttackAreas.Length; i++)
             {
                 CanAttackAreas[i].SetActive(false);
             }
         }
-        for(int i = 0; i < CanAttackAreas.Length / 4; i++)
+        for (int i = 0; i < CanAttackAreas.Length/4; i++)
         {
-            for(int j = 0; j < 4; j++)
+            if (v > 1 + i)
             {
-                int newv = v + nextX[j];
-                int newh = h + nextY[i];
-                if((newv >= 0 && newv <= 7 && newh >= 0 && newh <= 7) && mapInfo.Exist[newh,newv] )
+                if (mapInfo.Exist[h, v - (2 + i)])
                 {
-                    print("*");
-                    CanAttackAreas[j * (i + 1)].SetActive(true);
+                    CanAttackAreas[(4 * i) + 0].SetActive(true);
+                }
+            }
+            if (v < 6 - i)
+            {
+                if (mapInfo.Exist[h, v + (2 + i)])
+                {
+                    CanAttackAreas[(4 * i) + 1].SetActive(true);
+                }
+            }
+            if (h > 1 + i)
+            {
+                if (mapInfo.Exist[h - (2 + i), v])
+                {
+                    CanAttackAreas[(4 * i) + 2].SetActive(true);
+                }
+            }
+            if (h < 6 - i)
+            {
+                if (mapInfo.Exist[h + (2 + i), v])
+                {
+                    CanAttackAreas[(4 * i) + 3].SetActive(true);
                 }
             }
         }

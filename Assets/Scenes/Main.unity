@@ -734,7 +734,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1438477179}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &153919753
 GameObject:
@@ -2046,7 +2046,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1438477179}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &408613976
 GameObject:
@@ -2806,7 +2806,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1561457923}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &557479535
 GameObject:
@@ -3826,7 +3826,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1438477179}
-  m_RootOrder: 7
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &602858095
 GameObject:
@@ -4021,7 +4021,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1438477179}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &612991494
 GameObject:
@@ -5422,7 +5422,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1561457923}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &868179957
 GameObject:
@@ -6011,7 +6011,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1561457923}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &991624898
 GameObject:
@@ -6256,6 +6256,8 @@ MonoBehaviour:
   - {fileID: 721373658}
   sprite: {fileID: 21300000, guid: 2d9dec88e806ba742a2574f87510a8f6, type: 3}
   c: 0
+  nextX: 000000000000000001000000ffffffff
+  nextY: 01000000ffffffff0000000000000000
   appearRange: 0
 --- !u!58 &995813359
 CircleCollider2D:
@@ -6397,6 +6399,8 @@ MonoBehaviour:
   CanAttackAreas: []
   sprite: {fileID: 21300000, guid: 2d9dec88e806ba742a2574f87510a8f6, type: 3}
   c: 1
+  nextX: 000000000000000001000000ffffffff
+  nextY: 01000000ffffffff0000000000000000
   appearRange: 0
 --- !u!58 &1006800334
 CircleCollider2D:
@@ -7053,7 +7057,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1561457923}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1146928439
 GameObject:
@@ -8263,7 +8267,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1438477179}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1376435388
 GameObject:
@@ -8602,7 +8606,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1438477179}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1403711682
 GameObject:
@@ -9186,7 +9190,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1438477179}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1435748721
 GameObject:
@@ -9356,6 +9360,8 @@ MonoBehaviour:
   - {fileID: 1374801527}
   sprite: {fileID: 0}
   c: 0
+  nextX: 000000000000000001000000ffffffff
+  nextY: 01000000ffffffff0000000000000000
   appearRange: 0
 --- !u!58 &1438477177
 CircleCollider2D:
@@ -9435,14 +9441,14 @@ Transform:
   m_LocalPosition: {x: 1, y: 3.048, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 1740277189}
   - {fileID: 405437467}
   - {fileID: 608919271}
   - {fileID: 1427715504}
-  - {fileID: 1740277189}
+  - {fileID: 583902160}
   - {fileID: 1395653932}
   - {fileID: 138809605}
   - {fileID: 1374801530}
-  - {fileID: 583902160}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -9737,6 +9743,8 @@ MonoBehaviour:
   CanAttackAreas: []
   sprite: {fileID: 21300000, guid: 2d9dec88e806ba742a2574f87510a8f6, type: 3}
   c: 1
+  nextX: 000000000000000001000000ffffffff
+  nextY: 01000000ffffffff0000000000000000
   appearRange: 0
 --- !u!58 &1561457921
 CircleCollider2D:
@@ -9816,10 +9824,10 @@ Transform:
   m_LocalPosition: {x: 1.51, y: 1.815, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 1142261404}
   - {fileID: 867810279}
   - {fileID: 975228734}
   - {fileID: 536791471}
-  - {fileID: 1142261404}
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10726,7 +10734,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1438477179}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1741735680
 GameObject:
@@ -10923,6 +10931,8 @@ MonoBehaviour:
   - {fileID: 311184586}
   sprite: {fileID: 21300000, guid: 2d9dec88e806ba742a2574f87510a8f6, type: 3}
   c: 2
+  nextX: 000000000000000001000000ffffffff
+  nextY: 01000000ffffffff0000000000000000
   appearRange: 0
 --- !u!1 &1767471088
 GameObject:
@@ -12700,6 +12710,8 @@ MonoBehaviour:
   - {fileID: 1777821264}
   sprite: {fileID: 21300000, guid: 2d9dec88e806ba742a2574f87510a8f6, type: 3}
   c: 2
+  nextX: 000000000000000001000000ffffffff
+  nextY: 01000000ffffffff0000000000000000
   appearRange: 0
 --- !u!58 &2105280377
 CircleCollider2D:
