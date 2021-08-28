@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2451521764664299863}
   - component: {fileID: 2451521764664299860}
   m_Layer: 0
-  m_Name: Fx_Diller_NoAnermy
+  m_Name: Fx_Dealer_NoAnermy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4850,7 +4850,7 @@ ParticleSystemRenderer:
   m_ShadowBias: 0
   m_RenderAlignment: 0
   m_Pivot: {x: 0, y: 0, z: 0}
-  m_Flip: {x: 1, y: 1, z: 0}
+  m_Flip: {x: 0, y: 0, z: 0}
   m_UseCustomVertexStreams: 0
   m_EnableGPUInstancing: 1
   m_ApplyActiveColorSpace: 1
