@@ -10,6 +10,8 @@ public class UIController : MonoBehaviour
     public Text name;
     public Image portrait;
 
+    public GameObject MenuWindow;
+
     private int mb;
     TurnController turnController;
 
@@ -87,5 +89,10 @@ public class UIController : MonoBehaviour
         }
 
         return target;
+    }
+
+    public void MenuOpen()
+    {
+        MenuWindow.SetActive(true);
     }
 }

@@ -6736,6 +6736,7 @@ MonoBehaviour:
   currentTurn: {fileID: 758901238}
   name: {fileID: 1767471090}
   portrait: {fileID: 0}
+  MenuWindow: {fileID: 0}
 --- !u!4 &351884197
 Transform:
   m_ObjectHideFlags: 0
@@ -14480,7 +14481,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 806781175}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 351884196}
+        m_TargetAssemblyTypeName: UIController, Assembly-CSharp
+        m_MethodName: MenuOpen
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &806781175
 MonoBehaviour:
   m_ObjectHideFlags: 0
