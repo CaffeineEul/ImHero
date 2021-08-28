@@ -126,6 +126,8 @@ public class CharacterInfo : Operator
 
     void AppearCanAttackRange()
     {
+        if (!turnController.IsPlayerTurn()) return;
+
         if (!appearRange)
         {
             for (int i = 0; i < Areas.Length; i++)

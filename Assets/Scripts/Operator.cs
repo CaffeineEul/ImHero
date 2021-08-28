@@ -18,6 +18,7 @@ public class Operator : MonoBehaviour
     [SerializeField] protected int h;
     [SerializeField] protected int v;
     [SerializeField] protected bool canAttack = false;
+    [SerializeField] protected bool chkEnemy;
     [SerializeField] protected ParticleSystem attackParticle;
     [SerializeField] protected ParticleSystem healedParticle;
     public LayerMask _LayerMask;
@@ -92,7 +93,7 @@ public class Operator : MonoBehaviour
         print(target.name);
         Instantiate(healedParticle, target.transform.position, Quaternion.identity);
         target.hp += heal;
-        hp = Mathf.Clamp(hp, 0, 6);
+        target.hp = Mathf.Clamp(target.hp, 0, 6);
     }
 
     /// <summary>
