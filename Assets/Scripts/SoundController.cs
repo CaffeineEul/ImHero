@@ -25,7 +25,7 @@ public class SoundController : MonoBehaviour
     public AudioClip[] audioClips;
 
     public float SFXVolume = 0.3f;
-    public float BGMVolume = 0.03f;
+    public float BGMVolume = 0.1f;
 
     [HideInInspector] public AudioSource BGMaudio;
     [HideInInspector] public AudioSource SFXaudio;

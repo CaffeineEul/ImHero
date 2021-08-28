@@ -24803,7 +24803,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: f4c72fad22f624443911c7f6176e4c09, type: 3}
   - {fileID: 8300000, guid: f2a340f4fe1b15b4c938892fae30d185, type: 3}
   SFXVolume: 0.3
-  BGMVolume: 0.03
+  BGMVolume: 0.1
   BGMaudio: {fileID: 0}
   SFXaudio: {fileID: 0}
 --- !u!4 &1344322603
@@ -32758,10 +32758,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 0d79a0dfe0c0bc5418ff90813d7769eb, type: 3}
-    m_FontSize: 50
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 5
+    m_MinSize: 4
     m_MaxSize: 50
     m_Alignment: 4
     m_AlignByGeometry: 0
