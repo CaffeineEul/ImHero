@@ -58,6 +58,12 @@ public class CharacterInfo : Operator
         } 
         transform.position = new Vector3(posX, posY, 0);
 
+        if (chkEnemy)
+        {
+            AppearCanAttackRange();
+            return;
+        }
+
         if(Input.GetMouseButtonDown(0))
         {
             if (!objectMoveAlgorithm.IsCanClick())
