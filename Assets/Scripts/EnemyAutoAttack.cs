@@ -8,69 +8,90 @@ public class EnemyAutoAttack : MonoBehaviour
     private bool OnceAction = true;
     private CharacterInfo characterInfo;
     private ObjectMoveAlgorithm objectMoveAlgorithm;
+    private TurnController turnController;
+    private bool WaitTime = true;
     // Start is called before the first frame update
     void Start()
     {
         objectMoveAlgorithm = GameObject.Find("ObjectMoveAlgorithm").GetComponent<ObjectMoveAlgorithm>();
+        turnController = GameObject.Find("TurnController").GetComponent<TurnController>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if(!turnController.IsPlayerTurn() && WaitTime)
+        {
+            StartCoroutine(Action());
+        }
     }
-    void Action()
+    IEnumerator Action()
     {
-        foreach(var i in gameObjects)
+        foreach (var i in gameObjects)
         {
             characterInfo = i.GetComponent<CharacterInfo>();
-            if (i.transform.gameObject.GetComponent<TileColChk>().isPlayer)
+            for(int j = 0; j < i.transform.childCount; j++)
             {
-                characterInfo.Attack(i.transform.gameObject.GetComponent<TileColChk>().enemy.GetComponent<Operator>(), characterInfo.GetDamage());
-                OnceAction = false;
-                return;
-            }
-        }
-        if (!OnceAction)
-            return;
-        else
-        {
-            foreach (var i in gameObjects)
-            {
-                characterInfo = i.GetComponent<CharacterInfo>();
-                for (int j = 0; j < 4; j++)
+                i.transform.GetChild(j).gameObject.SetActive(true);
+                if(i.transform.GetChild(j).gameObject.GetComponent<TileColChk>().isPlayer)
                 {
-                    int v = characterInfo.ReturnPositionV();
-                    int h = characterInfo.ReturnPositionH();
-                    if (!OnceAction)
-                        return;
-                    if (characterInfo.ReturnPositionV() > 0)
-                    {
-                        characterInfo.objectMoveAlgorithm.GetMoveDir(h, v, h, v - 1);
-                        objectMoveAlgorithm.MoveTileMap(1);
-                        OnceAction = false;
-                    }
-                    else if(characterInfo.ReturnPositionV() < 7)
-                    {
-                        characterInfo.objectMoveAlgorithm.GetMoveDir(h, v, h, v + 1);
-                        objectMoveAlgorithm.MoveTileMap(1); 
-                        OnceAction = false;
-                    }
-                    else if(characterInfo.ReturnPositionH() > 0)
-                    {
-                        characterInfo.objectMoveAlgorithm.GetMoveDir(h, v, h-1,  v);
-                        objectMoveAlgorithm.MoveTileMap(1); 
-                        OnceAction = false;
-                    }
-                    else if(characterInfo.ReturnPositionH() < 7)
-                    {
-                        characterInfo.objectMoveAlgorithm.GetMoveDir(h, v, h+1,  v);
-                        objectMoveAlgorithm.MoveTileMap(1); 
-                        OnceAction = false;
-
-                    }
+                    characterInfo.Attack(i.transform.GetChild(j).gameObject.GetComponent<TileColChk>().player.GetComponent<Operator>(), characterInfo.GetDamage());
+                    turnController.MinusMb();
+                    WaitTime = false;
                 }
             }
         }
+        foreach (var i in gameObjects)
+        {
+            characterInfo = i.GetComponent<CharacterInfo>();
+            for (int j = 0; j < 4; j++)
+            {
+                int v = characterInfo.ReturnPositionV();
+                int h = characterInfo.ReturnPositionH();
+                float rand = UnityEngine.Random.Range(0, 3);
+                switch(rand)
+                {
+                    case 0:
+                        if (characterInfo.ReturnPositionV() > 0)
+                        {
+                            characterInfo.objectMoveAlgorithm.GetMoveDir(h, v, h, v - 1);
+                            objectMoveAlgorithm.MoveTileMap(1);
+                            turnController.MinusMb();
+                            WaitTime = false;
+                        }
+                        break;
+                    case 1:
+                        if (characterInfo.ReturnPositionV() < 7)
+                        {
+                            characterInfo.objectMoveAlgorithm.GetMoveDir(h, v, h, v + 1);
+                            objectMoveAlgorithm.MoveTileMap(1);
+                            turnController.MinusMb();
+                            WaitTime = false;
+                        }
+                        break;
+                    case 2:
+                        if (characterInfo.ReturnPositionH() > 0)
+                        {
+                            characterInfo.objectMoveAlgorithm.GetMoveDir(h, v, h - 1, v);
+                            objectMoveAlgorithm.MoveTileMap(1);
+                            turnController.MinusMb();
+                            WaitTime = false;
+                        }
+                        break;
+                    case 3:
+                        if (characterInfo.ReturnPositionH() < 7)
+                        {
+                            characterInfo.objectMoveAlgorithm.GetMoveDir(h, v, h + 1, v);
+                            objectMoveAlgorithm.MoveTileMap(1);
+                            turnController.MinusMb();
+                            WaitTime = false;
+                        }
+                        break;
+                    default: break;
+                }
+            }
+        }
+        yield return new WaitForSeconds(0.5f);
+        WaitTime = true;
     }
 }
