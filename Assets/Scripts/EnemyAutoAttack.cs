@@ -7,10 +7,11 @@ public class EnemyAutoAttack : MonoBehaviour
     public GameObject[] gameObjects;
     private bool OnceAction = true;
     private CharacterInfo characterInfo;
+    private ObjectMoveAlgorithm objectMoveAlgorithm;
     // Start is called before the first frame update
     void Start()
     {
-        
+        objectMoveAlgorithm = GameObject.Find("ObjectMoveAlgorithm").GetComponent<ObjectMoveAlgorithm>();
     }
 
     // Update is called once per frame
@@ -39,8 +40,33 @@ public class EnemyAutoAttack : MonoBehaviour
                 characterInfo = i.GetComponent<CharacterInfo>();
                 for (int j = 0; j < 4; j++)
                 {
-                    if (i.GetComponent<CharacterInfo>().v > 0)
+                    int v = characterInfo.ReturnPositionV();
+                    int h = characterInfo.ReturnPositionH();
+                    if (!OnceAction)
+                        return;
+                    if (characterInfo.ReturnPositionV() > 0)
                     {
+                        characterInfo.objectMoveAlgorithm.GetMoveDir(h, v, h, v - 1);
+                        objectMoveAlgorithm.MoveTileMap(1);
+                        OnceAction = false;
+                    }
+                    else if(characterInfo.ReturnPositionV() < 7)
+                    {
+                        characterInfo.objectMoveAlgorithm.GetMoveDir(h, v, h, v + 1);
+                        objectMoveAlgorithm.MoveTileMap(1); 
+                        OnceAction = false;
+                    }
+                    else if(characterInfo.ReturnPositionH() > 0)
+                    {
+                        characterInfo.objectMoveAlgorithm.GetMoveDir(h, v, h-1,  v);
+                        objectMoveAlgorithm.MoveTileMap(1); 
+                        OnceAction = false;
+                    }
+                    else if(characterInfo.ReturnPositionH() < 7)
+                    {
+                        characterInfo.objectMoveAlgorithm.GetMoveDir(h, v, h+1,  v);
+                        objectMoveAlgorithm.MoveTileMap(1); 
+                        OnceAction = false;
 
                     }
                 }
