@@ -10,13 +10,16 @@ public class UIController : MonoBehaviour
     public Text currentTurn;
     public Image portrait;
 
+    public GameObject[] gameObjects;
+    public GameObject OurTeamRemainMonster;
+    public GameObject EnemyTeamRemainMonster;
+
     public GameObject Menu;
     public GameObject MenuWindow;
     public GameObject DoubleCheck;
     private int mb;
     TurnController turnController;
     public float var= 1f;
-    GameObject target;
     // Start is called before the first frame update
     void Awake()
     {
@@ -31,6 +34,7 @@ public class UIController : MonoBehaviour
         UpdateMB();
         UpdateTurnCount();
         UpdateStatusHUD();
+        RemainUnit();
         Time.timeScale = var;
     }
 
@@ -152,5 +156,24 @@ public class UIController : MonoBehaviour
         MenuWindow.SetActive(false);
         DoubleCheck.SetActive(false); 
         var = 1f;
+    }
+    public void RemainUnit()
+    {
+        int teamcount = 0;
+        int enemycount = 0;
+        print(gameObjects.Length);
+        for(int i = 0; i < gameObjects.Length; i++)
+        {
+            if(gameObjects[i] != null && gameObjects[i].activeInHierarchy && gameObjects[i].layer == 6)
+            {
+                enemycount++;
+            }
+            else if(gameObjects[i] != null && gameObjects[i].activeInHierarchy && gameObjects[i].layer != 6)
+            {
+                teamcount++;
+            }
+        }
+        OurTeamRemainMonster.GetComponent<Text>().text = teamcount.ToString();
+        EnemyTeamRemainMonster.GetComponent<Text>().text = enemycount.ToString();
     }
 }
