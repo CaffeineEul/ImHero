@@ -48,7 +48,6 @@ public class CharacterInfo : Operator
             return;
         if (IsDead())
         {
-            // SFX
             soundController.DeadSound();
             mapInfo.Exist[h, v] = false;
             gameObject.SetActive(false);
@@ -231,7 +230,7 @@ public class CharacterInfo : Operator
         posY = mapInfo.GetInfoH(h, v);
         mapInfo.Exist[h, v] = true;
         //soundController.PlaySound(soundController.audioClips[(int)SoundController.clipsName.move], soundController.SFXaudio, false);
-        
+
     }
 
 
