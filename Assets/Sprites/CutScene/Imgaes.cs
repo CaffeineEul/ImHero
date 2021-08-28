@@ -9,6 +9,7 @@ public class Imgaes : MonoBehaviour
     public Sprite[] sprites;
     int start = 0;
     float time = 0f;
+    float total = 0f;
     bool b = false;
     private void Awake()
     {
@@ -16,6 +17,8 @@ public class Imgaes : MonoBehaviour
     }
     private void Update()
     {
+        total += Time.deltaTime;
+        print(total);
         time += Time.deltaTime;
         if(time > 1f && (start == 2 || start == 3 || start == 4))
         {
