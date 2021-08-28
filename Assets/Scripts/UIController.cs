@@ -10,6 +10,10 @@ public class UIController : MonoBehaviour
     public Text currentTurn;
     public Image portrait;
 
+    public GameObject[] gameObjects;
+    public GameObject OurTeamRemainMonster;
+    public GameObject EnemyTeamRemainMonster;
+
     public GameObject Menu;
     public GameObject MenuWindow;
     public GameObject DoubleCheck;
@@ -30,6 +34,7 @@ public class UIController : MonoBehaviour
         UpdateMB();
         UpdateTurnCount();
         UpdateStatusHUD();
+        RemainUnit();
         Time.timeScale = var;
     }
 
@@ -80,11 +85,30 @@ public class UIController : MonoBehaviour
     {
         GameObject[] hpCnt = new GameObject[statusHUD.transform.GetChild(1).childCount - 1];
         GameObject[] dmgCnt = new GameObject[statusHUD.transform.GetChild(2).childCount - 1];
-        
-        for(int i = 1; i < statusHUD.transform.GetChild(1).childCount; i++)
+        for (int i = 1; i < statusHUD.transform.GetChild(1).childCount; i++)
         {
             hpCnt[i - 1] = statusHUD.transform.GetChild(1).GetChild(i).gameObject;
             dmgCnt[i - 1] = statusHUD.transform.GetChild(2).GetChild(i).gameObject;
+        }
+        
+        if(target != null)
+        {
+            for(int i  = 0; i < target.GetHp(); i++)
+            {
+                hpCnt[i].SetActive(true);
+            }
+            for(int i = target.GetHp(); i < 6; i++)
+            {
+                hpCnt[i].SetActive(false);
+            }
+            for (int i = 0; i < target.GetDamage(); i++)
+            {
+                dmgCnt[i].SetActive(true);
+            }
+            for (int i = target.GetDamage(); i < 6; i++)
+            {
+                dmgCnt[i].SetActive(false);
+            }
         }
     }
 
@@ -132,5 +156,24 @@ public class UIController : MonoBehaviour
         MenuWindow.SetActive(false);
         DoubleCheck.SetActive(false); 
         var = 1f;
+    }
+    public void RemainUnit()
+    {
+        int teamcount = 0;
+        int enemycount = 0;
+        print(gameObjects.Length);
+        for(int i = 0; i < gameObjects.Length; i++)
+        {
+            if(gameObjects[i] != null && gameObjects[i].activeInHierarchy && gameObjects[i].layer == 6)
+            {
+                enemycount++;
+            }
+            else if(gameObjects[i] != null && gameObjects[i].activeInHierarchy && gameObjects[i].layer != 6)
+            {
+                teamcount++;
+            }
+        }
+        OurTeamRemainMonster.GetComponent<Text>().text = teamcount.ToString();
+        EnemyTeamRemainMonster.GetComponent<Text>().text = enemycount.ToString();
     }
 }

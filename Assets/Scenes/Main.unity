@@ -6736,6 +6736,15 @@ MonoBehaviour:
   statusHUD: {fileID: 161886433}
   currentTurn: {fileID: 758901238}
   portrait: {fileID: 0}
+  gameObjects:
+  - {fileID: 1753010919}
+  - {fileID: 1006800332}
+  - {fileID: 1438477175}
+  - {fileID: 2105280375}
+  - {fileID: 1561457919}
+  - {fileID: 995813357}
+  OurTeamRemainMonster: {fileID: 1478855560}
+  EnemyTeamRemainMonster: {fileID: 866487301}
   Menu: {fileID: 806781172}
   MenuWindow: {fileID: 1890810996}
   DoubleCheck: {fileID: 1097328603}
@@ -15899,7 +15908,7 @@ GameObject:
   - component: {fileID: 995813360}
   - component: {fileID: 995813359}
   - component: {fileID: 995813358}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Enemy_Dealer
   m_TagString: Character
   m_Icon: {fileID: 0}
@@ -29144,7 +29153,7 @@ GameObject:
   - component: {fileID: 1561457922}
   - component: {fileID: 1561457921}
   - component: {fileID: 1561457920}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Enemy_Tanker
   m_TagString: Character
   m_Icon: {fileID: 0}
@@ -32386,7 +32395,7 @@ GameObject:
   - component: {fileID: 2105280378}
   - component: {fileID: 2105280377}
   - component: {fileID: 2105280376}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Enemy_Supporter
   m_TagString: Character
   m_Icon: {fileID: 0}

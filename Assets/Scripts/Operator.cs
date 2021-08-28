@@ -50,6 +50,15 @@ public class Operator : MonoBehaviour
         }
     }
 
+    public int GetHp()
+    {
+        return hp;
+    }
+    public int GetDamage()
+    {
+        return damage;
+    }
+
     /// <summary>
     /// 공격할 때 호출되는 함수입니다
     /// </summary>
