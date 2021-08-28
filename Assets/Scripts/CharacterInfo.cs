@@ -14,6 +14,8 @@ public class CharacterInfo : Operator
     public Class c;
     public bool appearRange = false;
 
+    private bool isLastPlayerTurn = true;
+
 
     private bool ChooseCharacter = true;
     private float posX;
@@ -126,7 +128,17 @@ public class CharacterInfo : Operator
 
     void AppearCanAttackRange()
     {
-        if (!turnController.IsPlayerTurn()) return;
+        if (!turnController.IsPlayerTurn())
+        {
+            if (!chkEnemy)
+            {
+                for (int i = 0; i < Areas.Length; i++)
+                {
+                    Areas[i].SetActive(false);
+                }
+            }
+            return;
+        }
 
         if (!appearRange)
         {

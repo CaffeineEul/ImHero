@@ -6343,7 +6343,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6b999c2fe134dc4ebba5611ed1c92dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemies: []
+  enemies:
+  - {fileID: 995813357}
+  - {fileID: 1561457919}
+  - {fileID: 2105280375}
 --- !u!4 &257872423
 Transform:
   m_ObjectHideFlags: 0

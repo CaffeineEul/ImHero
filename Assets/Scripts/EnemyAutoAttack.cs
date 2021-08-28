@@ -27,7 +27,7 @@ public class EnemyAutoAttack : MonoBehaviour
             if(Input.GetMouseButtonUp(0))
             {
                 waitTime = true;
-                StartCoroutine(Go());
+                Go();
             }
         }
 
@@ -40,21 +40,28 @@ public class EnemyAutoAttack : MonoBehaviour
         //}
     }
 
-    private IEnumerator Go()
+    private void Go()
     {
-
+        turnController.MinusMb();
         foreach (GameObject enemy in enemies)
         {
             for(int j = 0; j < enemy.transform.childCount; j++)
             {
                 GameObject tile = enemy.transform.GetChild(j).gameObject;
-                print(tile.name);
                 tile.SetActive(true);
-                tile.GetComponent<SpriteRenderer>().enabled = false;                
+                tile.GetComponent<SpriteRenderer>().enabled = false;
+
+                if(tile.GetComponent<TileColChk>().isPlayer)
+                {
+                    CharacterInfo characterInfo = enemy.GetComponent<CharacterInfo>();
+                    print(characterInfo.name);
+                    characterInfo.Attack(tile.GetComponent<TileColChk>().player.GetComponent<Operator>(), characterInfo.GetDamage());
+                    waitTime = false;
+                    return;
+                }
             }
         }
 
-        yield return new WaitForSeconds(1f);
         waitTime = false;
     }
 
