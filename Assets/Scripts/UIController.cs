@@ -14,6 +14,7 @@ public class UIController : MonoBehaviour
     public GameObject OurTeamRemainMonster;
     public GameObject EnemyTeamRemainMonster;
 
+    public bool AllStop = false;
     public GameObject Menu;
     public GameObject MenuWindow;
     public GameObject DoubleCheck;
@@ -31,6 +32,10 @@ public class UIController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(AllStop)
+        {
+            return;
+        }
         UpdateMB();
         UpdateTurnCount();
         UpdateStatusHUD();
@@ -136,11 +141,13 @@ public class UIController : MonoBehaviour
     {
         MenuWindow.SetActive(true);
         var = 0f;
+        AllStop = true;
     }
     public void Restart()
     {
         MenuWindow.SetActive(false);
         var = 1f;
+        AllStop = false;
     }
     public void GameQuitCheck()
     {
@@ -156,6 +163,7 @@ public class UIController : MonoBehaviour
         MenuWindow.SetActive(false);
         DoubleCheck.SetActive(false); 
         var = 1f;
+        AllStop = false;
     }
     public void RemainUnit()
     {
