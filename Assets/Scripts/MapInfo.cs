@@ -39,6 +39,17 @@ public class MapInfo : MonoBehaviour
         {false, false,false,false,false,false,false,false}
     };
 
+    private void Update()
+    {
+        for(int i = 0; i < 8; i++)
+        {
+            for(int j = 0; j < 8; j++)
+            {
+                if (Exist[i, j])
+                    print(i + ", " + j);
+            }
+        }
+    }
     public float GetInfoV(int v, int h)
     {
         return infoV[v,h];
