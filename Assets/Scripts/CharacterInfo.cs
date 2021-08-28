@@ -100,11 +100,6 @@ public class CharacterInfo : Operator
                 }
             }
         }
-<<<<<<< Updated upstream
-=======
-
-        AppearCanMoveRange();
->>>>>>> Stashed changes
         AppearCanAttackRange();
     }
 
