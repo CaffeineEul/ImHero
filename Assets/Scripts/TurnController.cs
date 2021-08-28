@@ -17,16 +17,17 @@ public class TurnController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(mb <= 0)
+        if (!isPlayerTurn && mb <= 0)
+        {
+            print("End Enemy turn");
+            EndEnemyTurn();
+        }
+
+        if (mb <= 0)
         {
             isPlayerTurn = false;
             turn++;
             mb = 6;
-        }
-
-        if(!isPlayerTurn && mb <= 0)
-        {
-            EndEnemyTurn();
         }
     }
 
