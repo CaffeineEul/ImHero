@@ -89,8 +89,10 @@ public class Operator : MonoBehaviour
         // SFX
         soundController.HealSound();
         turnController.MinusMb();
-        target.hp += damage;
-        if (hp >= 6) hp = 6;
+        print(target.name);
+        Instantiate(healedParticle, target.transform.position, Quaternion.identity);
+        target.hp += heal;
+        hp = Mathf.Clamp(hp, 0, 6);
     }
 
     /// <summary>

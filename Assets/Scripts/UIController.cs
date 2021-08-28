@@ -99,7 +99,8 @@ public class UIController : MonoBehaviour
         
         if(target != null)
         {
-            for(int i  = 0; i < target.GetHp(); i++)
+            print(target.GetHp());
+            for(int i = 0; i < target.GetHp(); i++)
             {
                 hpCnt[i].SetActive(true);
             }
