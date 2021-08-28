@@ -18,6 +18,7 @@ public class UIController : MonoBehaviour
     public GameObject DoubleCheck;
     public GameObject WinWindow;
     public GameObject DefeatWindow;
+    public ParticleSystem GameOverFX;
 
     public float var= 1f;
     public bool AllStop = false;
@@ -27,6 +28,8 @@ public class UIController : MonoBehaviour
 
     public int enemycount_temp;
     public int teamcount_temp;
+
+
 
     // Start is called before the first frame update
     void Awake()
@@ -51,6 +54,10 @@ public class UIController : MonoBehaviour
         RemainUnit();
         Time.timeScale = var;
 
+        if (!DefeatWindow.activeSelf)
+        {
+            GameOverFX.Stop();
+        }
     }
 
 
@@ -196,6 +203,11 @@ public class UIController : MonoBehaviour
     public void GameOver()
     {
         DefeatWindow.SetActive(true);
+
+        if (!GameOverFX.isPlaying)
+        {
+            GameOverFX.Play(true);
+        }
     }
 
 
