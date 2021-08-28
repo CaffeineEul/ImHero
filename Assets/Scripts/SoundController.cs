@@ -7,10 +7,10 @@ public class SoundController : MonoBehaviour
     public enum clipsName
     {
         attack,         // [0]
-        cancle,         // [1]
+        cancle,         // [1] 
         click,          // [2] V
-        click_menu,     // [3]
-        click_nextTurn, // [4]
+        click_menu,     // [3] V
+        click_nextTurn, // [4] 
         gameOver,       // [5]
         heal,           // [6]
         hit,            // [7]
@@ -31,12 +31,13 @@ public class SoundController : MonoBehaviour
     [HideInInspector] public AudioSource SFXaudio;
 
     private bool isMenuON = false;
-    
+    private GameObject menuWindow;
     
 
     // Start is called before the first frame update
     void Start()
     {
+        menuWindow = GameObject.Find("MenuWindow");
         SFXaudio = gameObject.AddComponent<AudioSource>();
         BGMaudio = gameObject.AddComponent<AudioSource>();
 
@@ -63,14 +64,7 @@ public class SoundController : MonoBehaviour
             {
                 PlaySound(audioClips[(int)clipsName.move], SFXaudio, false, SFXVolume);
             }
-
-            if (isMenuON)
-            {
-                PlaySound(audioClips[(int)clipsName.click_menu], SFXaudio, false, SFXVolume);
-            }
         }
-
-        
     }
 
 
@@ -86,6 +80,7 @@ public class SoundController : MonoBehaviour
 
     public void MenuClickSound()
     {
+        PlaySound(audioClips[(int)clipsName.click_menu], SFXaudio, false, SFXVolume);
         isMenuON = true;
     }
 }
