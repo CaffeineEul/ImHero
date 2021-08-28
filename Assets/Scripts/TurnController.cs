@@ -37,7 +37,6 @@ public class TurnController : MonoBehaviour
     public void MinusMb()
     {
         mb--;
-        print(mb);
     }
 
     /// <summary>

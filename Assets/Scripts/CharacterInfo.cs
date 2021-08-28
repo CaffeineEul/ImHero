@@ -69,7 +69,12 @@ public class CharacterInfo : Operator
                 {
                     if(hit.transform.gameObject == Areas[i])
                     {
-                        if(i % 4 == 0)
+                        if(hit.transform.gameObject.GetComponent<TileColChk>().isEnemy)
+                        {
+                            turnController.MinusMb();
+                            Attack(hit.transform.gameObject.GetComponent<TileColChk>().enemy.GetComponent<Operator>(), damage);
+                        }
+                        else if(i % 4 == 0)
                         {
                             turnController.MinusMb();
                             objectMoveAlgorithm.GetMoveDir(h, v, h, v - (1 + i / 4));
