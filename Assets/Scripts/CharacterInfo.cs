@@ -17,7 +17,7 @@ public class CharacterInfo : Operator
     public bool appearRange = false;
 
     // Start is called before the first frame update
-    private void Awake()
+    private void Start()
     {
         mapInfo = GameObject.Find("MapInfo").GetComponent<MapInfo>();
         objectMoveAlgorithm = GameObject.Find("ObjectMoveAlgorithm").GetComponent<ObjectMoveAlgorithm>();

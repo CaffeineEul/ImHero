@@ -64,7 +64,7 @@ public class UIController : MonoBehaviour
 
             if(target!= null)
             {
-                name.text = target.name;
+                name.text = target.GetName();
                 portrait.sprite = target.GetComponent<SpriteRenderer>().sprite;
             }            
         }

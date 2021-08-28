@@ -88,4 +88,9 @@ public class Operator : MonoBehaviour
 
         return false;
     }
+
+    public string GetName()
+    {
+        return name;
+    }
 }
