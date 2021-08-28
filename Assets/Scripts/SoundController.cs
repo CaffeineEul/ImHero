@@ -6,7 +6,7 @@ public class SoundController : MonoBehaviour
 {
     public enum clipsName
     {
-        attack,         // [0]
+        attack,         // [0] V
         cancle,         // [1] 
         click,          // [2] V
         click_menu,     // [3] V
@@ -77,10 +77,40 @@ public class SoundController : MonoBehaviour
         audioPlayer.Play();
     }
 
+    public void MenuOFF()
+    {
+        isMenuON = false;
+    }
 
     public void MenuClickSound()
     {
         PlaySound(audioClips[(int)clipsName.click_menu], SFXaudio, false, SFXVolume);
         isMenuON = true;
+    }
+
+
+    public void AttackSound()
+    {
+        PlaySound(audioClips[(int)clipsName.attack], SFXaudio, false, SFXVolume);
+    }
+
+
+    public void HealSound()
+    {
+        PlaySound(audioClips[(int)clipsName.heal], SFXaudio, false, SFXVolume);
+    }
+
+
+    public void DeadSound()
+    {
+        PlaySound(audioClips[(int)clipsName.killed], SFXaudio, false, SFXVolume);
+    }
+    
+
+    public void HitSound()
+    {
+        PlaySound(audioClips[(int)clipsName.hit], SFXaudio, false, SFXVolume);
+
+        //PlaySound(audioClips[(int)clipsName.hit_shield], SFXaudio, false, SFXVolume);
     }
 }

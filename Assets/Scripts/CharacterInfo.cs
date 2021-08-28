@@ -14,7 +14,6 @@ public class CharacterInfo : Operator
     public bool appearRange = false;
 
 
-    private SoundController soundController;
     private bool ChooseCharacter = true;
     private float posX;
     private float posY;
@@ -24,7 +23,6 @@ public class CharacterInfo : Operator
     // Start is called before the first frame update
     private void Start()
     {
-        soundController = GameObject.Find("SoundController").GetComponent<SoundController>();
         mapInfo = GameObject.Find("MapInfo").GetComponent<MapInfo>();
         objectMoveAlgorithm = GameObject.Find("ObjectMoveAlgorithm").GetComponent<ObjectMoveAlgorithm>();
         uIController = GameObject.Find("UIController").GetComponent<UIController>();
@@ -41,6 +39,8 @@ public class CharacterInfo : Operator
             return;
         if (IsDead())
         {
+            // SFX
+            soundController.DeadSound();
             mapInfo.Exist[h, v] = false;
             gameObject.SetActive(false);
         } 
@@ -187,7 +187,6 @@ public class CharacterInfo : Operator
         posX = mapInfo.GetInfoV(h, v);
         posY = mapInfo.GetInfoH(h, v);
         mapInfo.Exist[h, v] = true;
-
         //soundController.PlaySound(soundController.audioClips[(int)SoundController.clipsName.move], soundController.SFXaudio, false);
         
     }

@@ -22,11 +22,13 @@ public class Operator : MonoBehaviour
 
     public Class me;
 
+    protected SoundController soundController;
     protected TurnController turnController;
 
     public void Awake()
     {
         turnController = GameObject.Find("TurnController").GetComponent<TurnController>();
+        soundController = GameObject.Find("SoundController").GetComponent<SoundController>();
 
         switch (me)
         {
@@ -67,6 +69,8 @@ public class Operator : MonoBehaviour
     /// <param name="damage">가한 공격력</param>
     public virtual void Attack(Operator target, int damage)
     {
+        // SFX
+        soundController.AttackSound();
         turnController.MinusMb();
         target.hp -= damage;
         return;
@@ -79,6 +83,8 @@ public class Operator : MonoBehaviour
     /// <param name="heal"></param>
     public virtual void Heal(Operator target, int heal)
     {
+        // SFX
+        soundController.HealSound();
         turnController.MinusMb();
         target.hp += damage;
         if (hp >= 6) hp = 6;
@@ -90,6 +96,7 @@ public class Operator : MonoBehaviour
     /// <returns></returns>
     protected bool IsDead()
     {
+        // SFX -> CharacterInfo
         return hp <= 0;
     }
 
