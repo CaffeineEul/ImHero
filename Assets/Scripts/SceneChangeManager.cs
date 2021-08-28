@@ -23,6 +23,6 @@ public class SceneChangeManager : MonoBehaviour
 
     public void LoadMainScene()
     {
-        SceneManager.LoadScene("Main");
+        SceneManager.LoadScene("Tutorial");
     }
 }
