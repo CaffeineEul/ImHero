@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class EnemyController : Operator
 {
-    public Class me;
+
 }
