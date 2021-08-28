@@ -4,8 +4,27 @@ using UnityEngine;
 
 public class SoundController : MonoBehaviour
 {
+    enum clipsName
+    {
+        attack,         // [0]
+        cancle,         // [1]
+        click,          // [2] V
+        click_menu,     // [3]
+        click_nextTurn, // [4]
+        gameOver,       // [5]
+        heal,           // [6]
+        hit,            // [7]
+        hit_shield,     // [8]
+        killed,         // [9]
+        move,           // [10]
+        stageBGM,       // [11] V
+        titleBGM        // [12]
+    }
+
+
     public GameObject[] charactors;
     public AudioClip[] audioClips;
+
 
     private AudioSource BGMaudio;
     private AudioSource SFXaudio;
@@ -14,9 +33,9 @@ public class SoundController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // In Game BGM Play 
+        // InGame BGM Play 
         BGMaudio = gameObject.AddComponent<AudioSource>();
-        PlaySound(audioClips[11], BGMaudio, true);
+        PlaySound(audioClips[(int)clipsName.stageBGM], BGMaudio, true);
     }
 
 
@@ -33,7 +52,7 @@ public class SoundController : MonoBehaviour
             if (hit.collider != null && hit.transform.gameObject.CompareTag("Character"))
             {
                 SFXaudio = gameObject.AddComponent<AudioSource>();
-                PlaySound(audioClips[2], SFXaudio, false);
+                PlaySound(audioClips[(int)clipsName.click], SFXaudio, false);
             }
         }
     }
