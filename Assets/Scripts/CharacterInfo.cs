@@ -73,8 +73,11 @@ public class CharacterInfo : Operator
                         {
                             turnController.MinusMb();
                             Attack(hit.transform.gameObject.GetComponent<TileColChk>().enemy.GetComponent<Operator>(), damage);
+                            appearRange = !appearRange;
+                            return;
                         }
-                        else if(i % 4 == 0)
+                        
+                        if(i % 4 == 0)
                         {
                             turnController.MinusMb();
                             objectMoveAlgorithm.GetMoveDir(h, v, h, v - (1 + i / 4));
