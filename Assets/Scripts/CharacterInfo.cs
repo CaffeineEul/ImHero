@@ -166,9 +166,6 @@ public class CharacterInfo : Operator
 
     public void MovePositionH(int var)
     {
-        Debug.Log(soundController.isClicked);
-        soundController.isClicked = false;
-        Debug.Log(soundController.isClicked);
         if (mapInfo.Exist[Mathf.Clamp(h + var, 0, 7), v])
         {
             return;
@@ -178,7 +175,6 @@ public class CharacterInfo : Operator
         posX = mapInfo.GetInfoV(h, v);
         posY = mapInfo.GetInfoH(h, v);
         mapInfo.Exist[h, v] = true;
-        Debug.Log("!!!!");
 
         //soundController.PlaySound(soundController.audioClips[(int)SoundController.clipsName.move], soundController.SFXaudio, false);
         
@@ -187,9 +183,6 @@ public class CharacterInfo : Operator
 
     public void MovePositionV(int var)
     {
-        Debug.Log(soundController.isClicked);
-        soundController.isClicked = false;
-        Debug.Log(soundController.isClicked);
         if (mapInfo.Exist[h, Mathf.Clamp(v + var, 0, 7)])
         {
             return;
@@ -199,7 +192,6 @@ public class CharacterInfo : Operator
         posX = mapInfo.GetInfoV(h, v);
         posY = mapInfo.GetInfoH(h, v);
         mapInfo.Exist[h, v] = true;
-        Debug.Log("!!");
         //soundController.PlaySound(soundController.audioClips[(int)SoundController.clipsName.move], soundController.SFXaudio, false);
     }
 }

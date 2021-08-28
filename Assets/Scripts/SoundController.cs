@@ -23,12 +23,11 @@ public class SoundController : MonoBehaviour
 
     public GameObject[] charactors;
     public AudioClip[] audioClips;
-    public bool isClicked = false;
 
     [HideInInspector] public AudioSource BGMaudio;
     [HideInInspector] public AudioSource SFXaudio;
-    
 
+ 
     // Start is called before the first frame update
     void Start()
     {
@@ -44,20 +43,21 @@ public class SoundController : MonoBehaviour
     void Update()
     {
         // SFX: Character Click
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButtonDown(0))
         {
             Vector2 character = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             Ray2D ray = new Ray2D(character, Vector2.zero);
             RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction);
 
-
-            if (hit.collider != null && hit.transform.gameObject.CompareTag("Character") && isClicked == false)
+            if (hit.collider != null && hit.transform.gameObject.CompareTag("Character"))
             {
-                Debug.Log(isClicked);
+                Debug.Log("!");
                 PlaySound(audioClips[(int)clipsName.click], SFXaudio, false);
-                isClicked = true;
-                Debug.Log(isClicked);
             }
+
+
+            PlaySound(audioClips[(int)clipsName.move], SFXaudio, false);
+
         }
     }
 

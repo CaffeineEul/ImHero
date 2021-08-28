@@ -5,7 +5,8 @@ using UnityEngine;
 public class TurnController : MonoBehaviour
 {
     private bool isPlayerTurn = true;
-    [SerializeField] private int mb;
+
+    public int mb;
     public int turn;
 
     private void Start()
@@ -37,6 +38,7 @@ public class TurnController : MonoBehaviour
     {
         mb--;
         print(mb);
+        PlaySound(audioClips[(int)clipsName.move], SFXaudio, false);
     }
 
     /// <summary>
