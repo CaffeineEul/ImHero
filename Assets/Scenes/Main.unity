@@ -30129,7 +30129,7 @@ MonoBehaviour:
   - {fileID: 1395653929}
   - {fileID: 138809602}
   - {fileID: 1374801527}
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 2d9dec88e806ba742a2574f87510a8f6, type: 3}
   c: 0
   appearRange: 0
 --- !u!60 &1438477177
