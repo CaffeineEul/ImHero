@@ -11,8 +11,6 @@ public class CharacterInfo : Operator
     public GameObject[] CanAttackAreas;
     public Sprite sprite;
     public Class c;
-    public int[] nextX = new int[] { 0, 0, 1, -1 };
-    public int[] nextY = new int[] { 1, -1, 0, 0 };
     float posX;
     float posY;
     bool ChooseCharacter = true;
@@ -30,6 +28,7 @@ public class CharacterInfo : Operator
     // Update is called once per frame
     void Update()
     {
+        print(appearRange);
         if (IsDead())
         {
             gameObject.SetActive(false);
@@ -52,11 +51,11 @@ public class CharacterInfo : Operator
                 objectMoveAlgorithm.AllAreaOff();
                 appearRange = true;
                 ChooseCharacter = !ChooseCharacter;
-            }
+            }/*
             if(appearRange && hit.collider != null && hit.transform.gameObject.layer == 6 && CanAttack())
             {
                 Attack(hit.transform.gameObject.GetComponent<Operator>(), damage);
-            }
+            }*/
             if(hit.collider != null && hit.transform.gameObject.tag == "Range")
             {
                 if (hit.transform.gameObject == CanMoveAreas[0])
@@ -98,10 +97,12 @@ public class CharacterInfo : Operator
         {
             for (int i = 0; i < CanAttackAreas.Length; i++)
             {
+                print(gameObject.transform.name + "," +i);
                 CanAttackAreas[i].SetActive(false);
             }
+            return;
         }
-        for (int i = 0; i < CanAttackAreas.Length/4; i++)
+        for (int i = 0; i < CanAttackAreas.Length / 4; i++)
         {
             if (v > 1 + i)
             {
