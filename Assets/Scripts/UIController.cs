@@ -161,7 +161,6 @@ public class UIController : MonoBehaviour
     {
         int teamcount = 0;
         int enemycount = 0;
-        print(gameObjects.Length);
         for(int i = 0; i < gameObjects.Length; i++)
         {
             if(gameObjects[i] != null && gameObjects[i].activeInHierarchy && gameObjects[i].layer == 6)
