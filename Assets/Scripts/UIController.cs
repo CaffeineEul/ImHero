@@ -48,6 +48,8 @@ public class UIController : MonoBehaviour
         if (mb != turnController.GetMB())
         {
             mb = turnController.GetMB();
+            print(mb);
+
             if (mb <= 0)
             {
                 foreach (GameObject g in MBTile)

@@ -78,7 +78,7 @@ public class Operator : MonoBehaviour
     /// <returns></returns>
     protected bool IsDead()
     {
-        return hp < 0;
+        return hp <= 0;
     }
 
     /// <summary>

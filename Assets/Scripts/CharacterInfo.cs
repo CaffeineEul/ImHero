@@ -41,6 +41,7 @@ public class CharacterInfo : Operator
             return;
         if (IsDead())
         {
+            mapInfo.Exist[h, v] = false;
             gameObject.SetActive(false);
         } 
         transform.position = new Vector3(posX, posY, 0);
@@ -71,7 +72,6 @@ public class CharacterInfo : Operator
                     {
                         if(hit.transform.gameObject.GetComponent<TileColChk>().isEnemy)
                         {
-                            turnController.MinusMb();
                             Attack(hit.transform.gameObject.GetComponent<TileColChk>().enemy.GetComponent<Operator>(), damage);
                             appearRange = !appearRange;
                             return;
