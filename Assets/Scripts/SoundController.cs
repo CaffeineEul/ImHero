@@ -66,9 +66,11 @@ public class SoundController : MonoBehaviour
 
             if (isMenuON)
             {
-                Debug.Log("!!");
+                PlaySound(audioClips[(int)clipsName.click_menu], SFXaudio, false, SFXVolume);
             }
         }
+
+        
     }
 
 
@@ -84,7 +86,6 @@ public class SoundController : MonoBehaviour
 
     public void MenuClickSound()
     {
-        PlaySound(audioClips[(int)clipsName.click_menu], SFXaudio, false, SFXVolume);
         isMenuON = true;
     }
 }
