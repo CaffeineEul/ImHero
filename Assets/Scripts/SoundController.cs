@@ -11,10 +11,10 @@ public class SoundController : MonoBehaviour
         click,          // [2] V
         click_menu,     // [3] V
         click_nextTurn, // [4] 
-        gameOver,       // [5]
-        heal,           // [6]
-        hit,            // [7]
-        hit_shield,     // [8]
+        gameOver,       // [5] 
+        heal,           // [6] 
+        hit,            // [7] 
+        hit_shield,     // [8] 
         killed,         // [9] V
         move,           // [10] V
         stageBGM,       // [11] V
@@ -77,16 +77,19 @@ public class SoundController : MonoBehaviour
         audioPlayer.Play();
     }
 
+
+    public void MenuOFF()
+    {
+        isMenuON = false;
+    }
+
+
     public void CancleSound()
     {
         PlaySound(audioClips[(int)clipsName.cancle], SFXaudio, false, SFXVolume);
         isMenuON = false;
     }
 
-    public void MenuOFF()
-    {
-        isMenuON = false;
-    }
 
     public void MenuClickSound()
     {

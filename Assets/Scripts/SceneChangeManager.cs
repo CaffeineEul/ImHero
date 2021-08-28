@@ -5,17 +5,21 @@ using UnityEngine.SceneManagement;
 
 public class SceneChangeManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public AudioClip IntroBGM;
+ 
+    private AudioSource audioPlayer;
+    
+    
+    private void Start()
     {
-        
+        audioPlayer = gameObject.AddComponent<AudioSource>();
+
+        audioPlayer.clip = IntroBGM;
+        audioPlayer.loop = true;
+        audioPlayer.volume = 0.3f;
+        audioPlayer.Play();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void LoadMainScene()
     {
