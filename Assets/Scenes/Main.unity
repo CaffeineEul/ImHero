@@ -15933,6 +15933,7 @@ MonoBehaviour:
   range: 0
   h: 6
   v: 2
+  canAttack: 0
   _LayerMask:
     serializedVersion: 2
     m_Bits: 0
@@ -15964,9 +15965,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.05, y: -0.1}
   serializedVersion: 2
-  m_Radius: 0.8303038
+  m_Radius: 0.23
 --- !u!212 &995813360
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -16077,6 +16078,7 @@ MonoBehaviour:
   range: 0
   h: 2
   v: 2
+  canAttack: 0
   _LayerMask:
     serializedVersion: 2
     m_Bits: 0
@@ -16104,9 +16106,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.05, y: -0.1}
   serializedVersion: 2
-  m_Radius: 0.8303038
+  m_Radius: 0.23
 --- !u!212 &1006800335
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -22664,7 +22666,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: cfa15bba3730b404d9ec4a4334aa4070, type: 3}
   - {fileID: 8300000, guid: f4c72fad22f624443911c7f6176e4c09, type: 3}
   - {fileID: 8300000, guid: f2a340f4fe1b15b4c938892fae30d185, type: 3}
-  isClicked: 0
   BGMaudio: {fileID: 0}
   SFXaudio: {fileID: 0}
 --- !u!4 &1344322603
@@ -28757,6 +28758,7 @@ MonoBehaviour:
   range: 0
   h: 1
   v: 6
+  canAttack: 0
   _LayerMask:
     serializedVersion: 2
     m_Bits: 0
@@ -28788,9 +28790,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.05, y: -0.1}
   serializedVersion: 2
-  m_Radius: 0.8303038
+  m_Radius: 0.23
 --- !u!212 &1438477178
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -29171,6 +29173,7 @@ MonoBehaviour:
   range: 0
   h: 4
   v: 4
+  canAttack: 0
   _LayerMask:
     serializedVersion: 2
     m_Bits: 0
@@ -29198,9 +29201,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.05, y: -0.1}
   serializedVersion: 2
-  m_Radius: 0.8303038
+  m_Radius: 0.23
 --- !u!212 &1561457922
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -30216,13 +30219,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8d67c47e65b3504cb84edef736242c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  allOperators:
-  - {fileID: 1753010919}
-  - {fileID: 1006800332}
-  - {fileID: 1438477175}
-  - {fileID: 2105280375}
-  - {fileID: 1561457919}
-  - {fileID: 995813357}
 --- !u!4 &1741735682
 Transform:
   m_ObjectHideFlags: 0
@@ -30346,9 +30342,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.05, y: -0.1}
   serializedVersion: 2
-  m_Radius: 0.8303038
+  m_Radius: 0.23
 --- !u!114 &1753010923
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30367,6 +30363,7 @@ MonoBehaviour:
   range: 0
   h: 0
   v: 0
+  canAttack: 0
   _LayerMask:
     serializedVersion: 2
     m_Bits: 0
@@ -32420,6 +32417,7 @@ MonoBehaviour:
   range: 0
   h: 6
   v: 6
+  canAttack: 0
   _LayerMask:
     serializedVersion: 2
     m_Bits: 0
@@ -32455,9 +32453,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.05, y: -0.1}
   serializedVersion: 2
-  m_Radius: 0.8303038
+  m_Radius: 0.23
 --- !u!212 &2105280378
 SpriteRenderer:
   m_ObjectHideFlags: 0
