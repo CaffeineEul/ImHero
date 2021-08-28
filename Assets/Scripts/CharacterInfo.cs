@@ -236,7 +236,7 @@ public class CharacterInfo : Operator
             return;
         }
         // FX
-        runParti = Instantiate(moveParticle, transform.position, Quaternion.identity);
+        runParti = Instantiate(moveParticle, transform.position, Quaternion.Euler(Vector3.down * 90));
 
         mapInfo.Exist[h, v] = false;
         h = Mathf.Clamp(h + var, 0, 7);
@@ -255,8 +255,8 @@ public class CharacterInfo : Operator
             return;
         }
         // FX
-        runParti = Instantiate(moveParticle, transform.position, Quaternion.identity);
-        
+        runParti = Instantiate(moveParticle, transform.position, Quaternion.Euler(Vector3.down * 90));
+
 
         mapInfo.Exist[h, v] = false;
         v = Mathf.Clamp(v + var, 0, 7);
