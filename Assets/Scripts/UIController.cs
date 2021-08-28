@@ -55,15 +55,15 @@ public class UIController : MonoBehaviour
 
     private void UpdateNamePortrait()
     {
-        Operator target = null;
+        GameObject target = null;
 
         if (Input.GetMouseButtonUp(0))
         {
-            target = GetClicked2DObject().GetComponent<Operator>();
-
-            if ((target = GetClicked2DObject().GetComponent<Operator>()) != null)
+            target = GetClicked2DObject();
+            
+            if (target != null && target.GetComponent<Operator>())
             {
-                name.text = target.GetName();
+                name.text = target.GetComponent<Operator>().GetName();
                 portrait.sprite = target.GetComponent<SpriteRenderer>().sprite;
             }
         }
