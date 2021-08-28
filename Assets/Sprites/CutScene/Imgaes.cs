@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 public class Imgaes : MonoBehaviour
 {
     public Image image;
@@ -22,11 +23,20 @@ public class Imgaes : MonoBehaviour
             start++;
             time = 0f;
         }
-        if(time > 6f && start < 8)
+        if(time > 6f && start < 7)
         {
+            if(start == 6)
+            {
+                time = 0f;
+                Invoke("SceneTrans", 5f);
+            }
             image.sprite = sprites[start];
             start++;
             time = 0f;
         }
+    }
+    void SceneTrans()
+    {
+        SceneManager.LoadScene("Start");
     }
 }
