@@ -30,14 +30,14 @@ public class MapInfo : MonoBehaviour
     public bool[,] Exist = new bool[8, 8];
     private void Update()
     {
-        for(int i = 0; i < 8; i++)
-        {
-            for(int j = 0; j < 8; j++)
-            {
-                if (Exist[i, j])
-                    print(i + ", " + j);
-            }
-        }
+        //for(int i = 0; i < 8; i++)
+        //{
+        //    for(int j = 0; j < 8; j++)
+        //    {
+        //        if (Exist[i, j])
+        //            print(i + ", " + j);
+        //    }
+        //}
     }
     public float GetInfoV(int v, int h)
     {
