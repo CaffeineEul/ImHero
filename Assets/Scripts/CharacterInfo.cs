@@ -11,6 +11,7 @@ public class CharacterInfo : Operator
     public GameObject[] CanAttackAreas;
     public Sprite sprite;
     public Class c;
+
     float posX;
     float posY;
     bool ChooseCharacter = true;
