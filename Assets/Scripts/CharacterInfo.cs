@@ -70,7 +70,13 @@ public class CharacterInfo : Operator
                 {
                     if(hit.transform.gameObject == Areas[i])
                     {
-                        if(hit.transform.gameObject.GetComponent<TileColChk>().isEnemy)
+                        if(me == Class.Supporter && hit.transform.gameObject.GetComponent<TileColChk>().isPlayer)
+                        {
+                            Heal(hit.transform.gameObject.GetComponent<TileColChk>().player.GetComponent<Operator>(), damage);
+                            appearRange = !appearRange;
+                            return;
+                        }
+                        else if(hit.transform.gameObject.GetComponent<TileColChk>().isEnemy)
                         {
                             Attack(hit.transform.gameObject.GetComponent<TileColChk>().enemy.GetComponent<Operator>(), damage);
                             appearRange = !appearRange;
