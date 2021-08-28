@@ -16,7 +16,7 @@ public class SoundController : MonoBehaviour
         hit,            // [7]
         hit_shield,     // [8]
         killed,         // [9]
-        move,           // [10]
+        move,           // [10] V
         stageBGM,       // [11] V
         titleBGM        // [12]
     }
@@ -35,14 +35,14 @@ public class SoundController : MonoBehaviour
         BGMaudio = gameObject.AddComponent<AudioSource>();
 
         // InGame BGM Play 
-        PlaySound(audioClips[(int)clipsName.stageBGM], BGMaudio, true);
+        PlaySound(audioClips[(int)clipsName.stageBGM], BGMaudio, true, 0.03f);
     }
 
 
     // Update is called once per frame
     void Update()
     {
-        // SFX: Character Click
+        // SFX: Character Click && Move
         if (Input.GetMouseButtonDown(0))
         {
             Vector2 character = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -52,17 +52,26 @@ public class SoundController : MonoBehaviour
             if (hit.collider != null && hit.transform.gameObject.CompareTag("Character"))
             {
                 Debug.Log("!");
-                PlaySound(audioClips[(int)clipsName.move], SFXaudio, false);
+                PlaySound(audioClips[(int)clipsName.click], SFXaudio, false, 1.0f);
+            }
+            else if (hit.collider != null && hit.transform.gameObject.CompareTag("Range"))
+            {
+                PlaySound(audioClips[(int)clipsName.move], SFXaudio, false, 1.0f);
             }
         }
     }
 
 
-    public void PlaySound(AudioClip audioClip, AudioSource audioPlayer, bool isLoop)
+    public void PlaySound(AudioClip audioClip, AudioSource audioPlayer, bool isLoop, float volume)
     {
         audioPlayer.Stop();
         audioPlayer.clip = audioClip;
         audioPlayer.loop = isLoop;
+        audioPlayer.volume = volume;
         audioPlayer.Play();
     }
+
+
+
+
 }
