@@ -16018,8 +16018,8 @@ GameObject:
   m_Component:
   - component: {fileID: 995813361}
   - component: {fileID: 995813360}
-  - component: {fileID: 995813359}
   - component: {fileID: 995813358}
+  - component: {fileID: 995813359}
   m_Layer: 6
   m_Name: Enemy_Dealer
   m_TagString: Character
@@ -16065,8 +16065,8 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: 2d9dec88e806ba742a2574f87510a8f6, type: 3}
   c: 0
   appearRange: 0
---- !u!58 &995813359
-CircleCollider2D:
+--- !u!68 &995813359
+EdgeCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -16078,9 +16078,18 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.05, y: -0.1}
-  serializedVersion: 2
-  m_Radius: 0.23
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: 0.04700446, y: -0.05425161}
+  - {x: -0.42556548, y: -0.30574608}
+  - {x: 0.03295803, y: -0.5388991}
+  - {x: 0.50666606, y: -0.30080092}
+  - {x: 0.03979802, y: -0.06148517}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
 --- !u!212 &995813360
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -16164,8 +16173,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1006800336}
   - component: {fileID: 1006800335}
-  - component: {fileID: 1006800334}
   - component: {fileID: 1006800333}
+  - component: {fileID: 1006800334}
   m_Layer: 0
   m_Name: Player_Tanker
   m_TagString: Character
@@ -16207,8 +16216,8 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: 2d9dec88e806ba742a2574f87510a8f6, type: 3}
   c: 1
   appearRange: 0
---- !u!58 &1006800334
-CircleCollider2D:
+--- !u!68 &1006800334
+EdgeCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -16220,9 +16229,18 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.05, y: -0.1}
-  serializedVersion: 2
-  m_Radius: 0.23
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: 0.05431831, y: -0.05776465}
+  - {x: -0.4246524, y: -0.30710495}
+  - {x: 0.03633094, y: -0.5323708}
+  - {x: 0.5022384, y: -0.2989744}
+  - {x: 0.056527227, y: -0.06400931}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
 --- !u!212 &1006800335
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -21189,7 +21207,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1059076770
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28882,8 +28900,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1438477179}
   - component: {fileID: 1438477178}
-  - component: {fileID: 1438477177}
   - component: {fileID: 1438477176}
+  - component: {fileID: 1438477177}
   m_Layer: 0
   m_Name: Player_Dealer
   m_TagString: Character
@@ -28929,8 +28947,8 @@ MonoBehaviour:
   sprite: {fileID: 0}
   c: 0
   appearRange: 0
---- !u!58 &1438477177
-CircleCollider2D:
+--- !u!68 &1438477177
+EdgeCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -28942,9 +28960,18 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.05, y: -0.1}
-  serializedVersion: 2
-  m_Radius: 0.23
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: 0.010243475, y: -0.07164478}
+  - {x: -0.43810838, y: -0.28709102}
+  - {x: 0.0070010424, y: -0.52027607}
+  - {x: 0.46303713, y: -0.29883862}
+  - {x: 0.010226488, y: -0.075056314}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
 --- !u!212 &1438477178
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -29298,8 +29325,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1561457923}
   - component: {fileID: 1561457922}
-  - component: {fileID: 1561457921}
   - component: {fileID: 1561457920}
+  - component: {fileID: 1561457921}
   m_Layer: 6
   m_Name: Enemy_Tanker
   m_TagString: Character
@@ -29341,8 +29368,8 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: 2d9dec88e806ba742a2574f87510a8f6, type: 3}
   c: 1
   appearRange: 0
---- !u!58 &1561457921
-CircleCollider2D:
+--- !u!68 &1561457921
+EdgeCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -29354,9 +29381,18 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.05, y: -0.1}
-  serializedVersion: 2
-  m_Radius: 0.23
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: 0.011936665, y: -0.08698559}
+  - {x: -0.46378398, y: -0.3189963}
+  - {x: -0.00006592274, y: -0.55832684}
+  - {x: 0.46499622, y: -0.31115687}
+  - {x: 0.0143613815, y: -0.084962726}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
 --- !u!212 &1561457922
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -30396,8 +30432,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1753010921}
   - component: {fileID: 1753010920}
-  - component: {fileID: 1753010922}
   - component: {fileID: 1753010923}
+  - component: {fileID: 1753010922}
   m_Layer: 0
   m_Name: Player_Supporter
   m_TagString: Character
@@ -30482,8 +30518,8 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &1753010922
-CircleCollider2D:
+--- !u!68 &1753010922
+EdgeCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -30495,9 +30531,19 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.05, y: -0.1}
-  serializedVersion: 2
-  m_Radius: 0.23
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: 0.002601862, y: -0.085386395}
+  - {x: 0.45109606, y: -0.30813873}
+  - {x: 0.0038311481, y: -0.083289385}
+  - {x: -0.441849, y: -0.30280554}
+  - {x: 0.010599852, y: -0.54152954}
+  - {x: 0.45354128, y: -0.30784047}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
 --- !u!114 &1753010923
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32544,8 +32590,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2105280379}
   - component: {fileID: 2105280378}
-  - component: {fileID: 2105280377}
   - component: {fileID: 2105280376}
+  - component: {fileID: 2105280377}
   m_Layer: 6
   m_Name: Enemy_Supporter
   m_TagString: Character
@@ -32595,8 +32641,8 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: 2d9dec88e806ba742a2574f87510a8f6, type: 3}
   c: 2
   appearRange: 0
---- !u!58 &2105280377
-CircleCollider2D:
+--- !u!68 &2105280377
+EdgeCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -32608,9 +32654,18 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.05, y: -0.1}
-  serializedVersion: 2
-  m_Radius: 0.23
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: 0.03693366, y: -0.08585513}
+  - {x: -0.42190385, y: -0.31943762}
+  - {x: 0.022393465, y: -0.54260445}
+  - {x: 0.48941946, y: -0.3098718}
+  - {x: 0.03861904, y: -0.084138036}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
 --- !u!212 &2105280378
 SpriteRenderer:
   m_ObjectHideFlags: 0
