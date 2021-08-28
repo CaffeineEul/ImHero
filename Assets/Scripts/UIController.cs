@@ -6,8 +6,8 @@ using UnityEngine.UI;
 public class UIController : MonoBehaviour
 {
     [SerializeField] private GameObject[] MBTile;
+    [SerializeField] private GameObject statusHUD;
     public Text currentTurn;
-    public Text name;
     public Image portrait;
 
     public GameObject MenuWindow;
@@ -28,7 +28,7 @@ public class UIController : MonoBehaviour
     {
         UpdateMB();
         UpdateTurnCount();
-        UpdateNamePortrait();
+        UpdateStatusHUD();
     }
 
     private void UpdateMB()
@@ -55,7 +55,7 @@ public class UIController : MonoBehaviour
         currentTurn.text = turnController.GetTurnCount().ToString();
     }
 
-    private void UpdateNamePortrait()
+    private void UpdateStatusHUD()
     {
         GameObject target = null;
 
@@ -65,9 +65,24 @@ public class UIController : MonoBehaviour
             
             if (target != null && target.GetComponent<Operator>())
             {
-                name.text = target.GetComponent<Operator>().GetName();
+                Text className = statusHUD.GetComponentInChildren<Text>();
+                className.text = target.GetComponent<Operator>().GetName();
+
+                UpdateHpDmg(target.GetComponent<Operator>());
                 portrait.sprite = target.GetComponent<SpriteRenderer>().sprite;
             }
+        }
+    }
+
+    private void UpdateHpDmg(Operator target)
+    {
+        GameObject[] hpCnt = new GameObject[statusHUD.transform.GetChild(1).childCount - 1];
+        GameObject[] dmgCnt = new GameObject[statusHUD.transform.GetChild(2).childCount - 1];
+        
+        for(int i = 1; i < statusHUD.transform.GetChild(1).childCount; i++)
+        {
+            hpCnt[i - 1] = statusHUD.transform.GetChild(1).GetChild(i).gameObject;
+            dmgCnt[i - 1] = statusHUD.transform.GetChild(2).GetChild(i).gameObject;
         }
     }
 
