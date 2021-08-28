@@ -44,7 +44,7 @@ public class ObjectMoveAlgorithm : MonoBehaviour
             {
                 for (int i = 0; i < var; i++)
                 {
-                    if (g.GetComponent<CharacterInfo>().ReturnPositionH() < 7)
+                    if (g.activeInHierarchy && g.GetComponent<CharacterInfo>().ReturnPositionH() < 7)
                     {
                         g.GetComponent<CharacterInfo>().MovePositionH(1);
                         g.GetComponent<CharacterInfo>().MovePositionV(0);
@@ -58,7 +58,7 @@ public class ObjectMoveAlgorithm : MonoBehaviour
             {
                 for (int i = 0; i < var; i++)
                 {
-                    if (g.GetComponent<CharacterInfo>().ReturnPositionH() > 0)
+                    if (g.activeInHierarchy && g.GetComponent<CharacterInfo>().ReturnPositionH() > 0)
                     {
                         g.GetComponent<CharacterInfo>().MovePositionH(-1);
                         g.GetComponent<CharacterInfo>().MovePositionV(0);
@@ -72,7 +72,7 @@ public class ObjectMoveAlgorithm : MonoBehaviour
             {
                 for (int i = 0; i < var; i++)
                 {
-                    if (g.GetComponent<CharacterInfo>().ReturnPositionV() < 7)
+                    if (g.activeInHierarchy && g.GetComponent<CharacterInfo>().ReturnPositionV() < 7)
                     {
                         g.GetComponent<CharacterInfo>().MovePositionH(0);
                         g.GetComponent<CharacterInfo>().MovePositionV(1);
@@ -86,7 +86,7 @@ public class ObjectMoveAlgorithm : MonoBehaviour
             {
                 for (int i = 0; i < var; i++)
                 {
-                    if (g.GetComponent<CharacterInfo>().ReturnPositionV() > 0)
+                    if (g.activeInHierarchy && g.GetComponent<CharacterInfo>().ReturnPositionV() > 0)
                     {
                         g.GetComponent<CharacterInfo>().MovePositionH(0);
                         g.GetComponent<CharacterInfo>().MovePositionV(-1);

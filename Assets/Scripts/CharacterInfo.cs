@@ -46,10 +46,14 @@ public class CharacterInfo : Operator
         if(parti != null) parti.transform.position = transform.position;
         if (uIController.AllStop)
             return;
+        if (!gameObject.activeInHierarchy)
+            return;
         if (IsDead())
         {
             soundController.DeadSound();
             mapInfo.Exist[h, v] = false;
+            h = Mathf.Clamp(h, 0, 0);
+            v = Mathf.Clamp(h, 0, 0);
             gameObject.SetActive(false);
         } 
         transform.position = new Vector3(posX, posY, 0);
