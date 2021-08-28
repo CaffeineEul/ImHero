@@ -22,7 +22,7 @@ public class CharacterInfo : Operator
     private float posY;
 
     ParticleSystem parti;
-    public ParticleSystem runParti;
+    ParticleSystem runParti;
 
     // Start is called before the first frame update
     private void Start()
@@ -236,11 +236,8 @@ public class CharacterInfo : Operator
             return;
         }
         // FX
-        if (!runParti.isPlaying)
-        {
-            runParti.Play();
-        }
-        
+        runParti = Instantiate(moveParticle, transform.position, Quaternion.identity);
+
         mapInfo.Exist[h, v] = false;
         h = Mathf.Clamp(h + var, 0, 7);
         posX = mapInfo.GetInfoV(h, v);
@@ -258,10 +255,8 @@ public class CharacterInfo : Operator
             return;
         }
         // FX
-        if (!runParti.isPlaying)
-        {
-            runParti.Play();
-        }
+        runParti = Instantiate(moveParticle, transform.position, Quaternion.identity);
+        
 
         mapInfo.Exist[h, v] = false;
         v = Mathf.Clamp(v + var, 0, 7);

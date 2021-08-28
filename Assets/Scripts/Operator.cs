@@ -21,6 +21,7 @@ public class Operator : MonoBehaviour
     [SerializeField] protected bool chkEnemy;
     [SerializeField] protected ParticleSystem attackParticle;
     [SerializeField] protected ParticleSystem healedParticle;
+    [SerializeField] protected ParticleSystem moveParticle;
     public LayerMask _LayerMask;
 
     public Class me;
