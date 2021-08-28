@@ -2,35 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class operatorPosInfo
-{
-    public GameObject gameObject;
-    public int h;
-    public int v;
-
-    public operatorPosInfo(GameObject gObject, int h, int v)
-    {
-        this.gameObject = gObject;
-        this.h = h;
-        this.v = v;
-    }
-
-}
-
 public class MapInfo : MonoBehaviour
 {
-    [SerializeField] public GameObject[] allOperators;
-    private operatorPosInfo[] operatorPosInfo = new operatorPosInfo[6];
-
-    private void Start()
-    {
-        operatorPosInfo[0] = new operatorPosInfo(allOperators[0], 0, 0);
-        operatorPosInfo[1] = new operatorPosInfo(allOperators[1], 2, 2);
-        operatorPosInfo[2] = new operatorPosInfo(allOperators[2], 6, 1);
-        operatorPosInfo[3] = new operatorPosInfo(allOperators[3], 6, 6);
-        operatorPosInfo[4] = new operatorPosInfo(allOperators[4], 4, 4);
-        operatorPosInfo[5] = new operatorPosInfo(allOperators[5], 6, 2);
-    }
 
     public float[,] infoV = new float[8, 8]
     {

@@ -17,6 +17,7 @@ public class Operator : MonoBehaviour
     [SerializeField] protected int range;
     [SerializeField] protected int h;
     [SerializeField] protected int v;
+    [SerializeField] protected bool canAttack = false;
     public LayerMask _LayerMask;
 
     public Class me;
@@ -86,16 +87,12 @@ public class Operator : MonoBehaviour
     /// <returns></returns>
     protected bool CanAttack()
     {
-        Debug.DrawRay(transform.position, new Vector3(-1, -1, 0) * range, new Color(0, 1, 0));
+        return canAttack;
+    }
 
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, new Vector3(0, -1, 0) * 0.9f, _LayerMask);
-
-        if (hit.transform.gameObject.tag == "Character")
-        {
-            return true;
-        }
-
-        return false;
+    protected void SetCanAttack()
+    {
+        canAttack = !canAttack;
     }
 
     public string GetName()
