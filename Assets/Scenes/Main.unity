@@ -6736,6 +6736,15 @@ MonoBehaviour:
   statusHUD: {fileID: 161886433}
   currentTurn: {fileID: 758901238}
   portrait: {fileID: 0}
+  gameObjects:
+  - {fileID: 1753010919}
+  - {fileID: 1006800332}
+  - {fileID: 1438477175}
+  - {fileID: 2105280375}
+  - {fileID: 1561457919}
+  - {fileID: 995813357}
+  OurTeamRemainMonster: {fileID: 1478855560}
+  EnemyTeamRemainMonster: {fileID: 866487301}
   Menu: {fileID: 806781172}
   MenuWindow: {fileID: 1890810996}
   DoubleCheck: {fileID: 1097328603}
