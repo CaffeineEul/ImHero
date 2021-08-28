@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SoundController : MonoBehaviour
+public class SoundController : Operator
 {
     enum clipsName
     {
@@ -21,17 +21,21 @@ public class SoundController : MonoBehaviour
         titleBGM        // [12]
     }
 
-
     public GameObject[] charactors;
     public AudioClip[] audioClips;
 
     private AudioSource BGMaudio;
     private AudioSource SFXaudio;
-
+    private Operator op;
+    private CharacterInfo chInfo;
+    
 
     // Start is called before the first frame update
     void Start()
     {
+        op = GetComponent<Operator>();
+        chInfo = op.GetComponent<CharacterInfo>();
+
         // InGame BGM Play 
         BGMaudio = gameObject.AddComponent<AudioSource>();
         PlaySound(audioClips[(int)clipsName.stageBGM], BGMaudio, true);

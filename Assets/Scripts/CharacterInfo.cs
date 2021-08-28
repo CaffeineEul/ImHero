@@ -16,7 +16,7 @@ public class CharacterInfo : Operator
     private float posX;
     private float posY;
 
-
+    
 
     // Start is called before the first frame update
     private void Start()
@@ -57,14 +57,8 @@ public class CharacterInfo : Operator
                 appearRange = true;
                 ChooseCharacter = !ChooseCharacter;
             }
-            /*
-            if(appearRange && hit.collider != null && hit.transform.gameObject.layer == 6 && CanAttack())
-            {
-                Attack(hit.transform.gameObject.GetComponent<Operator>(), damage);
-            }
-            */
 
-            if(hit.collider != null && hit.transform.gameObject.tag == "Range")
+            if (hit.collider != null)
             {
                 for(int i = 0; i < Areas.Length; i++)
                 {
@@ -106,6 +100,11 @@ public class CharacterInfo : Operator
                 }
             }
         }
+<<<<<<< Updated upstream
+=======
+
+        AppearCanMoveRange();
+>>>>>>> Stashed changes
         AppearCanAttackRange();
     }
 
