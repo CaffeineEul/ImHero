@@ -7,6 +7,7 @@ public class UIController : MonoBehaviour
 {
     [SerializeField] private GameObject[] MBTile;
     public Text currentTurn;
+    public Text name;
 
     private int mb;
     TurnController turnController;
@@ -23,6 +24,11 @@ public class UIController : MonoBehaviour
     {
         UpdateMB();
         UpdateTurnCount();
+        if(Input.GetMouseButtonUp(0))
+        {
+
+            GetClicked2DObject();
+        }
     }
 
     private void UpdateMB()
@@ -47,5 +53,28 @@ public class UIController : MonoBehaviour
     private void UpdateTurnCount()
     {
         currentTurn.text = turnController.GetTurnCount().ToString();
+    }
+
+
+
+    private GameObject GetClicked2DObject(int layer = -1)
+    {
+        GameObject target = null;
+
+        int mask = 1 << layer;
+
+        Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Ray2D ray = new Ray2D(pos, Vector2.zero);
+        RaycastHit2D hit;
+
+        hit = layer == -1 ? Physics2D.Raycast(ray.origin, ray.direction, Mathf.Infinity) : Physics2D.Raycast(ray.origin, ray.direction, Mathf.Infinity, mask);
+
+        if(hit)
+        {
+            target = hit.collider.gameObject;
+            print(target);
+        }
+
+        return target;
     }
 }
