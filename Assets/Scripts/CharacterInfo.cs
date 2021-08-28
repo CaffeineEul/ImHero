@@ -7,8 +7,7 @@ public class CharacterInfo : Operator
 {
     public MapInfo mapInfo;
     public ObjectMoveAlgorithm objectMoveAlgorithm;
-    public GameObject[] CanMoveAreas;
-    public GameObject[] CanAttackAreas;
+    public GameObject[] Areas;
     public Sprite sprite;
     public Class c;
     public bool appearRange = false;
@@ -67,37 +66,46 @@ public class CharacterInfo : Operator
 
             if(hit.collider != null && hit.transform.gameObject.tag == "Range")
             {
-                if (hit.transform.gameObject == CanMoveAreas[0])
+                for(int i = 0; i < Areas.Length; i++)
                 {
-                    turnController.MinusMb();
-                    objectMoveAlgorithm.GetMoveDir(h, v, h, v - 1);
-                    objectMoveAlgorithm.MoveTileMap();
-                    appearRange = !appearRange;
-                }
-                if (hit.transform.gameObject == CanMoveAreas[1])
-                {
-                    turnController.MinusMb();
-                    objectMoveAlgorithm.GetMoveDir(h, v, h, v + 1);
-                    objectMoveAlgorithm.MoveTileMap();
-                    appearRange = !appearRange;
-                }
-                if (hit.transform.gameObject == CanMoveAreas[2])
-                {
-                    turnController.MinusMb();
-                    objectMoveAlgorithm.GetMoveDir(h, v, h - 1, v);
-                    objectMoveAlgorithm.MoveTileMap();
-                    appearRange = !appearRange;
-                }
-                if (hit.transform.gameObject == CanMoveAreas[3])
-                {
-                    turnController.MinusMb();
-                    objectMoveAlgorithm.GetMoveDir(h, v, h + 1, v);
-                    objectMoveAlgorithm.MoveTileMap();
-                    appearRange = !appearRange;
+                    if(hit.transform.gameObject == Areas[i])
+                    {
+                        if(i % 4 == 0)
+                        {
+                            turnController.MinusMb();
+                            objectMoveAlgorithm.GetMoveDir(h, v, h, v - (1 + i / 4));
+                            objectMoveAlgorithm.MoveTileMap((1 + i / 4));
+                            appearRange = !appearRange;
+                            return;
+                        }
+                        else if(i % 4 == 1)
+                        {
+                            turnController.MinusMb();
+                            objectMoveAlgorithm.GetMoveDir(h, v, h, v + (1 + i / 4));
+                            objectMoveAlgorithm.MoveTileMap((1 + i / 4));
+                            appearRange = !appearRange; 
+                            return;
+                        }
+                        else if(i % 4 == 2)
+                        {
+                            turnController.MinusMb();
+                            objectMoveAlgorithm.GetMoveDir(h, v, h - (1 + i / 4), v );
+                            objectMoveAlgorithm.MoveTileMap((1 + i / 4));
+                            appearRange = !appearRange; 
+                            return;
+                        }
+                        else if(i % 4 == 3)
+                        {
+                            turnController.MinusMb();
+                            objectMoveAlgorithm.GetMoveDir(h, v, h + (1 + i / 4), v);
+                            objectMoveAlgorithm.MoveTileMap((1 + i / 4));
+                            appearRange = !appearRange;
+                            return;
+                        }
+                    }
                 }
             }
         }
-        AppearCanMoveRange();
         AppearCanAttackRange();
     }
 
@@ -106,97 +114,49 @@ public class CharacterInfo : Operator
     {
         if (!appearRange)
         {
-            for (int i = 0; i < CanAttackAreas.Length; i++)
+            for (int i = 0; i < Areas.Length; i++)
             {
-                print(gameObject.transform.name + "," +i);
-                CanAttackAreas[i].SetActive(false);
+                Areas[i].SetActive(false);
             }
             return;
         }
 
-        for (int i = 0; i < CanAttackAreas.Length / 4; i++)
+        for (int i = 0; i < Areas.Length / 4; i++)
         {
-            if (v > 1 + i)
+            if (v > 0 + i)
             {
-                if (mapInfo.Exist[h, v - (2 + i)])
+                if (mapInfo.Exist[h, v - (1 + i)])
                 {
-                    CanMoveAreas[(4 * i) + 0].gameObject.GetComponent<SpriteRenderer>().sprite = sprite;
+                    Areas[(4 * i) + 0].gameObject.GetComponent<SpriteRenderer>().sprite = sprite;
                 }
-                CanAttackAreas[(4 * i) + 0].SetActive(true);
+                Areas[(4 * i) + 0].SetActive(true);
             }
-            if (v < 6 - i)
+            if (v < 7 - i)
             {
-                if (mapInfo.Exist[h, v + (2 + i)])
+                if (mapInfo.Exist[h, v + (1 + i)])
                 {
-                    CanMoveAreas[(4 * i) + 1].gameObject.GetComponent<SpriteRenderer>().sprite = sprite;
+                    Areas[(4 * i) + 1].gameObject.GetComponent<SpriteRenderer>().sprite = sprite;
                 }
-                CanAttackAreas[(4 * i) + 1].SetActive(true);
+                Areas[(4 * i) + 1].SetActive(true);
             }
-            if (h > 1 + i)
+            if (h > 0 + i)
             {
-                if (mapInfo.Exist[h - (2 + i), v])
+                if (mapInfo.Exist[h - (1 + i), v])
                 {
-                    CanMoveAreas[(4 * i) + 2].gameObject.GetComponent<SpriteRenderer>().sprite = sprite;
+                    Areas[(4 * i) + 2].gameObject.GetComponent<SpriteRenderer>().sprite = sprite;
                 }
-                CanAttackAreas[(4 * i) + 2].SetActive(true);
+                Areas[(4 * i) + 2].SetActive(true);
             }
-            if (h < 6 - i)
+            if (h < 7 - i)
             {
-                if (mapInfo.Exist[h + (2 + i), v])
+                if (mapInfo.Exist[h + (1 + i), v])
                 {
-                    CanMoveAreas[(4 * i) + 3].gameObject.GetComponent<SpriteRenderer>().sprite = sprite;
+                    Areas[(4 * i) + 3].gameObject.GetComponent<SpriteRenderer>().sprite = sprite;
                 }
-                CanAttackAreas[(4 * i) + 3].SetActive(true);
+                Areas[(4 * i) + 3].SetActive(true);
             }
         }
     }
-
-
-    void AppearCanMoveRange()
-    {
-        if (!appearRange)
-        {
-            for(int i = 0; i < 4 ; i++)
-            {
-                CanMoveAreas[i].SetActive(false);
-            }
-            return;
-        }
-        if(v > 0)
-        {
-            if(mapInfo.Exist[h, v-1])
-            {
-                CanMoveAreas[0].gameObject.GetComponent<SpriteRenderer>().sprite = sprite;
-            }
-            CanMoveAreas[0].SetActive(true);
-        }
-        if(v < 7)
-        {
-            if (mapInfo.Exist[h, v+1])
-            {
-                CanMoveAreas[1].gameObject.GetComponent<SpriteRenderer>().sprite = sprite;
-            }
-            CanMoveAreas[1].SetActive(true);
-        }
-        if(h > 0)
-        {
-            if (mapInfo.Exist[h-1, v])
-            {
-                CanMoveAreas[2].gameObject.GetComponent<SpriteRenderer>().sprite = sprite;
-            }
-            CanMoveAreas[2].SetActive(true);
-        }
-        if(h < 7)
-        {
-            if (mapInfo.Exist[h+1, v])
-            {
-                CanMoveAreas[3].gameObject.GetComponent<SpriteRenderer>().sprite = sprite;
-            }
-            CanMoveAreas[3].SetActive(true);
-        }
-    }
-
-
     public int ReturnPositionH()
     {
         return h;
@@ -211,12 +171,12 @@ public class CharacterInfo : Operator
 
     public void MovePositionH(int var)
     {
-        if(mapInfo.Exist[h+ var, v])
+        if(mapInfo.Exist[Mathf.Clamp(h + var, 0, h + var), v])
         {
             return;
         }
         mapInfo.Exist[h, v] = false;
-        h += var;
+        h = Mathf.Clamp(h + var, 0, 7);
         posX = mapInfo.GetInfoV(h, v);
         posY = mapInfo.GetInfoH(h, v);
         mapInfo.Exist[h, v] = true;
@@ -225,12 +185,12 @@ public class CharacterInfo : Operator
 
     public void MovePositionV(int var)
     {
-        if (mapInfo.Exist[h, v + var])
+        if (mapInfo.Exist[h, Mathf.Clamp(v + var, 0, v + var)])
         {
             return;
         }
         mapInfo.Exist[h, v] = false;
-        v += var;
+        v = Mathf.Clamp(v + var, 0, 7);
         posX = mapInfo.GetInfoV(h, v);
         posY = mapInfo.GetInfoH(h, v);
         mapInfo.Exist[h, v] = true;

@@ -5726,7 +5726,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!60 &203541938
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -6110,7 +6110,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!60 &311184587
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -6413,7 +6413,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!60 &330876947
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -12031,7 +12031,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!60 &471248067
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -15915,12 +15915,11 @@ MonoBehaviour:
   me: 0
   mapInfo: {fileID: 0}
   objectMoveAlgorithm: {fileID: 0}
-  CanMoveAreas:
+  Areas:
   - {fileID: 1573620577}
   - {fileID: 2114754107}
   - {fileID: 1376435388}
   - {fileID: 825174474}
-  CanAttackAreas:
   - {fileID: 817088550}
   - {fileID: 1853012459}
   - {fileID: 62331586}
@@ -16060,12 +16059,11 @@ MonoBehaviour:
   me: 1
   mapInfo: {fileID: 0}
   objectMoveAlgorithm: {fileID: 0}
-  CanMoveAreas:
+  Areas:
   - {fileID: 320490847}
   - {fileID: 526898997}
   - {fileID: 338044660}
   - {fileID: 1420112096}
-  CanAttackAreas: []
   sprite: {fileID: 21300000, guid: 2d9dec88e806ba742a2574f87510a8f6, type: 3}
   c: 1
   appearRange: 0
@@ -21919,7 +21917,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!60 &1275147282
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -28726,12 +28724,11 @@ MonoBehaviour:
   me: 0
   mapInfo: {fileID: 0}
   objectMoveAlgorithm: {fileID: 0}
-  CanMoveAreas:
+  Areas:
   - {fileID: 1740277186}
   - {fileID: 405437464}
   - {fileID: 608919268}
   - {fileID: 1427715501}
-  CanAttackAreas:
   - {fileID: 583902157}
   - {fileID: 1395653929}
   - {fileID: 138809602}
@@ -29141,12 +29138,11 @@ MonoBehaviour:
   me: 1
   mapInfo: {fileID: 0}
   objectMoveAlgorithm: {fileID: 0}
-  CanMoveAreas:
+  Areas:
   - {fileID: 1142261401}
   - {fileID: 867810276}
   - {fileID: 975228731}
   - {fileID: 536791468}
-  CanAttackAreas: []
   sprite: {fileID: 21300000, guid: 2d9dec88e806ba742a2574f87510a8f6, type: 3}
   c: 1
   appearRange: 0
@@ -29731,7 +29727,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!60 &1663111444
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -30319,12 +30315,11 @@ MonoBehaviour:
   me: 2
   mapInfo: {fileID: 0}
   objectMoveAlgorithm: {fileID: 0}
-  CanMoveAreas:
+  Areas:
   - {fileID: 1435748721}
   - {fileID: 260893763}
   - {fileID: 1926247266}
   - {fileID: 1420997842}
-  CanAttackAreas:
   - {fileID: 330876946}
   - {fileID: 1981659206}
   - {fileID: 203541937}
@@ -30783,7 +30778,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!60 &1796828760
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -31868,7 +31863,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!60 &1981659207
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -32361,12 +32356,11 @@ MonoBehaviour:
   me: 2
   mapInfo: {fileID: 0}
   objectMoveAlgorithm: {fileID: 0}
-  CanMoveAreas:
+  Areas:
   - {fileID: 994147851}
   - {fileID: 1910018219}
   - {fileID: 1380955318}
   - {fileID: 1795564882}
-  CanAttackAreas:
   - {fileID: 408613976}
   - {fileID: 1854372479}
   - {fileID: 820984449}

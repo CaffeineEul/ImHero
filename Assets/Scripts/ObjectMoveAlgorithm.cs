@@ -36,49 +36,49 @@ public class ObjectMoveAlgorithm : MonoBehaviour
     }
     
     
-    public void MoveTileMap()
+    public void MoveTileMap(int var)
     {
-        if (nh - h == 1)
+        if (nh - h > 0)
         {
             foreach(var g in gameObjects)
             {
                 if (g.GetComponent<CharacterInfo>().ReturnPositionH() < 7)
                 {
-                    g.GetComponent<CharacterInfo>().MovePositionH(1);
+                    g.GetComponent<CharacterInfo>().MovePositionH(var);
                     g.GetComponent<CharacterInfo>().MovePositionV(0);
                 }
             }
         }
-        if (nh - h == -1)
+        if (nh - h < 0)
         {
             foreach (var g in gameObjects)
             {
                 if (g.GetComponent<CharacterInfo>().ReturnPositionH() > 0)
                 {
-                    g.GetComponent<CharacterInfo>().MovePositionH(-1);
+                    g.GetComponent<CharacterInfo>().MovePositionH(-var);
                     g.GetComponent<CharacterInfo>().MovePositionV(0);
                 }
             }
         }
-        if (nv - v == 1)
+        if (nv - v > 0)
         {
             foreach (var g in gameObjects)
             {
                 if (g.GetComponent<CharacterInfo>().ReturnPositionV() < 7)
                 {
                     g.GetComponent<CharacterInfo>().MovePositionH(0);
-                    g.GetComponent<CharacterInfo>().MovePositionV(1);
+                    g.GetComponent<CharacterInfo>().MovePositionV(var);
                 }
             }
         }
-        if (nv - v == -1)
+        if (nv - v < 0)
         {
             foreach (var g in gameObjects)
             {
                 if (g.GetComponent<CharacterInfo>().ReturnPositionV() > 0)
                 {
                     g.GetComponent<CharacterInfo>().MovePositionH(0);
-                    g.GetComponent<CharacterInfo>().MovePositionV(-1);
+                    g.GetComponent<CharacterInfo>().MovePositionV(-var);
                 }
             }
         }
