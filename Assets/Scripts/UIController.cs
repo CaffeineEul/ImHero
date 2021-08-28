@@ -18,16 +18,18 @@ public class UIController : MonoBehaviour
     public GameObject DoubleCheck;
     public GameObject WinWindow;
     public GameObject DefeatWindow;
+    public GameObject ConsoleWindow;
     public ParticleSystem GameOverFX;
+
+    public int enemycount_temp;
+    public int teamcount_temp;
 
     public float var= 1f;
     public bool AllStop = false;
 
     private int mb;
     private TurnController turnController;
-
-    public int enemycount_temp;
-    public int teamcount_temp;
+    private EnemyAutoAttack EAA;
 
 
 
@@ -35,8 +37,9 @@ public class UIController : MonoBehaviour
     void Awake()
     {
         turnController = GameObject.Find("TurnController").GetComponent<TurnController>();
-        mb = turnController.GetMB();
+        EAA = GameObject.Find("EnemyAutoController").GetComponent<EnemyAutoAttack>();
         portrait = GameObject.Find("Sprite").GetComponent<Image>();
+        mb = turnController.GetMB();
     }
 
 
@@ -57,6 +60,12 @@ public class UIController : MonoBehaviour
         if (!DefeatWindow.activeSelf)
         {
             GameOverFX.Stop();
+        }
+
+
+        if (EAA.LogMessage != null)
+        {
+            ConsoleWindow.GetComponent<Text>().text = EAA.LogMessage;
         }
     }
 

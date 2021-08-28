@@ -12,6 +12,7 @@ public class EnemyAutoAttack : MonoBehaviour
     private bool isLastPlayerTurn = true;
     // Start is called before the first frame update
 
+    public string LogMessage;
 
     void Start()
     {
@@ -57,7 +58,7 @@ public class EnemyAutoAttack : MonoBehaviour
                 // 서폿일 때
                 if (characterInfo.me == Operator.Class.Supporter && tileColChk.isEnemy && tileColChk.enemy.GetComponent<Operator>().GetHp() < 6)
                 {
-
+                    LogMessage = characterInfo.name + "가 " + tileColChk.enemy.name + "를 힐했습니다";
                     Debug.Log(characterInfo.name + "가 " + tileColChk.enemy.name + "를 힐했습니다");
                     characterInfo.Heal(tileColChk.enemy.GetComponent<Operator>(), characterInfo.GetDamage());
                     waitTime = false;
@@ -65,6 +66,7 @@ public class EnemyAutoAttack : MonoBehaviour
                 }
                 else if (characterInfo.me != Operator.Class.Supporter && tileColChk.isPlayer) // 딜탱일때
                 {
+                    LogMessage = characterInfo.name + "가 " + tileColChk.player.name + "를 공격했습니다";
                     Debug.Log(characterInfo.name + "가 " + tileColChk.player.name + "를 공격했습니다");
                     characterInfo.Attack(tileColChk.player.GetComponent<Operator>(), characterInfo.GetDamage());
                     waitTime = false;
@@ -87,6 +89,7 @@ public class EnemyAutoAttack : MonoBehaviour
                 if (characterInfo.ReturnPositionV() > 0)
                 {
                     int ran = Random.Range(1, characterInfo.Areas.Length / 4);
+                    LogMessage = moveEnemy.name + "이 " + rand + "방향으로 " + ran + "만큼 이동합니다";
                     Debug.Log(moveEnemy.name + "이 " + rand + "방향으로 " + ran + "만큼 이동합니다");
                     characterInfo.objectMoveAlgorithm.GetMoveDir(h, v, h, Mathf.Clamp(v - ran, 0, 7));
                     objectMoveAlgorithm.MoveTileMap(ran);
@@ -97,6 +100,7 @@ public class EnemyAutoAttack : MonoBehaviour
                 if (characterInfo.ReturnPositionV() < 7)
                 {
                     int ran = Random.Range(1, characterInfo.Areas.Length / 4);
+                    LogMessage = moveEnemy.name + "이 " + rand + "방향으로 " + ran + "만큼 이동합니다";
                     Debug.Log(moveEnemy.name + "이 " + rand + "방향으로 " + ran + "만큼 이동합니다");
                     characterInfo.objectMoveAlgorithm.GetMoveDir(h, v, h, Mathf.Clamp(v + ran, 0, 7));
                     objectMoveAlgorithm.MoveTileMap(ran);
@@ -107,6 +111,7 @@ public class EnemyAutoAttack : MonoBehaviour
                 if (characterInfo.ReturnPositionH() > 0)
                 {
                     int ran = Random.Range(1, characterInfo.Areas.Length / 4);
+                    LogMessage = moveEnemy.name + "이 " + rand + "방향으로 " + ran + "만큼 이동합니다";
                     Debug.Log(moveEnemy.name + "이 " + rand + "방향으로 " + ran + "만큼 이동합니다");
                     characterInfo.objectMoveAlgorithm.GetMoveDir(h, v, Mathf.Clamp(h - ran, 0, 7), v);
                     objectMoveAlgorithm.MoveTileMap(ran);
@@ -117,6 +122,7 @@ public class EnemyAutoAttack : MonoBehaviour
                 if (characterInfo.ReturnPositionH() < 7)
                 {
                     int ran = Random.Range(1, characterInfo.Areas.Length / 4);
+                    LogMessage = moveEnemy.name + "이 " + rand + "방향으로 " + ran + "만큼 이동합니다";
                     Debug.Log(moveEnemy.name + "이 " + rand + "방향으로 " + ran + "만큼 이동합니다");
                     characterInfo.objectMoveAlgorithm.GetMoveDir(h, v, Mathf.Clamp(h + ran, 0, 7), v);
                     objectMoveAlgorithm.MoveTileMap(ran);
