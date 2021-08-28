@@ -6343,10 +6343,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6b999c2fe134dc4ebba5611ed1c92dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameObjects:
-  - {fileID: 2105280375}
-  - {fileID: 1561457919}
-  - {fileID: 995813357}
+  enemies: []
 --- !u!4 &257872423
 Transform:
   m_ObjectHideFlags: 0
@@ -7397,11 +7394,15 @@ MonoBehaviour:
   - {fileID: 995813357}
   OurTeamRemainMonster: {fileID: 1478855560}
   EnemyTeamRemainMonster: {fileID: 866487301}
-  AllStop: 0
   Menu: {fileID: 806781172}
   MenuWindow: {fileID: 1890810996}
   DoubleCheck: {fileID: 1097328603}
+  WinWindow: {fileID: 0}
+  DefeatWindow: {fileID: 0}
   var: 1
+  AllStop: 0
+  enemycount_temp: 0
+  teamcount_temp: 0
 --- !u!4 &351884197
 Transform:
   m_ObjectHideFlags: 0
@@ -17696,6 +17697,7 @@ MonoBehaviour:
   h: 6
   v: 2
   canAttack: 0
+  chkEnemy: 1
   attackParticle: {fileID: 2199398616251060499, guid: 7d16ae28e48cfd14a86ac73cf3798195, type: 3}
   healedParticle: {fileID: 390917306001052070, guid: e1ee7bcfa486e0e4fb96d17deb6a211b, type: 3}
   _LayerMask:
@@ -17870,6 +17872,7 @@ MonoBehaviour:
   h: 2
   v: 2
   canAttack: 0
+  chkEnemy: 0
   attackParticle: {fileID: 2451521764664299863, guid: feba24ff55c1b3f43b49175e0b1a8948, type: 3}
   healedParticle: {fileID: 390917306001052070, guid: e1ee7bcfa486e0e4fb96d17deb6a211b, type: 3}
   _LayerMask:
@@ -31247,6 +31250,7 @@ MonoBehaviour:
   h: 1
   v: 6
   canAttack: 0
+  chkEnemy: 0
   attackParticle: {fileID: 2451521764664299863, guid: feba24ff55c1b3f43b49175e0b1a8948, type: 3}
   healedParticle: {fileID: 390917306001052070, guid: e1ee7bcfa486e0e4fb96d17deb6a211b, type: 3}
   _LayerMask:
@@ -31835,6 +31839,7 @@ MonoBehaviour:
   h: 4
   v: 4
   canAttack: 0
+  chkEnemy: 1
   attackParticle: {fileID: 2199398616251060499, guid: 7d16ae28e48cfd14a86ac73cf3798195, type: 3}
   healedParticle: {fileID: 390917306001052070, guid: e1ee7bcfa486e0e4fb96d17deb6a211b, type: 3}
   _LayerMask:
@@ -33323,6 +33328,7 @@ MonoBehaviour:
   h: 0
   v: 0
   canAttack: 0
+  chkEnemy: 0
   attackParticle: {fileID: 7070770986009800263, guid: 9a12275094f08124c834fd0cea1e1f9d, type: 3}
   healedParticle: {fileID: 390917306001052070, guid: e1ee7bcfa486e0e4fb96d17deb6a211b, type: 3}
   _LayerMask:
@@ -35903,6 +35909,7 @@ MonoBehaviour:
   h: 6
   v: 6
   canAttack: 0
+  chkEnemy: 1
   attackParticle: {fileID: 7070770986009800263, guid: 9a12275094f08124c834fd0cea1e1f9d, type: 3}
   healedParticle: {fileID: 390917306001052070, guid: e1ee7bcfa486e0e4fb96d17deb6a211b, type: 3}
   _LayerMask:
