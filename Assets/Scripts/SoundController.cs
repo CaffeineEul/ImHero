@@ -7,7 +7,7 @@ public class SoundController : MonoBehaviour
     public enum clipsName
     {
         attack,         // [0] V
-        cancle,         // [1] 
+        cancle,         // [1] V
         click,          // [2] V
         click_menu,     // [3] V
         click_nextTurn, // [4] 
@@ -15,7 +15,7 @@ public class SoundController : MonoBehaviour
         heal,           // [6]
         hit,            // [7]
         hit_shield,     // [8]
-        killed,         // [9]
+        killed,         // [9] V
         move,           // [10] V
         stageBGM,       // [11] V
         titleBGM        // [12]
@@ -75,6 +75,12 @@ public class SoundController : MonoBehaviour
         audioPlayer.loop = isLoop;
         audioPlayer.volume = volume;
         audioPlayer.Play();
+    }
+
+    public void CancleSound()
+    {
+        PlaySound(audioClips[(int)clipsName.cancle], SFXaudio, false, SFXVolume);
+        isMenuON = false;
     }
 
     public void MenuOFF()
