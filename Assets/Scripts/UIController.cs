@@ -48,7 +48,6 @@ public class UIController : MonoBehaviour
         if (mb != turnController.GetMB())
         {
             mb = turnController.GetMB();
-            print(mb);
 
             if (mb <= 0)
             {

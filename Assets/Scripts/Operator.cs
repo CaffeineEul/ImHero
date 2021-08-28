@@ -73,6 +73,18 @@ public class Operator : MonoBehaviour
     }
 
     /// <summary>
+    /// 서포터가 힐 할때 호출되는 함수입니다
+    /// </summary>
+    /// <param name="target"></param>
+    /// <param name="heal"></param>
+    public virtual void Heal(Operator target, int heal)
+    {
+        turnController.MinusMb();
+        target.hp += damage;
+        if (hp >= 6) hp = 6;
+    }
+
+    /// <summary>
     /// 오퍼레이터가 체력이 다해 죽었는지 반환 하는 함수입니다
     /// </summary>
     /// <returns></returns>
