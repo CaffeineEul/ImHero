@@ -36,7 +36,7 @@ public class Operator : MonoBehaviour
         {
             case Class.Dealer:
                 className = "Dealer";
-                hp = 4;
+                hp = 3;
                 damage = 3;
                 range = 2;
                 break;
@@ -48,7 +48,7 @@ public class Operator : MonoBehaviour
                 break;
             case Class.Supporter:
                 className = "Supporter";
-                hp = 2;
+                hp = 4;
                 damage = 1;
                 range = 3;
                 break;
