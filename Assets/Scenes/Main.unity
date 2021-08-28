@@ -17694,6 +17694,7 @@ MonoBehaviour:
   sprite_ori: {fileID: 21300000, guid: 48f9d5c121a08354f96fbf65bd715e52, type: 3}
   c: 0
   appearRange: 0
+  runParti: {fileID: 0}
 --- !u!60 &995813359
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -17853,6 +17854,7 @@ MonoBehaviour:
   sprite_ori: {fileID: 21300000, guid: 48f9d5c121a08354f96fbf65bd715e52, type: 3}
   c: 1
   appearRange: 0
+  runParti: {fileID: 0}
 --- !u!60 &1006800334
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -31206,6 +31208,7 @@ MonoBehaviour:
   sprite_ori: {fileID: 21300000, guid: 48f9d5c121a08354f96fbf65bd715e52, type: 3}
   c: 0
   appearRange: 0
+  runParti: {fileID: 0}
 --- !u!60 &1438477177
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -31780,6 +31783,7 @@ MonoBehaviour:
   sprite_ori: {fileID: 21300000, guid: 48f9d5c121a08354f96fbf65bd715e52, type: 3}
   c: 1
   appearRange: 0
+  runParti: {fileID: 0}
 --- !u!60 &1561457921
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -33354,6 +33358,7 @@ MonoBehaviour:
   sprite_ori: {fileID: 21300000, guid: 48f9d5c121a08354f96fbf65bd715e52, type: 3}
   c: 2
   appearRange: 0
+  runParti: {fileID: 0}
 --- !u!1 &1767471088
 GameObject:
   m_ObjectHideFlags: 0
@@ -34175,7 +34180,7 @@ ParticleSystemRenderer:
   m_MaxParticleSize: 3.39
   m_CameraVelocityScale: 0
   m_VelocityScale: 0
-  m_LengthScale: 14.76
+  m_LengthScale: 20.55
   m_SortingFudge: -14.63
   m_NormalDirection: 1
   m_ShadowBias: 0
@@ -34382,9 +34387,9 @@ ParticleSystem:
         m_RotationOrder: 4
     startColor:
       serializedVersion: 2
-      minMaxState: 0
-      minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.5613208, g: 1, b: 1, a: 1}
+      minMaxState: 2
+      minColor: {r: 0.05660379, g: 0.04886082, b: 0.04886082, a: 1}
+      maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -35027,7 +35032,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 5
+      scalar: 0
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -35130,8 +35135,66 @@ ParticleSystem:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
-    m_BurstCount: 0
-    m_Bursts: []
+    m_BurstCount: 1
+    m_Bursts:
+    - serializedVersion: 2
+      time: 0
+      countCurve:
+        serializedVersion: 2
+        minMaxState: 0
+        scalar: 20
+        minScalar: 30
+        maxCurve:
+          serializedVersion: 2
+          m_Curve:
+          - serializedVersion: 3
+            time: 0
+            value: 1
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          - serializedVersion: 3
+            time: 1
+            value: 1
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        minCurve:
+          serializedVersion: 2
+          m_Curve:
+          - serializedVersion: 3
+            time: 0
+            value: 1
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          - serializedVersion: 3
+            time: 1
+            value: 1
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+      cycleCount: 1
+      repeatInterval: 0.01
+      probability: 1
   SizeModule:
     enabled: 0
     curve:
@@ -38908,7 +38971,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1797091308}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0.66, y: 1.833, z: -4.2447734}
+  m_LocalPosition: {x: -1.052, y: 1.833, z: -4.2447734}
   m_LocalScale: {x: 0.38958, y: 0.38958, z: 0.38958}
   m_Children: []
   m_Father: {fileID: 0}
@@ -40798,6 +40861,7 @@ MonoBehaviour:
   sprite_ori: {fileID: 21300000, guid: 48f9d5c121a08354f96fbf65bd715e52, type: 3}
   c: 2
   appearRange: 0
+  runParti: {fileID: 0}
 --- !u!60 &2105280377
 PolygonCollider2D:
   m_ObjectHideFlags: 0
