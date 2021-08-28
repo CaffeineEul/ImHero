@@ -57,13 +57,7 @@ public class SoundController : MonoBehaviour
 
             if (hit.collider != null && hit.transform.gameObject.CompareTag("Character"))
             {
-<<<<<<< Updated upstream
-                //Debug.Log("!");
-                PlaySound(audioClips[(int)clipsName.click], SFXaudio, false, 1.0f);
-=======
-                Debug.Log("!");
                 PlaySound(audioClips[(int)clipsName.click], SFXaudio, false, SFXVolume);
->>>>>>> Stashed changes
             }
             else if (hit.collider != null && hit.transform.gameObject.CompareTag("Range"))
             {
@@ -72,7 +66,7 @@ public class SoundController : MonoBehaviour
 
             if (isMenuON)
             {
-                PlaySound(audioClips[(int)clipsName.click_menu], SFXaudio, false, SFXVolume);
+                Debug.Log("!!");
             }
         }
     }
@@ -90,6 +84,7 @@ public class SoundController : MonoBehaviour
 
     public void MenuClickSound()
     {
+        PlaySound(audioClips[(int)clipsName.click_menu], SFXaudio, false, SFXVolume);
         isMenuON = true;
     }
 }
