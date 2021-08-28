@@ -30,7 +30,7 @@ public class SoundController : MonoBehaviour
     [HideInInspector] public AudioSource BGMaudio;
     [HideInInspector] public AudioSource SFXaudio;
 
-    private bool isMenuON = false;
+
     private GameObject menuWindow;
     
 
@@ -78,23 +78,16 @@ public class SoundController : MonoBehaviour
     }
 
 
-    public void MenuOFF()
-    {
-        isMenuON = false;
-    }
-
 
     public void CancleSound()
     {
         PlaySound(audioClips[(int)clipsName.cancle], SFXaudio, false, SFXVolume);
-        isMenuON = false;
     }
 
 
     public void MenuClickSound()
     {
         PlaySound(audioClips[(int)clipsName.click_menu], SFXaudio, false, SFXVolume);
-        isMenuON = true;
     }
 
 
