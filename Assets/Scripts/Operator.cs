@@ -11,7 +11,7 @@ public class Operator : MonoBehaviour
         Supporter
     }
 
-    [SerializeField] protected string name;
+    [SerializeField] protected string className;
     [SerializeField] protected int hp;
     [SerializeField] protected int damage;
     [SerializeField] protected int range;
@@ -91,6 +91,6 @@ public class Operator : MonoBehaviour
 
     public string GetName()
     {
-        return name;
+        return className;
     }
 }

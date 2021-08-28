@@ -58,11 +58,9 @@ public class UIController : MonoBehaviour
         Operator target = null;
 
         if (Input.GetMouseButtonUp(0))
-        {
+        {                     
 
-            target = GetClicked2DObject().GetComponent<Operator>();
-
-            if(target!= null)
+            if((target = GetClicked2DObject().GetComponent<Operator>()) != null)
             {
                 name.text = target.GetName();
                 portrait.sprite = target.GetComponent<SpriteRenderer>().sprite;
