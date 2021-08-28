@@ -16,8 +16,9 @@ public class TileColChk : MonoBehaviour
         {
             isEnemy = false;
         }
-        else if(collision.gameObject.layer == 7)
+        if(collision.gameObject.layer == 7)
         {
+            print(collision.gameObject + "!");
             isPlayer = false;
         }
     }
@@ -29,8 +30,9 @@ public class TileColChk : MonoBehaviour
             isEnemy = true;
             enemy = collision.gameObject;
         }
-        if (collision.gameObject.layer == 7 && transform.parent.gameObject.name != collision.gameObject.name)
+        if (collision.gameObject.layer == 7)
         {
+            print(collision.gameObject + "*");
             isPlayer = true;
             player = collision.gameObject;
         }
