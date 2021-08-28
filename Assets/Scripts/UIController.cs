@@ -8,15 +8,17 @@ public class UIController : MonoBehaviour
     [SerializeField] private GameObject[] MBTile;
     public Text currentTurn;
     public Text name;
+    public Image portrait;
 
     private int mb;
     TurnController turnController;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         turnController = GameObject.Find("TurnController").GetComponent<TurnController>();
         mb = turnController.GetMB();
+        portrait = GameObject.Find("Sprite").GetComponent<Image>();
     }
 
     // Update is called once per frame
@@ -24,11 +26,7 @@ public class UIController : MonoBehaviour
     {
         UpdateMB();
         UpdateTurnCount();
-        if(Input.GetMouseButtonUp(0))
-        {
-
-            GetClicked2DObject();
-        }
+        UpdateNamePortrait();
     }
 
     private void UpdateMB()
@@ -55,7 +53,22 @@ public class UIController : MonoBehaviour
         currentTurn.text = turnController.GetTurnCount().ToString();
     }
 
+    private void UpdateNamePortrait()
+    {
+        Operator target = null;
 
+        if (Input.GetMouseButtonUp(0))
+        {
+
+            target = GetClicked2DObject().GetComponent<Operator>();
+
+            if(target!= null)
+            {
+                name.text = target.name;
+                portrait.sprite = target.GetComponent<SpriteRenderer>().sprite;
+            }            
+        }
+    }
 
     private GameObject GetClicked2DObject(int layer = -1)
     {
@@ -72,7 +85,6 @@ public class UIController : MonoBehaviour
         if(hit)
         {
             target = hit.collider.gameObject;
-            print(target);
         }
 
         return target;
