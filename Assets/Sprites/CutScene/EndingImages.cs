@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class EndingImages : MonoBehaviour
 {
+    public Credit credit;
     public Image image;
     public Sprite[] sprites;
     int start = 0;
@@ -13,9 +14,12 @@ public class EndingImages : MonoBehaviour
     private void Awake()
     {
         image = GetComponent<Image>();
+        credit = GetComponent<Credit>();
     }
     private void Update()
     {
+        if (credit.end)
+            return;
         time += Time.deltaTime;
         if (time > 1f && (start == 2 || start == 3 || start == 4))
         {
