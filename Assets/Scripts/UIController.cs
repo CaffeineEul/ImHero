@@ -10,11 +10,12 @@ public class UIController : MonoBehaviour
     public Text currentTurn;
     public Image portrait;
 
+    public GameObject Menu;
     public GameObject MenuWindow;
-
+    public GameObject DoubleCheck;
     private int mb;
     TurnController turnController;
-
+    public float var= 1f;
     // Start is called before the first frame update
     void Awake()
     {
@@ -29,6 +30,7 @@ public class UIController : MonoBehaviour
         UpdateMB();
         UpdateTurnCount();
         UpdateStatusHUD();
+        Time.timeScale = var;
     }
 
     private void UpdateMB()
@@ -109,5 +111,26 @@ public class UIController : MonoBehaviour
     public void MenuOpen()
     {
         MenuWindow.SetActive(true);
+        var = 0f;
+    }
+    public void Restart()
+    {
+        MenuWindow.SetActive(false);
+        var = 1f;
+    }
+    public void GameQuitCheck()
+    {
+        MenuWindow.SetActive(false);
+        DoubleCheck.SetActive(true);
+    }
+    public void GameQuit()
+    {
+        Application.Quit();
+    }
+    public void GameQuitCancle()
+    {
+        MenuWindow.SetActive(false);
+        DoubleCheck.SetActive(false); 
+        var = 1f;
     }
 }

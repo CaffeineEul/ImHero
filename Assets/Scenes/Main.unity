@@ -6736,7 +6736,10 @@ MonoBehaviour:
   statusHUD: {fileID: 161886433}
   currentTurn: {fileID: 758901238}
   portrait: {fileID: 0}
+  Menu: {fileID: 806781172}
   MenuWindow: {fileID: 1890810996}
+  DoubleCheck: {fileID: 1097328603}
+  var: 1
 --- !u!4 &351884197
 Transform:
   m_ObjectHideFlags: 0
@@ -13305,7 +13308,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 557708949}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 351884196}
+        m_TargetAssemblyTypeName: UIController, Assembly-CSharp
+        m_MethodName: Restart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &557708949
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22495,7 +22510,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1326514590}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 351884196}
+        m_TargetAssemblyTypeName: UIController, Assembly-CSharp
+        m_MethodName: GameQuitCheck
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1326514590
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22607,6 +22634,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 091cb2b7602c365429343cb164fa0a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  className: 
+  hp: 0
+  damage: 0
+  range: 0
+  h: 0
+  v: 0
+  _LayerMask:
+    serializedVersion: 2
+    m_Bits: 0
+  me: 0
   charactors:
   - {fileID: 1753010919}
   - {fileID: 1006800332}
@@ -29905,7 +29942,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1671388848}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 351884196}
+        m_TargetAssemblyTypeName: UIController, Assembly-CSharp
+        m_MethodName: GameQuit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1671388848
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30607,7 +30656,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1793333444}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 351884196}
+        m_TargetAssemblyTypeName: UIController, Assembly-CSharp
+        m_MethodName: GameQuitCancle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1793333444
 MonoBehaviour:
   m_ObjectHideFlags: 0
