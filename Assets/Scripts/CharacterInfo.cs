@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class CharacterInfo : Operator
 {
+    public UIController uIController;
     public MapInfo mapInfo;
     public ObjectMoveAlgorithm objectMoveAlgorithm;
     public GameObject[] Areas;
@@ -26,6 +27,7 @@ public class CharacterInfo : Operator
         soundController = GameObject.Find("SoundController").GetComponent<SoundController>();
         mapInfo = GameObject.Find("MapInfo").GetComponent<MapInfo>();
         objectMoveAlgorithm = GameObject.Find("ObjectMoveAlgorithm").GetComponent<ObjectMoveAlgorithm>();
+        uIController = GameObject.Find("UIController").GetComponent<UIController>();
         posX = transform.position.x;
         posY = transform.position.y;
         mapInfo.Exist[h, v] = true; 
@@ -35,6 +37,8 @@ public class CharacterInfo : Operator
     // Update is called once per frame
     void Update()
     {
+        if (uIController.AllStop)
+            return;
         if (IsDead())
         {
             gameObject.SetActive(false);
