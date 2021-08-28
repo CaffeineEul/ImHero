@@ -18,6 +18,8 @@ public class Operator : MonoBehaviour
     [SerializeField] protected int h;
     [SerializeField] protected int v;
     [SerializeField] protected bool canAttack = false;
+    [SerializeField] protected ParticleSystem attackParticle;
+    [SerializeField] protected ParticleSystem healedParticle;
     public LayerMask _LayerMask;
 
     public Class me;
@@ -72,6 +74,7 @@ public class Operator : MonoBehaviour
         // SFX
         soundController.AttackSound();
         turnController.MinusMb();
+        Instantiate(attackParticle, target.transform.position, Quaternion.identity);
         target.hp -= damage;
         return;
     }

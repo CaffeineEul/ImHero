@@ -17036,6 +17036,8 @@ MonoBehaviour:
   h: 6
   v: 2
   canAttack: 0
+  attackParticle: {fileID: 0}
+  healedParticle: {fileID: 0}
   _LayerMask:
     serializedVersion: 2
     m_Bits: 0
@@ -17208,6 +17210,8 @@ MonoBehaviour:
   h: 2
   v: 2
   canAttack: 0
+  attackParticle: {fileID: 0}
+  healedParticle: {fileID: 0}
   _LayerMask:
     serializedVersion: 2
     m_Bits: 0
@@ -22235,7 +22239,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1059076770
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30436,6 +30440,8 @@ MonoBehaviour:
   h: 1
   v: 6
   canAttack: 0
+  attackParticle: {fileID: 2199398616251060499, guid: 7d16ae28e48cfd14a86ac73cf3798195, type: 3}
+  healedParticle: {fileID: 390917306001052070, guid: e1ee7bcfa486e0e4fb96d17deb6a211b, type: 3}
   _LayerMask:
     serializedVersion: 2
     m_Bits: 0
@@ -30877,6 +30883,8 @@ MonoBehaviour:
   h: 4
   v: 4
   canAttack: 0
+  attackParticle: {fileID: 0}
+  healedParticle: {fileID: 0}
   _LayerMask:
     serializedVersion: 2
     m_Bits: 0
@@ -32296,6 +32304,8 @@ MonoBehaviour:
   h: 0
   v: 0
   canAttack: 0
+  attackParticle: {fileID: 0}
+  healedParticle: {fileID: 0}
   _LayerMask:
     serializedVersion: 2
     m_Bits: 0
@@ -34729,6 +34739,8 @@ MonoBehaviour:
   h: 6
   v: 6
   canAttack: 0
+  attackParticle: {fileID: 0}
+  healedParticle: {fileID: 0}
   _LayerMask:
     serializedVersion: 2
     m_Bits: 0
@@ -35188,6 +35200,14 @@ PrefabInstance:
     - target: {fileID: 708202856941594894, guid: 7d16ae28e48cfd14a86ac73cf3798195, type: 3}
       propertyPath: m_Name
       value: Fx_Diller_Anermy
+      objectReference: {fileID: 0}
+    - target: {fileID: 2199398616251060499, guid: 7d16ae28e48cfd14a86ac73cf3798195, type: 3}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2199398616251060499, guid: 7d16ae28e48cfd14a86ac73cf3798195, type: 3}
+      propertyPath: stopAction
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4001651854822038972, guid: 7d16ae28e48cfd14a86ac73cf3798195, type: 3}
       propertyPath: m_RootOrder
