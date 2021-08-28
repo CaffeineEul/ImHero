@@ -272,7 +272,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isEnemy: 0
+  isPlayer: 0
   enemy: {fileID: 0}
+  player: {fileID: 0}
 --- !u!1 &43640854
 GameObject:
   m_ObjectHideFlags: 0
@@ -5317,7 +5319,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isEnemy: 0
+  isPlayer: 0
   enemy: {fileID: 0}
+  player: {fileID: 0}
 --- !u!1 &93717238
 GameObject:
   m_ObjectHideFlags: 0
@@ -5546,7 +5550,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isEnemy: 0
+  isPlayer: 0
   enemy: {fileID: 0}
+  player: {fileID: 0}
 --- !u!1 &138809602
 GameObject:
   m_ObjectHideFlags: 0
@@ -5696,7 +5702,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isEnemy: 0
+  isPlayer: 0
   enemy: {fileID: 0}
+  player: {fileID: 0}
 --- !u!1 &153919753
 GameObject:
   m_ObjectHideFlags: 0
@@ -5857,6 +5865,76 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 161886433}
   m_CullTransparentMesh: 1
+--- !u!1001 &182512404
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1989013163}
+    m_Modifications:
+    - target: {fileID: 1535278827089407386, guid: c1707aa3572c3994aad345b321bab359, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 9.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 1535278827089407386, guid: c1707aa3572c3994aad345b321bab359, type: 3}
+      propertyPath: InitialModule.startSizeY.scalar
+      value: 5.42
+      objectReference: {fileID: 0}
+    - target: {fileID: 6850975583114412909, guid: c1707aa3572c3994aad345b321bab359, type: 3}
+      propertyPath: m_Name
+      value: ScreenFX_HpNone
+      objectReference: {fileID: 0}
+    - target: {fileID: 8903097503871757480, guid: c1707aa3572c3994aad345b321bab359, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8903097503871757480, guid: c1707aa3572c3994aad345b321bab359, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 8903097503871757480, guid: c1707aa3572c3994aad345b321bab359, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8903097503871757480, guid: c1707aa3572c3994aad345b321bab359, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 8903097503871757480, guid: c1707aa3572c3994aad345b321bab359, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8903097503871757480, guid: c1707aa3572c3994aad345b321bab359, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8903097503871757480, guid: c1707aa3572c3994aad345b321bab359, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8903097503871757480, guid: c1707aa3572c3994aad345b321bab359, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8903097503871757480, guid: c1707aa3572c3994aad345b321bab359, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 8903097503871757480, guid: c1707aa3572c3994aad345b321bab359, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8903097503871757480, guid: c1707aa3572c3994aad345b321bab359, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c1707aa3572c3994aad345b321bab359, type: 3}
+--- !u!4 &182512405 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8903097503871757480, guid: c1707aa3572c3994aad345b321bab359, type: 3}
+  m_PrefabInstance: {fileID: 182512404}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &203541937
 GameObject:
   m_ObjectHideFlags: 0
@@ -5985,7 +6063,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isEnemy: 0
+  isPlayer: 0
   enemy: {fileID: 0}
+  player: {fileID: 0}
 --- !u!50 &203541942
 Rigidbody2D:
   serializedVersion: 4
@@ -6217,7 +6297,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isEnemy: 0
+  isPlayer: 0
   enemy: {fileID: 0}
+  player: {fileID: 0}
 --- !u!50 &260893768
 Rigidbody2D:
   serializedVersion: 4
@@ -6445,7 +6527,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isEnemy: 0
+  isPlayer: 0
   enemy: {fileID: 0}
+  player: {fileID: 0}
 --- !u!50 &311184591
 Rigidbody2D:
   serializedVersion: 4
@@ -6670,7 +6754,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isEnemy: 0
+  isPlayer: 0
   enemy: {fileID: 0}
+  player: {fileID: 0}
 --- !u!50 &320490852
 Rigidbody2D:
   serializedVersion: 4
@@ -6820,7 +6906,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isEnemy: 0
+  isPlayer: 0
   enemy: {fileID: 0}
+  player: {fileID: 0}
 --- !u!50 &330876951
 Rigidbody2D:
   serializedVersion: 4
@@ -7045,7 +7133,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isEnemy: 0
+  isPlayer: 0
   enemy: {fileID: 0}
+  player: {fileID: 0}
 --- !u!50 &338044665
 Rigidbody2D:
   serializedVersion: 4
@@ -12096,7 +12186,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isEnemy: 0
+  isPlayer: 0
   enemy: {fileID: 0}
+  player: {fileID: 0}
 --- !u!1 &408613976
 GameObject:
   m_ObjectHideFlags: 0
@@ -12246,7 +12338,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isEnemy: 0
+  isPlayer: 0
   enemy: {fileID: 0}
+  player: {fileID: 0}
 --- !u!1 &414249375
 GameObject:
   m_ObjectHideFlags: 0
@@ -12599,7 +12693,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isEnemy: 0
+  isPlayer: 0
   enemy: {fileID: 0}
+  player: {fileID: 0}
 --- !u!50 &471248071
 Rigidbody2D:
   serializedVersion: 4
@@ -12831,7 +12927,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isEnemy: 0
+  isPlayer: 0
   enemy: {fileID: 0}
+  player: {fileID: 0}
 --- !u!50 &526899002
 Rigidbody2D:
   serializedVersion: 4
@@ -12983,7 +13081,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isEnemy: 0
+  isPlayer: 0
   enemy: {fileID: 0}
+  player: {fileID: 0}
 --- !u!50 &536791473
 Rigidbody2D:
   serializedVersion: 4
@@ -14085,7 +14185,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isEnemy: 0
+  isPlayer: 0
   enemy: {fileID: 0}
+  player: {fileID: 0}
 --- !u!1 &602858095
 GameObject:
   m_ObjectHideFlags: 0
@@ -14317,7 +14419,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isEnemy: 0
+  isPlayer: 0
   enemy: {fileID: 0}
+  player: {fileID: 0}
 --- !u!1 &612991494
 GameObject:
   m_ObjectHideFlags: 0
@@ -14626,7 +14730,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isEnemy: 0
+  isPlayer: 0
   enemy: {fileID: 0}
+  player: {fileID: 0}
 --- !u!1 &730022024
 GameObject:
   m_ObjectHideFlags: 0
@@ -15396,7 +15502,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isEnemy: 0
+  isPlayer: 0
   enemy: {fileID: 0}
+  player: {fileID: 0}
 --- !u!1 &820984449
 GameObject:
   m_ObjectHideFlags: 0
@@ -15546,7 +15654,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isEnemy: 0
+  isPlayer: 0
   enemy: {fileID: 0}
+  player: {fileID: 0}
 --- !u!1 &825174474
 GameObject:
   m_ObjectHideFlags: 0
@@ -15698,7 +15808,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isEnemy: 0
+  isPlayer: 0
   enemy: {fileID: 0}
+  player: {fileID: 0}
 --- !u!1 &866487301
 GameObject:
   m_ObjectHideFlags: 0
@@ -15906,7 +16018,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isEnemy: 0
+  isPlayer: 0
   enemy: {fileID: 0}
+  player: {fileID: 0}
 --- !u!50 &867810281
 Rigidbody2D:
   serializedVersion: 4
@@ -16562,7 +16676,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isEnemy: 0
+  isPlayer: 0
   enemy: {fileID: 0}
+  player: {fileID: 0}
 --- !u!50 &975228736
 Rigidbody2D:
   serializedVersion: 4
@@ -16808,7 +16924,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isEnemy: 0
+  isPlayer: 0
   enemy: {fileID: 0}
+  player: {fileID: 0}
 --- !u!1 &995813357
 GameObject:
   m_ObjectHideFlags: 0
@@ -22568,7 +22686,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isEnemy: 0
+  isPlayer: 0
   enemy: {fileID: 0}
+  player: {fileID: 0}
 --- !u!50 &1142261406
 Rigidbody2D:
   serializedVersion: 4
@@ -22744,6 +22864,68 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1166266746}
   m_CullTransparentMesh: 1
+--- !u!1001 &1185619916
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1989013163}
+    m_Modifications:
+    - target: {fileID: 1354020395533783814, guid: 6f64fe8e71469af49b15fac74cd340b9, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1354020395533783814, guid: 6f64fe8e71469af49b15fac74cd340b9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.69810534
+      objectReference: {fileID: 0}
+    - target: {fileID: 1354020395533783814, guid: 6f64fe8e71469af49b15fac74cd340b9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1354020395533783814, guid: 6f64fe8e71469af49b15fac74cd340b9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 1354020395533783814, guid: 6f64fe8e71469af49b15fac74cd340b9, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1354020395533783814, guid: 6f64fe8e71469af49b15fac74cd340b9, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1354020395533783814, guid: 6f64fe8e71469af49b15fac74cd340b9, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1354020395533783814, guid: 6f64fe8e71469af49b15fac74cd340b9, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1354020395533783814, guid: 6f64fe8e71469af49b15fac74cd340b9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 1354020395533783814, guid: 6f64fe8e71469af49b15fac74cd340b9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1354020395533783814, guid: 6f64fe8e71469af49b15fac74cd340b9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8659164279405997519, guid: 6f64fe8e71469af49b15fac74cd340b9, type: 3}
+      propertyPath: m_Name
+      value: ScreenFX_Attack
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6f64fe8e71469af49b15fac74cd340b9, type: 3}
+--- !u!4 &1185619917 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1354020395533783814, guid: 6f64fe8e71469af49b15fac74cd340b9, type: 3}
+  m_PrefabInstance: {fileID: 1185619916}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1223506559
 GameObject:
   m_ObjectHideFlags: 0
@@ -22893,7 +23075,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isEnemy: 0
+  isPlayer: 0
   enemy: {fileID: 0}
+  player: {fileID: 0}
 --- !u!1 &1245441326
 GameObject:
   m_ObjectHideFlags: 0
@@ -23097,7 +23281,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isEnemy: 0
+  isPlayer: 0
   enemy: {fileID: 0}
+  player: {fileID: 0}
 --- !u!50 &1275147286
 Rigidbody2D:
   serializedVersion: 4
@@ -24002,7 +24188,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isEnemy: 0
+  isPlayer: 0
   enemy: {fileID: 0}
+  player: {fileID: 0}
 --- !u!1 &1376435388
 GameObject:
   m_ObjectHideFlags: 0
@@ -24152,7 +24340,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isEnemy: 0
+  isPlayer: 0
   enemy: {fileID: 0}
+  player: {fileID: 0}
 --- !u!1 &1380955318
 GameObject:
   m_ObjectHideFlags: 0
@@ -24302,7 +24492,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isEnemy: 0
+  isPlayer: 0
   enemy: {fileID: 0}
+  player: {fileID: 0}
 --- !u!1 &1395653929
 GameObject:
   m_ObjectHideFlags: 0
@@ -24452,7 +24644,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isEnemy: 0
+  isPlayer: 0
   enemy: {fileID: 0}
+  player: {fileID: 0}
 --- !u!1 &1403711682
 GameObject:
   m_ObjectHideFlags: 0
@@ -24822,7 +25016,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isEnemy: 0
+  isPlayer: 0
   enemy: {fileID: 0}
+  player: {fileID: 0}
 --- !u!50 &1420112101
 Rigidbody2D:
   serializedVersion: 4
@@ -24974,7 +25170,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isEnemy: 0
+  isPlayer: 0
   enemy: {fileID: 0}
+  player: {fileID: 0}
 --- !u!50 &1420997847
 Rigidbody2D:
   serializedVersion: 4
@@ -29960,7 +30158,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isEnemy: 0
+  isPlayer: 0
   enemy: {fileID: 0}
+  player: {fileID: 0}
 --- !u!1 &1435748721
 GameObject:
   m_ObjectHideFlags: 0
@@ -30089,7 +30289,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isEnemy: 0
+  isPlayer: 0
   enemy: {fileID: 0}
+  player: {fileID: 0}
 --- !u!50 &1435748726
 Rigidbody2D:
   serializedVersion: 4
@@ -30868,7 +31070,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isEnemy: 0
+  isPlayer: 0
   enemy: {fileID: 0}
+  player: {fileID: 0}
 --- !u!1 &1579703562
 GameObject:
   m_ObjectHideFlags: 0
@@ -31363,7 +31567,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isEnemy: 0
+  isPlayer: 0
   enemy: {fileID: 0}
+  player: {fileID: 0}
 --- !u!50 &1663111448
 Rigidbody2D:
   serializedVersion: 4
@@ -31746,7 +31952,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isEnemy: 0
+  isPlayer: 0
   enemy: {fileID: 0}
+  player: {fileID: 0}
 --- !u!1 &1741735680
 GameObject:
   m_ObjectHideFlags: 0
@@ -32230,7 +32438,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isEnemy: 0
+  isPlayer: 0
   enemy: {fileID: 0}
+  player: {fileID: 0}
 --- !u!1 &1793333441
 GameObject:
   m_ObjectHideFlags: 0
@@ -32515,7 +32725,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isEnemy: 0
+  isPlayer: 0
   enemy: {fileID: 0}
+  player: {fileID: 0}
 --- !u!1 &1796828759
 GameObject:
   m_ObjectHideFlags: 0
@@ -32646,7 +32858,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isEnemy: 0
+  isPlayer: 0
   enemy: {fileID: 0}
+  player: {fileID: 0}
 --- !u!50 &1796828764
 Rigidbody2D:
   serializedVersion: 4
@@ -32980,7 +33194,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isEnemy: 0
+  isPlayer: 0
   enemy: {fileID: 0}
+  player: {fileID: 0}
 --- !u!1 &1853012459
 GameObject:
   m_ObjectHideFlags: 0
@@ -33130,7 +33346,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isEnemy: 0
+  isPlayer: 0
   enemy: {fileID: 0}
+  player: {fileID: 0}
 --- !u!1 &1854372479
 GameObject:
   m_ObjectHideFlags: 0
@@ -33280,7 +33498,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isEnemy: 0
+  isPlayer: 0
   enemy: {fileID: 0}
+  player: {fileID: 0}
 --- !u!1 &1884343661
 GameObject:
   m_ObjectHideFlags: 0
@@ -33630,7 +33850,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isEnemy: 0
+  isPlayer: 0
   enemy: {fileID: 0}
+  player: {fileID: 0}
 --- !u!1 &1926247266
 GameObject:
   m_ObjectHideFlags: 0
@@ -33759,7 +33981,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isEnemy: 0
+  isPlayer: 0
   enemy: {fileID: 0}
+  player: {fileID: 0}
 --- !u!50 &1926247271
 Rigidbody2D:
   serializedVersion: 4
@@ -33951,7 +34175,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isEnemy: 0
+  isPlayer: 0
   enemy: {fileID: 0}
+  player: {fileID: 0}
 --- !u!50 &1981659211
 Rigidbody2D:
   serializedVersion: 4
@@ -34053,7 +34279,9 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.75, y: 1.29, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1185619917}
+  - {fileID: 182512405}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -34674,7 +34902,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isEnemy: 0
+  isPlayer: 0
   enemy: {fileID: 0}
+  player: {fileID: 0}
 --- !u!1 &2141038915
 GameObject:
   m_ObjectHideFlags: 0
