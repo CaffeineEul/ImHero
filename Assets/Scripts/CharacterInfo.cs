@@ -108,29 +108,33 @@ public class CharacterInfo : Operator
             {
                 if (mapInfo.Exist[h, v - (2 + i)])
                 {
-                    CanAttackAreas[(4 * i) + 0].SetActive(true);
+                    CanMoveAreas[(4 * i) + 0].gameObject.GetComponent<SpriteRenderer>().sprite = sprite;
                 }
+                CanAttackAreas[(4 * i) + 0].SetActive(true);
             }
             if (v < 6 - i)
             {
                 if (mapInfo.Exist[h, v + (2 + i)])
                 {
-                    CanAttackAreas[(4 * i) + 1].SetActive(true);
+                    CanMoveAreas[(4 * i) + 1].gameObject.GetComponent<SpriteRenderer>().sprite = sprite;
                 }
+                CanAttackAreas[(4 * i) + 1].SetActive(true);
             }
             if (h > 1 + i)
             {
                 if (mapInfo.Exist[h - (2 + i), v])
                 {
-                    CanAttackAreas[(4 * i) + 2].SetActive(true);
+                    CanMoveAreas[(4 * i) + 2].gameObject.GetComponent<SpriteRenderer>().sprite = sprite;
                 }
+                CanAttackAreas[(4 * i) + 2].SetActive(true);
             }
             if (h < 6 - i)
             {
                 if (mapInfo.Exist[h + (2 + i), v])
                 {
-                    CanAttackAreas[(4 * i) + 3].SetActive(true);
+                    CanMoveAreas[(4 * i) + 3].gameObject.GetComponent<SpriteRenderer>().sprite = sprite;
                 }
+                CanAttackAreas[(4 * i) + 3].SetActive(true);
             }
         }
 
