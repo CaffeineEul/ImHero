@@ -10,6 +10,7 @@ public class CharacterInfo : Operator
     public ObjectMoveAlgorithm objectMoveAlgorithm;
     public GameObject[] Areas;
     public Sprite sprite;
+    public Sprite sprite_ori;
     public Class c;
     public bool appearRange = false;
 
@@ -142,6 +143,10 @@ public class CharacterInfo : Operator
                 {
                     Areas[(4 * i) + 0].gameObject.GetComponent<SpriteRenderer>().sprite = sprite;
                 }
+                else
+                {
+                    Areas[(4 * i) + 0].gameObject.GetComponent<SpriteRenderer>().sprite = sprite_ori;
+                }
                 Areas[(4 * i) + 0].SetActive(true);
             }
             if (v < 7 - i)
@@ -149,6 +154,10 @@ public class CharacterInfo : Operator
                 if (mapInfo.Exist[h, v + (1 + i)])
                 {
                     Areas[(4 * i) + 1].gameObject.GetComponent<SpriteRenderer>().sprite = sprite;
+                }
+                else
+                {
+                    Areas[(4 * i) + 1].gameObject.GetComponent<SpriteRenderer>().sprite = sprite_ori;
                 }
                 Areas[(4 * i) + 1].SetActive(true);
             }
@@ -158,6 +167,10 @@ public class CharacterInfo : Operator
                 {
                     Areas[(4 * i) + 2].gameObject.GetComponent<SpriteRenderer>().sprite = sprite;
                 }
+                else
+                {
+                    Areas[(4 * i) + 2].gameObject.GetComponent<SpriteRenderer>().sprite = sprite_ori;
+                }
                 Areas[(4 * i) + 2].SetActive(true);
             }
             if (h < 7 - i)
@@ -165,6 +178,10 @@ public class CharacterInfo : Operator
                 if (mapInfo.Exist[h + (1 + i), v])
                 {
                     Areas[(4 * i) + 3].gameObject.GetComponent<SpriteRenderer>().sprite = sprite;
+                }
+                else
+                {
+                    Areas[(4 * i) + 3].gameObject.GetComponent<SpriteRenderer>().sprite = sprite_ori;
                 }
                 Areas[(4 * i) + 3].SetActive(true);
             }

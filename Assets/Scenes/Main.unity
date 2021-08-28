@@ -17053,6 +17053,7 @@ MonoBehaviour:
   - {fileID: 62331586}
   - {fileID: 721373658}
   sprite: {fileID: 21300000, guid: 2d9dec88e806ba742a2574f87510a8f6, type: 3}
+  sprite_ori: {fileID: 21300000, guid: 48f9d5c121a08354f96fbf65bd715e52, type: 3}
   c: 0
   appearRange: 0
 --- !u!60 &995813359
@@ -17220,6 +17221,7 @@ MonoBehaviour:
   - {fileID: 338044660}
   - {fileID: 1420112096}
   sprite: {fileID: 21300000, guid: 2d9dec88e806ba742a2574f87510a8f6, type: 3}
+  sprite_ori: {fileID: 21300000, guid: 48f9d5c121a08354f96fbf65bd715e52, type: 3}
   c: 1
   appearRange: 0
 --- !u!60 &1006800334
@@ -30451,6 +30453,7 @@ MonoBehaviour:
   - {fileID: 138809602}
   - {fileID: 1374801527}
   sprite: {fileID: 21300000, guid: 2d9dec88e806ba742a2574f87510a8f6, type: 3}
+  sprite_ori: {fileID: 21300000, guid: 48f9d5c121a08354f96fbf65bd715e52, type: 3}
   c: 0
   appearRange: 0
 --- !u!60 &1438477177
@@ -30887,6 +30890,7 @@ MonoBehaviour:
   - {fileID: 975228731}
   - {fileID: 536791468}
   sprite: {fileID: 21300000, guid: 2d9dec88e806ba742a2574f87510a8f6, type: 3}
+  sprite_ori: {fileID: 21300000, guid: 48f9d5c121a08354f96fbf65bd715e52, type: 3}
   c: 1
   appearRange: 0
 --- !u!60 &1561457921
@@ -32313,6 +32317,7 @@ MonoBehaviour:
   - {fileID: 471248066}
   - {fileID: 311184586}
   sprite: {fileID: 21300000, guid: 2d9dec88e806ba742a2574f87510a8f6, type: 3}
+  sprite_ori: {fileID: 21300000, guid: 48f9d5c121a08354f96fbf65bd715e52, type: 3}
   c: 2
   appearRange: 0
 --- !u!1 &1767471088
@@ -34745,6 +34750,7 @@ MonoBehaviour:
   - {fileID: 26223456}
   - {fileID: 1777821264}
   sprite: {fileID: 21300000, guid: 2d9dec88e806ba742a2574f87510a8f6, type: 3}
+  sprite_ori: {fileID: 21300000, guid: 48f9d5c121a08354f96fbf65bd715e52, type: 3}
   c: 2
   appearRange: 0
 --- !u!60 &2105280377

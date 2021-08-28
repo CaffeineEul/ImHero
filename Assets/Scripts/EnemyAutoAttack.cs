@@ -21,9 +21,9 @@ public class EnemyAutoAttack : MonoBehaviour
     void Update()
     {
         if(!turnController.IsPlayerTurn() && WaitTime)
-        {
             StartCoroutine(Action());
-        }
+        if (turnController.IsPlayerTurn())
+            StopAllCoroutines();
     }
     IEnumerator Action()
     {
@@ -38,6 +38,7 @@ public class EnemyAutoAttack : MonoBehaviour
                     characterInfo.Attack(i.transform.GetChild(j).gameObject.GetComponent<TileColChk>().player.GetComponent<Operator>(), characterInfo.GetDamage());
                     turnController.MinusMb();
                     WaitTime = false;
+                    yield return new WaitForSeconds(1f);
                 }
             }
         }
@@ -58,6 +59,7 @@ public class EnemyAutoAttack : MonoBehaviour
                             objectMoveAlgorithm.MoveTileMap(1);
                             turnController.MinusMb();
                             WaitTime = false;
+                            yield return new WaitForSeconds(1f);
                         }
                         break;
                     case 1:
@@ -67,6 +69,7 @@ public class EnemyAutoAttack : MonoBehaviour
                             objectMoveAlgorithm.MoveTileMap(1);
                             turnController.MinusMb();
                             WaitTime = false;
+                            yield return new WaitForSeconds(1f);
                         }
                         break;
                     case 2:
@@ -76,6 +79,7 @@ public class EnemyAutoAttack : MonoBehaviour
                             objectMoveAlgorithm.MoveTileMap(1);
                             turnController.MinusMb();
                             WaitTime = false;
+                            yield return new WaitForSeconds(1f);
                         }
                         break;
                     case 3:
@@ -85,13 +89,15 @@ public class EnemyAutoAttack : MonoBehaviour
                             objectMoveAlgorithm.MoveTileMap(1);
                             turnController.MinusMb();
                             WaitTime = false;
+                            yield return new WaitForSeconds(1f);
                         }
                         break;
-                    default: break;
+                    default: 
+                        break;
                 }
             }
         }
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1f);
         WaitTime = true;
     }
 }
