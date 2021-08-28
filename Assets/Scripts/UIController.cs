@@ -7,20 +7,27 @@ public class UIController : MonoBehaviour
 {
     [SerializeField] private GameObject[] MBTile;
     [SerializeField] private GameObject statusHUD;
+
     public Text currentTurn;
     public Image portrait;
-
     public GameObject[] gameObjects;
     public GameObject OurTeamRemainMonster;
     public GameObject EnemyTeamRemainMonster;
-
-    public bool AllStop = false;
     public GameObject Menu;
     public GameObject MenuWindow;
     public GameObject DoubleCheck;
-    private int mb;
-    TurnController turnController;
+    public GameObject WinWindow;
+    public GameObject DefeatWindow;
+
     public float var= 1f;
+    public bool AllStop = false;
+
+    private int mb;
+    private TurnController turnController;
+
+    public int enemycount_temp;
+    public int teamcount_temp;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -29,6 +36,7 @@ public class UIController : MonoBehaviour
         portrait = GameObject.Find("Sprite").GetComponent<Image>();
     }
 
+
     // Update is called once per frame
     void Update()
     {
@@ -36,12 +44,15 @@ public class UIController : MonoBehaviour
         {
             return;
         }
+
         UpdateMB();
         UpdateTurnCount();
         UpdateStatusHUD();
         RemainUnit();
         Time.timeScale = var;
+
     }
+
 
     private void UpdateMB()
     {
@@ -63,10 +74,12 @@ public class UIController : MonoBehaviour
         }
     }
 
+
     private void UpdateTurnCount()
     {
         currentTurn.text = turnController.GetTurnCount().ToString();
     }
+
 
     private void UpdateStatusHUD()
     {
@@ -86,6 +99,7 @@ public class UIController : MonoBehaviour
             }
         }
     }
+
 
     private void UpdateHpDmg(Operator target)
     {
@@ -119,6 +133,7 @@ public class UIController : MonoBehaviour
         }
     }
 
+
     private GameObject GetClicked2DObject(int layer = -1)
     {
         GameObject target = null;
@@ -139,27 +154,36 @@ public class UIController : MonoBehaviour
         return target;
     }
 
+
     public void MenuOpen()
     {
         MenuWindow.SetActive(true);
         var = 0f;
         AllStop = true;
     }
+
+
     public void Restart()
     {
         MenuWindow.SetActive(false);
         var = 1f;
         AllStop = false;
     }
+
+
     public void GameQuitCheck()
     {
         MenuWindow.SetActive(false);
         DoubleCheck.SetActive(true);
     }
+
+
     public void GameQuit()
     {
         Application.Quit();
     }
+
+
     public void GameQuitCancle()
     {
         MenuWindow.SetActive(false);
@@ -167,11 +191,26 @@ public class UIController : MonoBehaviour
         var = 1f;
         AllStop = false;
     }
+
+
+    public void GameOver()
+    {
+        DefeatWindow.SetActive(true);
+    }
+
+
+    public void GameOver_Victory()
+    {
+        WinWindow.SetActive(true);
+    }
+
+
     public void RemainUnit()
     {
         int teamcount = 0;
         int enemycount = 0;
-        for(int i = 0; i < gameObjects.Length; i++)
+        
+        for (int i = 0; i < gameObjects.Length; i++)
         {
             if(gameObjects[i] != null && gameObjects[i].activeInHierarchy && gameObjects[i].layer == 6)
             {
@@ -182,7 +221,21 @@ public class UIController : MonoBehaviour
                 teamcount++;
             }
         }
+
+        if (teamcount <= 0 && enemycount > 0)
+        {
+            GameOver();
+        }
+        else if (teamcount > 0 && enemycount <= 0)
+        {
+            GameOver_Victory();
+        }
+
+
         OurTeamRemainMonster.GetComponent<Text>().text = teamcount.ToString();
         EnemyTeamRemainMonster.GetComponent<Text>().text = enemycount.ToString();
+
+        enemycount_temp = enemycount;
+        teamcount_temp = teamcount;
     }
 }

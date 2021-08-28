@@ -6,19 +6,19 @@ public class SoundController : MonoBehaviour
 {
     public enum clipsName
     {
-        attack,         // [0] V
-        cancle,         // [1] V
-        click,          // [2] V
-        click_menu,     // [3] V
-        click_nextTurn, // [4] 
-        gameOver,       // [5] 
-        heal,           // [6] 
-        hit,            // [7] 
-        hit_shield,     // [8] 
-        killed,         // [9] V
-        move,           // [10] V
-        stageBGM,       // [11] V
-        titleBGM        // [12]
+        attack,             // [0] V
+        cancle,             // [1] V
+        click,              // [2] V
+        click_menu,         // [3] V
+        click_nextTurn,     // [4] 
+        gameOver,           // [5] V
+        gameOver_Victory,   // [6] V
+        heal,               // [7] 
+        hit_shield,         // [8] -
+        killed,             // [9] V
+        move,               // [10] V
+        stageBGM,           // [11] V
+        titleBGM            // [12] V
     }
 
     public GameObject[] charactors;
@@ -30,13 +30,15 @@ public class SoundController : MonoBehaviour
     [HideInInspector] public AudioSource BGMaudio;
     [HideInInspector] public AudioSource SFXaudio;
 
-
     private GameObject menuWindow;
-    
+    private UIController uiController;
+
+    private bool isOver = false;
 
     // Start is called before the first frame update
     void Start()
     {
+        uiController = GameObject.Find("UIController").GetComponent<UIController>();
         menuWindow = GameObject.Find("MenuWindow");
         SFXaudio = gameObject.AddComponent<AudioSource>();
         BGMaudio = gameObject.AddComponent<AudioSource>();
@@ -65,6 +67,21 @@ public class SoundController : MonoBehaviour
                 PlaySound(audioClips[(int)clipsName.move], SFXaudio, false, SFXVolume);
             }
         }
+
+        
+        // SFX: GameOver
+        if (uiController.teamcount_temp <= 0 && uiController.enemycount_temp > 0 && !isOver)
+        {
+            // defeat
+            PlaySound(audioClips[(int)clipsName.gameOver], SFXaudio, false, SFXVolume);
+            isOver = true;
+        }
+        else if (uiController.enemycount_temp <= 0 && uiController.teamcount_temp > 0 && !isOver)
+        {
+            // win
+            PlaySound(audioClips[(int)clipsName.gameOver_Victory], SFXaudio, false, SFXVolume);
+            isOver = true;
+        }
     }
 
 
@@ -76,7 +93,6 @@ public class SoundController : MonoBehaviour
         audioPlayer.volume = volume;
         audioPlayer.Play();
     }
-
 
 
     public void CancleSound()
@@ -106,13 +122,5 @@ public class SoundController : MonoBehaviour
     public void DeadSound()
     {
         PlaySound(audioClips[(int)clipsName.killed], SFXaudio, false, SFXVolume);
-    }
-    
-
-    public void HitSound()
-    {
-        PlaySound(audioClips[(int)clipsName.hit], SFXaudio, false, SFXVolume);
-
-        //PlaySound(audioClips[(int)clipsName.hit_shield], SFXaudio, false, SFXVolume);
     }
 }
