@@ -11,11 +11,13 @@ public class CharacterInfo : Operator
     public GameObject[] CanAttackAreas;
     public Sprite sprite;
     public Class c;
-
-    float posX;
-    float posY;
-    bool ChooseCharacter = true;
     public bool appearRange = false;
+
+    private bool ChooseCharacter = true;
+    private float posX;
+    private float posY;
+
+
 
     // Start is called before the first frame update
     private void Start()
@@ -26,10 +28,13 @@ public class CharacterInfo : Operator
         posY = transform.position.y;
         mapInfo.Exist[h, v] = true; 
     }
+
+
     // Update is called once per frame
     void Update()
     {
         print(appearRange);
+
         if (IsDead())
         {
             gameObject.SetActive(false);
@@ -52,11 +57,14 @@ public class CharacterInfo : Operator
                 objectMoveAlgorithm.AllAreaOff();
                 appearRange = true;
                 ChooseCharacter = !ChooseCharacter;
-            }/*
+            }
+            /*
             if(appearRange && hit.collider != null && hit.transform.gameObject.layer == 6 && CanAttack())
             {
                 Attack(hit.transform.gameObject.GetComponent<Operator>(), damage);
-            }*/
+            }
+            */
+
             if(hit.collider != null && hit.transform.gameObject.tag == "Range")
             {
                 if (hit.transform.gameObject == CanMoveAreas[0])
@@ -92,6 +100,8 @@ public class CharacterInfo : Operator
         AppearCanMoveRange();
         AppearCanAttackRange();
     }
+
+
     void AppearCanAttackRange()
     {
         if (!appearRange)
@@ -103,6 +113,7 @@ public class CharacterInfo : Operator
             }
             return;
         }
+
         for (int i = 0; i < CanAttackAreas.Length / 4; i++)
         {
             if (v > 1 + i)
@@ -138,8 +149,9 @@ public class CharacterInfo : Operator
                 CanAttackAreas[(4 * i) + 3].SetActive(true);
             }
         }
-
     }
+
+
     void AppearCanMoveRange()
     {
         if (!appearRange)
@@ -183,14 +195,20 @@ public class CharacterInfo : Operator
             CanMoveAreas[3].SetActive(true);
         }
     }
+
+
     public int ReturnPositionH()
     {
         return h;
     }
+
+
     public int ReturnPositionV()
     {
         return v;
     }
+
+
     public void MovePositionH(int var)
     {
         if(mapInfo.Exist[h+ var, v])
@@ -203,6 +221,8 @@ public class CharacterInfo : Operator
         posY = mapInfo.GetInfoH(h, v);
         mapInfo.Exist[h, v] = true;
     }
+
+
     public void MovePositionV(int var)
     {
         if (mapInfo.Exist[h, v + var])

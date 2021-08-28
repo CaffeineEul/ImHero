@@ -58,7 +58,12 @@ public class UIController : MonoBehaviour
         Operator target = null;
 
         if (Input.GetMouseButtonUp(0))
+<<<<<<< Updated upstream
         {                     
+=======
+        {
+            target = GetClicked2DObject().GetComponent<Operator>();
+>>>>>>> Stashed changes
 
             if((target = GetClicked2DObject().GetComponent<Operator>()) != null)
             {

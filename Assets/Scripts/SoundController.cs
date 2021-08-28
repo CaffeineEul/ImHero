@@ -25,7 +25,6 @@ public class SoundController : MonoBehaviour
     public GameObject[] charactors;
     public AudioClip[] audioClips;
 
-
     private AudioSource BGMaudio;
     private AudioSource SFXaudio;
 
